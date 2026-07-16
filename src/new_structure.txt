@@ -1,0 +1,56 @@
+.
+├── app
+│   ├── about
+│   │   └── page.tsx
+│   ├── blog
+│   │   ├── [slug]
+│   │   │   └── page.tsx
+│   │   └── page.tsx
+│   ├── checkout
+│   │   └── page.tsx
+│   ├── contact
+│   │   └── page.tsx
+│   ├── favicon.ico
+│   ├── get-started
+│   │   └── page.tsx
+│   ├── globals.css
+│   ├── industries
+│   │   └── page.tsx
+│   ├── layout.tsx
+│   ├── page.tsx
+│   ├── products
+│   │   ├── [slug]
+│   │   │   └── page.tsx
+│   │   └── page.tsx
+│   ├── services
+│   │   ├── [slug]
+│   │   │   └── page.tsx
+│   │   └── page.tsx
+│   └── software
+│       └── page.tsx
+├── components
+│   ├── illustrations.tsx
+│   ├── photos.tsx
+│   ├── site-chrome.tsx
+│   └── ui
+│       ├── button.tsx
+│       ├── dialog.tsx
+│       ├── input.tsx
+│       ├── label.tsx
+│       ├── separator.tsx
+│       ├── sheet.tsx
+│       ├── skeleton.tsx
+│       ├── toggle.tsx
+│       └── tooltip.tsx
+├── hooks
+│   └── use-mobile.tsx
+├── lib
+│   ├── ecosystem.ts
+│   ├── error-capture.ts
+│   ├── error-page.ts
+│   ├── lovable-error-reporting.ts
+│   └── utils.ts
+├── new_structure.txt
+└── new_structure2.txt
+
+18 directories, 36 files

@@ -1,0 +1,224 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-soft: var(--primary-soft);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+
+  /* These match the `variable` names set on the next/font loaders in
+     app/layout.tsx — --font-inter and --font-instrument-serif are the raw
+     font-loader outputs, --font-sans / --font-display are the semantic
+     Tailwind-facing names used everywhere else in this file. */
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-instrument-serif);
+
+  --shadow-soft: 0 1px 2px oklch(0.35 0.03 220 / 0.04),
+    0 8px 24px oklch(0.35 0.03 220 / 0.06);
+
+  --shadow-elevated: 0 4px 12px oklch(0.35 0.03 220 / 0.06),
+    0 24px 60px oklch(0.35 0.03 220 / 0.1);
+
+  --shadow-glow: 0 20px 60px -20px oklch(0.36 0.04 220 / 0.35);
+}
+
+:root {
+  --radius: 0.875rem;
+
+  /* Brand */
+  --background: oklch(0.995 0.003 220);
+  --foreground: oklch(0.22 0.03 225);
+
+  --surface: oklch(0.985 0.005 220);
+  --surface-muted: oklch(0.965 0.008 220);
+
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.22 0.03 225);
+
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.22 0.03 225);
+
+  --primary: oklch(0.36 0.036 220);
+  --primary-foreground: oklch(0.985 0.005 220);
+  --primary-soft: oklch(0.94 0.014 220);
+
+  --secondary: oklch(0.96 0.008 220);
+  --secondary-foreground: oklch(0.3 0.03 225);
+
+  --muted: oklch(0.965 0.008 220);
+  --muted-foreground: oklch(0.5 0.02 225);
+
+  --accent: oklch(0.55 0.19 27);
+  --accent-foreground: oklch(0.99 0.005 220);
+
+  --destructive: oklch(0.55 0.2 27);
+  --destructive-foreground: oklch(0.99 0.005 220);
+
+  --border: oklch(0.92 0.008 220);
+  --input: oklch(0.92 0.008 220);
+  --ring: oklch(0.36 0.036 220);
+
+  --gradient-hero: linear-gradient(
+    135deg,
+    oklch(0.98 0.008 220) 0%,
+    oklch(0.94 0.014 220) 50%,
+    oklch(0.9 0.02 220) 100%
+  );
+
+  --gradient-primary: linear-gradient(
+    135deg,
+    oklch(0.4 0.04 220) 0%,
+    oklch(0.32 0.035 225) 100%
+  );
+
+  --gradient-accent: linear-gradient(
+    135deg,
+    oklch(0.6 0.19 27) 0%,
+    oklch(0.48 0.18 27) 100%
+  );
+
+  --gradient-radial: radial-gradient(
+    ellipse at top,
+    oklch(0.94 0.02 220) 0%,
+    transparent 60%
+  );
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    letter-spacing: -0.02em;
+  }
+
+  ::selection {
+    background: var(--primary);
+    color: var(--primary-foreground);
+  }
+}
+
+@utility container-page {
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+  max-width: 1200px;
+
+  @media (min-width: 768px) {
+    padding-inline: 2rem;
+  }
+}
+
+@utility text-gradient {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility bg-hero {
+  background: var(--gradient-hero);
+}
+
+@utility bg-radial-soft {
+  background: var(--gradient-radial);
+}
+
+@utility shadow-card {
+  box-shadow: var(--shadow-soft);
+}
+
+@utility shadow-lift {
+  box-shadow: var(--shadow-elevated);
+}
+
+@utility ring-soft {
+  box-shadow: inset 0 0 0 1px oklch(0.36 0.036 220 / 0.08);
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@utility animate-fade-up {
+  animation: fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@utility animate-float {
+  animation: float 6s ease-in-out infinite;
+}
