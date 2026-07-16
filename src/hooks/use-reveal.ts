@@ -2,30 +2,31 @@
 
 import { useEffect, useRef, useState } from "react";
 
-export function useReveal<T extends HTMLElement>() {
+/**
+ * Reveals an element once it scrolls into view. Returns both `shown` and
+ * `visible` (same value) so call sites can destructure whichever name they
+ * already use. `threshold` defaults to 0.15; pass a different value per call
+ * site if a section needs to reveal earlier/later (e.g. 0.1, 0.12).
+ */
+export function useReveal<T extends HTMLElement>(threshold = 0.15) {
   const ref = useRef<T | null>(null);
-  const [visible, setVisible] = useState(false);
+  const [shown, setShown] = useState(false);
 
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
-
     const observer = new IntersectionObserver(
-      ([entry], observer) => {
+      ([entry], obs) => {
         if (entry.isIntersecting) {
-          setVisible(true);
-          observer.unobserve(entry.target);
+          setShown(true);
+          obs.unobserve(entry.target);
         }
       },
-      {
-        threshold: 0.12,
-      }
+      { threshold }
     );
-
     observer.observe(el);
-
     return () => observer.disconnect();
-  }, []);
+  }, [threshold]);
 
-  return { ref, visible };
+  return { ref, shown, visible: shown };
 }
