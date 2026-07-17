@@ -1,3 +1,4 @@
+"use client";
 import { workflow } from "@/components/software/software-data";
 
 export function WorkflowSection() {

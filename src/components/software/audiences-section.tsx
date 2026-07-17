@@ -1,3 +1,4 @@
+"use client";
 import { audiences } from "@/components/software/software-data";
 
 export function AudiencesSection() {

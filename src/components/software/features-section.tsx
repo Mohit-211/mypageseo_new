@@ -1,3 +1,4 @@
+"use client";
 import { features } from "@/components/software/software-data";
 import { FeatureCard } from "@/components/software/feature-card";
 
