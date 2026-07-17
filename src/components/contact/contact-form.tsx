@@ -11,16 +11,20 @@ import {
   interestOptions,
   type ContactForm as ContactFormValues,
 } from "./contact-data";
+import { contactUsAPI } from "@/api/contact.api";
+
 
 export function ContactForm() {
   const [form, setForm] = useState<ContactFormValues>(initialContactForm);
   const [errors, setErrors] = useState<Partial<Record<keyof ContactFormValues, string>>>({});
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const set = (k: keyof ContactFormValues) => (v: string) => {
     setForm((f) => ({ ...f, [k]: v }));
     if (errors[k]) setErrors((e) => ({ ...e, [k]: undefined }));
+    if (submitError) setSubmitError(null);
   };
 
   const onSubmit = async (e: FormEvent) => {
@@ -35,10 +39,29 @@ export function ContactForm() {
       setErrors(next);
       return;
     }
+
     setSubmitting(true);
-    // Simulated submission (no backend wired). Replace with a server action when available.
-    await new Promise((r) => setTimeout(r, 700));
+    setSubmitError(null);
+
+    const result = await contactUsAPI({
+      full_name: form.name,
+      business_name: form.business,
+      email: form.email,
+      phone_number: form.phone || undefined,
+      business_website: form.website || undefined,
+      business_location: form.location || undefined,
+      company_size: form.size,
+      primary_interest: form.interest,
+      goals_or_challenges: form.message,
+    });
+
     setSubmitting(false);
+
+    if (!result.success) {
+      setSubmitError(result.message || "Something went wrong. Please try again.");
+      return;
+    }
+
     setSubmitted(true);
     setForm(initialContactForm);
   };
@@ -106,6 +129,13 @@ export function ContactForm() {
             </div>
             {errors.message && <p className="mt-1.5 text-xs text-accent">{errors.message}</p>}
           </div>
+
+          {submitError && (
+            <div className="mt-4 rounded-lg bg-accent/10 px-4 py-3 text-sm text-accent">
+              {submitError}
+            </div>
+          )}
+
           <div className="mt-6 flex items-center justify-between flex-wrap gap-3">
             <p className="text-xs text-muted-foreground">
               By submitting, you agree to be contacted by MyPageSEO. We never share your information.

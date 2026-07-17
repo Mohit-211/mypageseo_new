@@ -1,4 +1,5 @@
 import { BadgeCheck, ChevronRight, Lock } from "lucide-react";
+import { resolvePlanIcon } from "@/lib/plan-icons";
 import type { AppliedCoupon, Plan, Pricing } from "./plans-data";
 
 export function OrderSummary({
@@ -11,7 +12,8 @@ export function OrderSummary({
   applied: AppliedCoupon | null;
 }) {
   const isCustom = plan.price === null;
-
+  const PlanIcon = resolvePlanIcon(plan.icon);
+console.log(pricing,"pricing")
   return (
     <div className="rounded-3xl border border-border/70 bg-background p-6 shadow-lift">
       <div className="flex items-center justify-between">
@@ -23,11 +25,11 @@ export function OrderSummary({
 
       <div className="mt-5 flex items-center gap-3 rounded-2xl border border-border/60 bg-surface/40 p-4">
         <span className="grid h-10 w-10 place-items-center rounded-xl bg-primary/5 text-primary">
-          <plan.icon className="h-5 w-5" strokeWidth={1.75} />
+          <PlanIcon className="h-5 w-5" strokeWidth={1.75} />
         </span>
         <div className="min-w-0 flex-1">
           <p className="text-sm font-semibold text-foreground">{plan.name} Plan</p>
-          <p className="text-xs text-muted-foreground">Monthly Local SEO subscription</p>
+          <p className="text-xs text-muted-foreground">{plan.tagline}</p>
         </div>
       </div>
 
@@ -42,15 +44,16 @@ export function OrderSummary({
         <>
           <dl className="mt-6 space-y-3 text-sm">
             <Row label="Monthly subscription" value={`$${pricing.monthly.toLocaleString()}`} />
-            {pricing.discount > 0 && (
-              <Row label={`Coupon (${applied?.code})`} value={`-$${pricing.discount.toLocaleString()}`} accent />
-            )}
+           
             <Row label="One-time setup fee" value={`$${pricing.setup.toLocaleString()}`} />
-            <Row
+            {/* <Row
               label="Taxes"
               value={pricing.tax > 0 ? `$${pricing.tax.toLocaleString()}` : "Calculated after"}
               muted
-            />
+            /> */}
+             {pricing.discount > 0 && (
+              <Row label={`Coupon (${applied?.code})`} value={`-$${pricing.discount.toLocaleString()}`} accent />
+            )}
           </dl>
 
           <div className="my-5 border-t border-border/60" />
@@ -62,7 +65,7 @@ export function OrderSummary({
             </span>
           </div>
           <p className="mt-2 text-xs text-muted-foreground">
-            Then <span className="font-semibold text-foreground">${pricing.recurring.toLocaleString()}/month</span>,
+            Then <span className="font-semibold text-foreground">${pricing.monthly.toLocaleString()}/month</span>,
             billed monthly. Cancel anytime after your 90-day foundation.
           </p>
         </>

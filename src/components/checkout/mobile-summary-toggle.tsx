@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { OrderSummary } from "./order-summary";
+import { getPlanIcon } from "./Icon-map";
 import type { AppliedCoupon, Plan, Pricing } from "./plans-data";
 
 export function MobileSummaryToggle({
@@ -17,6 +18,8 @@ export function MobileSummaryToggle({
   const [summaryOpen, setSummaryOpen] = useState(false);
   const isCustom = plan.price === null;
 
+  const Icon = getPlanIcon(plan.icon);
+
   return (
     <div className="container-page lg:hidden">
       <button
@@ -25,20 +28,37 @@ export function MobileSummaryToggle({
       >
         <div className="flex items-center gap-3">
           <span className="grid h-9 w-9 place-items-center rounded-lg bg-primary/5 text-primary">
-            <plan.icon className="h-4 w-4" />
+            <Icon className="h-4 w-4" />
           </span>
+
           <div className="text-left">
-            <p className="text-xs text-muted-foreground">Order summary</p>
+            <p className="text-xs text-muted-foreground">
+              Order summary
+            </p>
+
             <p className="text-sm font-semibold text-foreground">
-              {plan.name} — {isCustom ? "Custom" : `$${pricing.total.toLocaleString()} today`}
+              {plan.name} —{" "}
+              {isCustom
+                ? "Custom"
+                : `$${pricing.total.toLocaleString()} today`}
             </p>
           </div>
         </div>
-        <ChevronDown className={`h-4 w-4 text-muted-foreground transition-transform ${summaryOpen ? "rotate-180" : ""}`} />
+
+        <ChevronDown
+          className={`h-4 w-4 text-muted-foreground transition-transform ${
+            summaryOpen ? "rotate-180" : ""
+          }`}
+        />
       </button>
+
       {summaryOpen && (
         <div className="mt-3 animate-fade-in">
-          <OrderSummary plan={plan} pricing={pricing} applied={applied} />
+          <OrderSummary
+            plan={plan}
+            pricing={pricing}
+            applied={applied}
+          />
         </div>
       )}
     </div>

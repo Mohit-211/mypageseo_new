@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Inter, Instrument_Serif } from "next/font/google";
-
 import { AppShell } from "@/components/app-shell";
 import "./globals.css";
+import { CountryProvider } from "@/context/CountryContext";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -46,8 +46,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${instrumentSerif.variable}`}>
-      <body>
-        <AppShell>{children}</AppShell>
+      <body suppressHydrationWarning>
+        <CountryProvider>
+          <AppShell>{children}</AppShell>
+        </CountryProvider>
       </body>
     </html>
   );

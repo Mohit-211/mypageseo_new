@@ -8,16 +8,28 @@ export function Field({
   type = "text",
   placeholder,
   required,
+  value: valueProp,
+  onChange,
 }: {
   label: string;
   name: string;
   type?: string;
   placeholder?: string;
   required?: boolean;
+  value?: string;
+  onChange?: (value: string) => void;
 }) {
-  const [value, setValue] = useState("");
+  const [internalValue, setInternalValue] = useState("");
   const [focused, setFocused] = useState(false);
+
+  const value = valueProp !== undefined ? valueProp : internalValue;
   const active = focused || value.length > 0;
+
+  function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
+    const v = e.target.value;
+    if (onChange) onChange(v);
+    else setInternalValue(v);
+  }
 
   return (
     <label className="relative block">
@@ -27,7 +39,7 @@ export function Field({
         required={required}
         placeholder={placeholder}
         value={value}
-        onChange={(e) => setValue(e.target.value)}
+        onChange={handleChange}
         onFocus={() => setFocused(true)}
         onBlur={() => setFocused(false)}
         className="peer w-full rounded-xl border border-border bg-background px-4 pt-5 pb-2 text-sm text-foreground placeholder:text-transparent transition-all focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20"

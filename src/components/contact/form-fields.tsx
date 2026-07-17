@@ -69,13 +69,16 @@ export function Select({
         value={value}
         required={required}
         onChange={(e) => onChange(e.target.value)}
-        className={`peer w-full appearance-none rounded-xl bg-card px-4 pt-5 pb-2 text-sm text-foreground ring-1 transition-all outline-none focus:ring-2 ${
+        className={`peer w-full appearance-none rounded-xl bg-card px-4 pt-5 pb-2 text-sm ring-1 transition-all outline-none focus:ring-2 ${
           error ? "ring-accent focus:ring-accent" : "ring-border focus:ring-primary/40"
-        } ${filled ? "" : "text-transparent"}`}
+        } ${filled ? "text-foreground" : "text-transparent"}`}
       >
-        <option value="" hidden />
+        {/* Placeholder option: kept invisible on purpose, but only this one */}
+        <option value="" hidden className="text-foreground" />
         {options.map((o) => (
-          <option key={o} value={o}>{o}</option>
+          <option key={o} value={o} className="text-foreground">
+            {o}
+          </option>
         ))}
       </select>
       <label
