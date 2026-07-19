@@ -1,0 +1,226 @@
+.
+├── .DS_Store
+├── api
+│   ├── client.ts
+│   ├── contact.api.ts
+│   ├── coupon.api.ts
+│   └── subscription.api.ts
+├── app
+│   ├── about
+│   │   └── page.tsx
+│   ├── blog
+│   │   ├── [slug]
+│   │   │   └── page.tsx
+│   │   └── page.tsx
+│   ├── checkout
+│   │   └── page.tsx
+│   ├── contact
+│   │   └── page.tsx
+│   ├── globals.css
+│   ├── industries
+│   │   └── page.tsx
+│   ├── layout.tsx
+│   ├── not-found.tsx
+│   ├── page.tsx
+│   ├── payment
+│   │   └── success
+│   │       └── page.tsx
+│   ├── pricing
+│   │   └── page.tsx
+│   ├── robots.ts
+│   ├── services
+│   │   └── page.tsx
+│   ├── sitemap.ts
+│   └── software
+│       └── page.tsx
+├── components
+│   ├── .DS_Store
+│   ├── about
+│   │   ├── about-data.ts
+│   │   ├── about-faq.tsx
+│   │   ├── about-final-cta.tsx
+│   │   ├── about-hero.tsx
+│   │   ├── about-story.tsx
+│   │   ├── differentiators-section.tsx
+│   │   ├── industries-section.tsx
+│   │   ├── philosophy-section.tsx
+│   │   ├── process-section.tsx
+│   │   ├── software-extension-section.tsx
+│   │   ├── team-illustration.tsx
+│   │   ├── team-roles-section.tsx
+│   │   └── transparency-section.tsx
+│   ├── app-shell.tsx
+│   ├── blog
+│   │   ├── article
+│   │   │   ├── article-content.tsx
+│   │   │   ├── article-cover.tsx
+│   │   │   ├── article-cta.tsx
+│   │   │   ├── article-data.ts
+│   │   │   ├── article-hero.tsx
+│   │   │   ├── article-prose.tsx
+│   │   │   ├── author-bio.tsx
+│   │   │   ├── callout.tsx
+│   │   │   ├── not-found.tsx
+│   │   │   ├── page.tsx
+│   │   │   ├── pull-quote.tsx
+│   │   │   ├── reading-progress.tsx
+│   │   │   ├── related-articles.tsx
+│   │   │   └── table-of-contents.tsx
+│   │   ├── blog-cta.tsx
+│   │   ├── blog-data.ts
+│   │   ├── blog-hero.tsx
+│   │   ├── blog-illustrations.tsx
+│   │   ├── blog-ui.tsx
+│   │   ├── category-nav.tsx
+│   │   ├── featured-post.tsx
+│   │   ├── featured-topics.tsx
+│   │   ├── guide-card.tsx
+│   │   ├── insights-page.tsx
+│   │   ├── newsletter-signup.tsx
+│   │   ├── page.tsx
+│   │   ├── popular-guides.tsx
+│   │   ├── post-card.tsx
+│   │   ├── recent-posts.tsx
+│   │   ├── software-updates.tsx
+│   │   └── use-reveal.ts
+│   ├── checkout
+│   │   ├── Icon-map.ts
+│   │   ├── business-info-panel.tsx
+│   │   ├── checkout-faq.tsx
+│   │   ├── checkout-footer.tsx
+│   │   ├── checkout-form.tsx
+│   │   ├── checkout-header.tsx
+│   │   ├── checkout-intro.tsx
+│   │   ├── form-field.tsx
+│   │   ├── growth-goals-panel.tsx
+│   │   ├── mobile-summary-toggle.tsx
+│   │   ├── order-summary.tsx
+│   │   ├── panel.tsx
+│   │   ├── payment-panel.tsx
+│   │   ├── plan-selector.tsx
+│   │   ├── plans-data.ts
+│   │   └── trust-badges.tsx
+│   ├── contact
+│   │   ├── contact-cta.tsx
+│   │   ├── contact-data.ts
+│   │   ├── contact-form.tsx
+│   │   ├── contact-hero.tsx
+│   │   ├── contact-info-cards.tsx
+│   │   ├── faq-item.tsx
+│   │   ├── faq-section.tsx
+│   │   ├── form-fields.tsx
+│   │   ├── help-cards.tsx
+│   │   ├── hero-art.tsx
+│   │   ├── lifestyle-band.tsx
+│   │   ├── north-america-map.tsx
+│   │   ├── process-steps.tsx
+│   │   ├── reveal-card.tsx
+│   │   ├── service-area-map.tsx
+│   │   └── trust-section.tsx
+│   ├── footer.tsx
+│   ├── header.tsx
+│   ├── home
+│   │   ├── counter.tsx
+│   │   ├── credibility-section.tsx
+│   │   ├── customer-journey-section.tsx
+│   │   ├── hero-dashboard.tsx
+│   │   ├── hero-section.tsx
+│   │   ├── how-we-work-section.tsx
+│   │   ├── industries-section.tsx
+│   │   ├── lifestyle-section.tsx
+│   │   ├── results-section.tsx
+│   │   ├── scene-card.tsx
+│   │   ├── seo-comparison-section.tsx
+│   │   ├── services-section.tsx
+│   │   └── software-showcase-section.tsx
+│   ├── illustrations.tsx
+│   ├── industries
+│   │   ├── challenges-section.tsx
+│   │   ├── cta-section.tsx
+│   │   ├── faq-section.tsx
+│   │   ├── hero-illustration.tsx
+│   │   ├── hero-section.tsx
+│   │   ├── industries-data.ts
+│   │   ├── industry-card.tsx
+│   │   ├── industry-filter-grid.tsx
+│   │   ├── map-section.tsx
+│   │   ├── north-america-map.tsx
+│   │   ├── photos-band-section.tsx
+│   │   ├── services-section.tsx
+│   │   ├── workflow-section.tsx
+│   │   └── workflow-step.tsx
+│   ├── navlinks.ts
+│   ├── paymentsuccesscard
+│   │   └── paymentsuccesscard.tsx
+│   ├── photos.tsx
+│   ├── pricing
+│   │   ├── comparison-table.tsx
+│   │   ├── included-features.tsx
+│   │   ├── lifestyle-strip.tsx
+│   │   ├── pricing-card.tsx
+│   │   ├── pricing-cta.tsx
+│   │   ├── pricing-data.ts
+│   │   ├── pricing-faq.tsx
+│   │   ├── pricing-hero-and-cards.tsx
+│   │   ├── result-tile.tsx
+│   │   ├── roi-calculator.tsx
+│   │   ├── slider.tsx
+│   │   ├── software-spotlight.tsx
+│   │   └── testimonials.tsx
+│   ├── reveal.tsx
+│   ├── services
+│   │   ├── cta-section.tsx
+│   │   ├── faq-item.tsx
+│   │   ├── plan-selector-skeleton.tsx
+│   │   ├── service-illustrations.tsx
+│   │   ├── service-section.tsx
+│   │   ├── services-data.ts
+│   │   ├── services-overview.tsx
+│   │   └── workflow-steps.tsx
+│   ├── software
+│   │   ├── audiences-section.tsx
+│   │   ├── comparison-section.tsx
+│   │   ├── cta-section.tsx
+│   │   ├── faq-section.tsx
+│   │   ├── feature-card.tsx
+│   │   ├── features-section.tsx
+│   │   ├── hero-mockup.tsx
+│   │   ├── hero-section.tsx
+│   │   ├── intelligence-section.tsx
+│   │   ├── reports-section.tsx
+│   │   ├── showcase-mockups.tsx
+│   │   ├── showcase-section.tsx
+│   │   ├── software-data.ts
+│   │   ├── software-faq-item.tsx
+│   │   ├── stat-item.tsx
+│   │   ├── stats-section.tsx
+│   │   ├── ui-primitives.tsx
+│   │   └── workflow-section.tsx
+│   └── ui
+│       ├── button.tsx
+│       ├── dialog.tsx
+│       ├── input.tsx
+│       ├── label.tsx
+│       ├── separator.tsx
+│       ├── sheet.tsx
+│       ├── skeleton.tsx
+│       ├── toggle.tsx
+│       └── tooltip.tsx
+├── context
+│   └── CountryContext.tsx
+├── hooks
+│   ├── use-count-up.ts
+│   ├── use-mobile.tsx
+│   ├── use-reveal.ts
+│   └── use-subscription-plans.ts
+├── lib
+│   ├── countries.ts
+│   ├── getCountry.ts
+│   ├── home-data.ts
+│   ├── plan-icons.ts
+│   ├── services.ts
+│   └── utils.ts
+├── middleware.ts
+└── structure.txt
+
+30 directories, 194 files

@@ -1,6 +1,25 @@
 import Link from "next/link";
-import { MapPin, Sparkles } from "lucide-react";
-import { serviceLinks, productLinks } from "./navlinks";
+import Image from "next/image";
+import { Sparkles } from "lucide-react";
+
+const exploreLinks = [
+  { href: "/services", label: "Services" },
+  { href: "/software", label: "Software" },
+  { href: "/industries", label: "Industries" },
+  { href: "/pricing", label: "Pricing" },
+] as const;
+
+const companyLinks = [
+  { href: "/about", label: "About Us" },
+  { href: "/blog", label: "Blog" },
+  { href: "/contact", label: "Contact" },
+  { href: "/checkout", label: "Get Started" },
+] as const;
+
+const legalLinks = [
+  { href: "/privacy-policy", label: "Privacy Policy" },
+  { href: "/terms-conditions", label: "Terms & Conditions" },
+] as const;
 
 export function Footer() {
   return (
@@ -8,12 +27,13 @@ export function Footer() {
       <div className="container-page py-16 grid gap-12 md:grid-cols-5">
         <div className="md:col-span-2">
           <div className="flex items-center gap-2">
-            <span className="grid h-8 w-8 place-items-center rounded-lg bg-primary text-primary-foreground">
-              <MapPin className="h-4 w-4" strokeWidth={2.5} />
-            </span>
-            <span className="text-[15px] font-semibold">
-              MyPage<span className="text-accent">SEO</span>
-            </span>
+            <Image
+              src="/logo.png"
+              alt="MyPageSEO logo"
+              width={240}
+              height={60}
+              className="h-22 w-auto"
+            />
           </div>
           <p className="mt-4 max-w-sm text-sm text-muted-foreground leading-relaxed">
             The Local Growth ecosystem — expert Local SEO services and
@@ -21,73 +41,53 @@ export function Footer() {
             Canada.
           </p>
         </div>
+
         <div>
           <div className="text-xs font-semibold uppercase tracking-wider text-foreground">
-            Services
+            Explore
           </div>
           <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
-            {serviceLinks.slice(0, 5).map((s) => (
-              <li key={s.slug}>
-                <Link
-                  href={`/services/${s.slug}`}
-                  className="hover:text-foreground"
-                >
-                  {s.name}
+            {exploreLinks.map((l) => (
+              <li key={l.href}>
+                <Link href={l.href} className="hover:text-foreground">
+                  {l.label}
                 </Link>
               </li>
             ))}
           </ul>
         </div>
-        <div>
-          <div className="text-xs font-semibold uppercase tracking-wider text-foreground">
-            Products
-          </div>
-          <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
-            {productLinks.map((p) => (
-              <li key={p.slug}>
-                <Link
-                  href={`/products/${p.slug}`}
-                  className="hover:text-foreground"
-                >
-                  {p.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
+
         <div>
           <div className="text-xs font-semibold uppercase tracking-wider text-foreground">
             Company
           </div>
           <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
-            <li>
-              <Link href="/about" className="hover:text-foreground">
-                About Us
-              </Link>
-            </li>
-            <li>
-              <Link href="/industries" className="hover:text-foreground">
-                Industries
-              </Link>
-            </li>
-            <li>
-              <Link href="/blog" className="hover:text-foreground">
-                Blogs
-              </Link>
-            </li>
-            <li>
-              <Link href="/contact" className="hover:text-foreground">
-                Contact
-              </Link>
-            </li>
-            <li>
-              <Link href="/get-started" className="hover:text-foreground">
-                Get Started
-              </Link>
-            </li>
+            {companyLinks.map((l) => (
+              <li key={l.href}>
+                <Link href={l.href} className="hover:text-foreground">
+                  {l.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div>
+          <div className="text-xs font-semibold uppercase tracking-wider text-foreground">
+            Legal
+          </div>
+          <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
+            {legalLinks.map((l) => (
+              <li key={l.href}>
+                <Link href={l.href} className="hover:text-foreground">
+                  {l.label}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
       </div>
+
       <div className="border-t border-border/60">
         <div className="container-page py-6 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-muted-foreground">
           <p>© {new Date().getFullYear()} MyPageSEO. All rights reserved.</p>

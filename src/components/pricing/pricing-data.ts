@@ -14,12 +14,10 @@ import {
 } from "lucide-react";
 
 export type Plan = {
-  id: string;
+  id: "base" | "standard" | "elite";
   icon: LucideIcon;
   name: string;
   tagline: string;
-  price: number | null;
-  setup?: string;
   cta: string;
   popular?: boolean;
   features: string[];
@@ -31,16 +29,17 @@ export const plans: Plan[] = [
     id: "base",
     icon: Sparkles,
     name: "Base",
-    tagline: "For businesses starting their Local SEO journey at a single location.",
-    price: 499,
-    setup: "One-time onboarding $299",
+    tagline:
+      "For businesses starting their Local SEO journey at a single location.",
     cta: "Start with Base",
     features: [
-      "1 business location",
-      "Local SEO audit & foundation setup",
-      "Google Business Profile optimization",
-      "10 local keywords tracked",
-      "Core citation cleanup (top 20 directories)",
+      "Local SEO audit of your website & Google Business Profile",
+      "Google Business Profile setup & full optimization",
+      "Keyword rank tracking report",
+      "Optimization for 7 keywords",
+      "Local SEO setup for one business location",
+      "Business listing correction across 2+ local directories",
+      "3 Google Business Profile posts every month",
       "Monthly performance report",
       "Email support",
     ],
@@ -49,79 +48,71 @@ export const plans: Plan[] = [
     id: "standard",
     icon: Rocket,
     name: "Standard",
-    tagline: "Ideal for growing businesses that need consistent optimization and stronger visibility.",
-    price: 999,
-    setup: "One-time onboarding $499",
+    tagline: "Consistent growth and visibility for your core location",
     cta: "Choose Standard",
     popular: true,
     inherits: "Base",
     features: [
-      "Up to 3 business locations",
-      "30 local keywords tracked",
-      "Extended citation management (60+ directories)",
-      "Review monitoring & response guidance",
-      "4 Google Business Profile posts / month",
-      "1 local landing page / quarter",
-      "Bi-weekly performance reporting",
-      "Quarterly strategy call",
+      "Everything in Base +",
+      "Optimization for 15 keywords",
+      "Local SEO setup for up to 3 business locations",
+      "Business listing correction across 5+ local directories",
+      "7 Google Business Profile posts every month",
+      "Monthly strategy call",
+      "Priority support",
     ],
   },
   {
     id: "elite",
     icon: Crown,
     name: "Elite",
-    tagline: "Built for multi-location brands running larger campaigns with deeper reporting needs.",
-    price: 2199,
-    setup: "One-time onboarding $999",
+    tagline: "Scale your visibility across multiple locations effortlessly",
     cta: "Choose Elite",
     inherits: "Standard",
     features: [
-      "Up to 10 business locations",
-      "100 local keywords tracked",
-      "Full citation network + suppression",
-      "Weekly GBP posts across locations",
-      "Monthly local landing pages",
-      "Custom reporting dashboard",
+      "Everything in Standard +",
+      "Optimization for 25 keywords",
+      "Local SEO setup for up to 5 business locations",
+      "Business listing correction across multiple directories",
+      "12 Google Business Profile posts every month",
+      "Bi-weekly strategy call",
       "Dedicated account manager",
-      "Monthly strategy session",
-      "Priority support",
-    ],
-  },
-  {
-    id: "enterprise",
-    icon: Building2,
-    name: "Enterprise",
-    tagline: "Custom Local SEO programs for franchises, chains, and organizations with unique scale.",
-    price: null,
-    cta: "Talk to Sales",
-    inherits: "Elite",
-    features: [
-      "Unlimited business locations",
-      "Custom keyword & market strategy",
-      "API integrations & data feeds",
-      "White-label reporting available",
-      "Executive quarterly business reviews",
-      "SLA-backed priority support",
-      "Multi-region campaign coordination",
-      "Dedicated strategist + analyst team",
     ],
   },
 ];
 
 export const compareRows: { label: string; values: (string | boolean)[] }[] = [
-  { label: "Business locations", values: ["1", "Up to 3", "Up to 10", "Unlimited"] },
+  {
+    label: "Business locations",
+    values: ["1", "Up to 3", "Up to 10", "Unlimited"],
+  },
   { label: "Local keywords tracked", values: ["10", "30", "100", "Custom"] },
   { label: "GBP optimization", values: [true, true, true, true] },
-  { label: "Citation management", values: ["Top 20", "60+", "Full network", "Custom"] },
+  {
+    label: "Citation management",
+    values: ["Top 20", "60+", "Full network", "Custom"],
+  },
   { label: "Review monitoring", values: [false, true, true, true] },
   { label: "GBP posting", values: [false, "4 / mo", "Weekly", "Custom"] },
-  { label: "Local landing pages", values: [false, "Quarterly", "Monthly", "Custom"] },
-  { label: "Reporting cadence", values: ["Monthly", "Bi-weekly", "Weekly", "Real-time"] },
+  {
+    label: "Local landing pages",
+    values: [false, "Quarterly", "Monthly", "Custom"],
+  },
+  {
+    label: "Reporting cadence",
+    values: ["Monthly", "Bi-weekly", "Weekly", "Real-time"],
+  },
   { label: "Software dashboard access", values: [true, true, true, true] },
-  { label: "Strategy sessions", values: [false, "Quarterly", "Monthly", "Executive QBRs"] },
+  {
+    label: "Strategy sessions",
+    values: [false, "Quarterly", "Monthly", "Executive QBRs"],
+  },
   { label: "Dedicated account manager", values: [false, false, true, true] },
   { label: "API integrations", values: [false, false, false, true] },
-  { label: "Support", values: ["Email", "Priority email", "Priority + phone", "SLA-backed"] },
+  {
+    label: "Support",
+    values: ["Email", "Priority email", "Priority + phone", "SLA-backed"],
+  },
 ];
 
 export const included = [
@@ -181,7 +172,8 @@ export const testimonials = [
     role: "Marketing Director, Regional HVAC Group",
   },
   {
-    quote: "Our direction requests are up 3x and we finally rank in the map pack for our core service areas.",
+    quote:
+      "Our direction requests are up 3x and we finally rank in the map pack for our core service areas.",
     name: "Priya Shah",
     role: "Founder, Bloom Wellness Studio",
   },
