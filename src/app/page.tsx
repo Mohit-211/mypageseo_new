@@ -11,23 +11,74 @@ import { IndustriesSection } from "@/components/home/industries-section";
 import { ResultsSection } from "@/components/home/results-section";
 
 export const metadata: Metadata = {
-  title: "MyPageSEO — Local SEO Specialists for North American Businesses",
+  title: "Local SEO Experts for Businesses Across the US & Canada | MyPageSEO",
+
   description:
-    "Rank higher on Google Maps and Google Business Profile. Expert Local SEO for law firms, dentists, contractors, restaurants and service businesses across the US and Canada.",
-  openGraph: {
-    title: "MyPageSEO — Local SEO Specialists",
-    description:
-      "Expert Local SEO plus proprietary auditing software. Win more customers from your service area.",
-    url: "/",
-  },
+    "Grow your business with Local SEO that delivers measurable results. MyPageSEO helps businesses across the United States and Canada improve Google Maps rankings, optimize Google Business Profiles, manage citations, build online reputation, and generate more local customers.",
+
+  keywords: [
+    "Local SEO",
+    "Local SEO Company",
+    "Local SEO Agency",
+    "Google Business Profile",
+    "Google Business Profile Optimization",
+    "Google Maps SEO",
+    "Google Maps Ranking",
+    "Citation Management",
+    "Reputation Management",
+    "Local Search Marketing",
+    "Multi Location SEO",
+    "Restaurant SEO",
+    "Dentist SEO",
+    "Law Firm SEO",
+    "Contractor SEO",
+    "Healthcare SEO",
+    "Home Services SEO",
+    "Small Business SEO",
+    "US Local SEO",
+    "Canada Local SEO",
+    "MyPageSEO",
+  ],
+
   alternates: {
     canonical: "/",
+  },
+
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "/",
+    siteName: "MyPageSEO",
+    title:
+      "Local SEO Experts for Businesses Across the US & Canada | MyPageSEO",
+    description:
+      "Expert Local SEO, Google Business Profile optimization, citation management, reputation management, and intelligent reporting software for businesses across North America.",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "MyPageSEO",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Local SEO Experts | MyPageSEO",
+    description:
+      "Generate more customers with Local SEO, Google Maps optimization, and intelligent reporting software.",
+    images: ["/og-image.png"],
+  },
+
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 
 export default function HomePage() {
   return (
-    
     <div>
       <HeroSection />
       <CredibilitySection />
