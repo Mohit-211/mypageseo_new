@@ -23,14 +23,15 @@ export function HeroSection() {
             Local SEO built around your industry.
           </h1>
           <p className="mt-6 text-lg text-muted-foreground leading-relaxed max-w-xl">
-            No two industries compete the same way in local search. A law firm, dental clinic, restaurant, HVAC
-            company, and real estate brokerage all require different Local SEO strategies — because customer intent,
-            competition, and Google Business Profile signals vary dramatically. We build campaigns that respect those
-            differences.
+            No two industries compete the same way in local search. A law firm,
+            dental clinic, restaurant, HVAC company, and real estate brokerage
+            all require different Local SEO strategies — because customer
+            intent, competition, and Google Business Profile signals vary
+            dramatically. We build campaigns that respect those differences.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
-              href="/get-started"
+              href="/checkout"
               className="inline-flex items-center gap-2 rounded-full bg-accent px-5 py-3 text-sm font-semibold text-accent-foreground shadow-card transition-all hover:-translate-y-0.5 hover:shadow-lift"
             >
               Explore Plans <ArrowRight className="h-4 w-4" />

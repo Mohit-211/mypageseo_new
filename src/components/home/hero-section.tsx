@@ -40,7 +40,7 @@ export function HeroSection() {
 
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
-              href="/get-started"
+              href="/checkout"
               className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground shadow-lift transition-all duration-300 hover:-translate-y-0.5"
             >
               Get Started

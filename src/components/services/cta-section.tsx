@@ -20,7 +20,7 @@ export function CtaSection() {
         </h2>
         <div className="relative mt-10 flex flex-wrap justify-center gap-3">
           <Link
-            href="/get-started"
+            href="/checkout"
             className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground shadow-lift transition-all hover:-translate-y-0.5"
           >
             Get Started <ArrowRight className="h-4 w-4" />

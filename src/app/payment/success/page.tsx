@@ -1,4 +1,4 @@
-import PaymentSuccess from "@/components/paymentsuccesscard/paymentsuccesscard";
+import PaymentSuccess from "@/components/payment/SuccessCard";
 
 export default async function PaymentSuccessPage({
   searchParams,

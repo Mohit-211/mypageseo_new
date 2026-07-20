@@ -121,7 +121,7 @@ export function ResultsSection() {
         </div>
         <div className="flex gap-3">
           <Link
-            href="/get-started"
+            href="/checkout"
             className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground hover:opacity-95 transition"
           >
             Get Started <ArrowRight className="h-4 w-4" />

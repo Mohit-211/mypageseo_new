@@ -28,7 +28,7 @@ export function HeroSection() {
               Request a Demo <ArrowRight className="w-4 h-4" />
             </Link>
             <Link
-              href="/get-started"
+              href="/checkout"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-primary text-primary-foreground font-medium hover:opacity-95 transition"
             >
               Get Started

@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   description:
     "Transparent Local SEO pricing for single-location businesses to multi-location enterprises across the US and Canada.",
   alternates: {
-    canonical: "/get-started",
+    canonical: "/checkout",
   },
   openGraph: {
     title: "MyPageSEO Pricing — Local SEO Plans",
