@@ -33,7 +33,8 @@ export function CheckoutForm() {
 
   const [planId, setPlanId] = useState<PlanId | null>(null);
   const [applied, setApplied] = useState<AppliedCoupon | null>(null);
-  const [business, setBusiness] = useState<BusinessDetails>(emptyBusinessDetails);
+  const [business, setBusiness] =
+    useState<BusinessDetails>(emptyBusinessDetails);
   const [submitting, setSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
 
@@ -71,7 +72,9 @@ export function CheckoutForm() {
         return; // keep submitting=true — we're navigating away, no need to reset state
       }
 
-      setSubmitError("Subscription was created, but no approval link was returned. Please contact support.");
+      setSubmitError(
+        "Subscription was created, but no approval link was returned. Please contact support."
+      );
       setSubmitting(false);
     } catch (err: any) {
       setSubmitError(err?.message ?? "Something went wrong. Please try again.");
@@ -85,7 +88,6 @@ export function CheckoutForm() {
       )}
 
       <section className="container-page py-8 md:py-12 grid gap-10 lg:grid-cols-[1fr_400px] items-start">
-        
         <form onSubmit={handleSubmit} className="space-y-10">
           <PlanSelector
             plans={plans}
@@ -120,12 +122,12 @@ export function CheckoutForm() {
         </form>
 
         <aside className="hidden lg:block sticky top-24">
-  {plan && pricing ? (
-    <OrderSummary plan={plan} pricing={pricing} applied={applied} />
-  ) : (
-    loading && <PlanSelectorSkeleton />
-  )}
-</aside>
+          {plan && pricing ? (
+            <OrderSummary plan={plan} pricing={pricing} applied={applied} />
+          ) : (
+            loading && <PlanSelectorSkeleton />
+          )}
+        </aside>
       </section>
     </>
   );

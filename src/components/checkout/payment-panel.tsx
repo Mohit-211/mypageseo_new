@@ -35,22 +35,27 @@ export function PaymentPanel({
     setCouponError(null);
 
     try {
-      const res = await validateCouponAPI({ coupon_code: code, plan_id: planId });
+      const res = await validateCouponAPI({
+        coupon_code: code,
+        plan_id: planId,
+      });
 
       if (!res.success || !res.data?.valid) {
         onApplyCoupon(null);
-        setCouponError(res.message || "That code isn't valid. Please try another.");
+        setCouponError(
+          res.message || "That code isn't valid. Please try another.",
+        );
         return;
       }
 
-      const { original_amount, discount_amount, final_amount,monthly_amount } = res.data;
+      const { original_amount, discount_amount, final_amount, monthly_amount } =
+        res.data;
 
       if (
         typeof original_amount !== "number" ||
         typeof discount_amount !== "number" ||
-        typeof final_amount !== "number"||
-        typeof monthly_amount !=="number"
-
+        typeof final_amount !== "number" ||
+        typeof monthly_amount !== "number"
       ) {
         onApplyCoupon(null);
         setCouponError("Couldn't validate coupon. Please try again.");
@@ -63,21 +68,62 @@ export function PaymentPanel({
         originalAmount: original_amount,
         discountAmount: discount_amount,
         finalAmount: final_amount,
-        monthlyAmount:monthly_amount,
-
+        monthlyAmount: monthly_amount,
       });
     } catch (err: any) {
+      console.error("Coupon validation error:", err);
+
       onApplyCoupon(null);
-      setCouponError(
-        err?.response?.data?.message ?? "Couldn't validate coupon. Please try again."
-      );
+
+      const status = err?.response?.status;
+
+      switch (status) {
+        case 400:
+          setCouponError(
+            err?.response?.data?.message ?? "The coupon code is invalid.",
+          );
+          break;
+
+        case 401:
+        case 403:
+          setCouponError(
+            "We're unable to validate coupons right now. You can continue your purchase without a coupon or try again later.",
+          );
+          break;
+
+        case 404:
+          setCouponError("Coupon not found.");
+          break;
+
+        case 409:
+          setCouponError(
+            err?.response?.data?.message ??
+              "This coupon has already been used.",
+          );
+          break;
+
+        case 429:
+          setCouponError(
+            "Too many attempts. Please wait a moment and try again.",
+          );
+          break;
+
+        default:
+          setCouponError(
+            "Something went wrong while validating your coupon. Please try again later.",
+          );
+      }
     } finally {
       setValidating(false);
     }
   }
 
   return (
-    <Panel step="3" title="Payment" subtitle="Encrypted end-to-end. Cancel anytime after your foundation period.">
+    <Panel
+      step="3"
+      title="Payment"
+      subtitle="Encrypted end-to-end. Cancel anytime after your foundation period."
+    >
       <div className="mb-6">
         <div className="animate-fade-in">
           <label className="text-xs font-medium text-muted-foreground">
@@ -138,7 +184,8 @@ export function PaymentPanel({
           </>
         ) : isCustom ? (
           <>
-            Contact sales for Enterprise pricing <ArrowRight className="h-4 w-4" />
+            Contact sales for Enterprise pricing{" "}
+            <ArrowRight className="h-4 w-4" />
           </>
         ) : (
           <>
@@ -148,7 +195,8 @@ export function PaymentPanel({
       </button>
       {isCustom && (
         <p className="mt-3 text-center text-xs text-muted-foreground">
-          Enterprise plans are custom-scoped. Our team will reach out within one business day.
+          Enterprise plans are custom-scoped. Our team will reach out within one
+          business day.
         </p>
       )}
     </Panel>

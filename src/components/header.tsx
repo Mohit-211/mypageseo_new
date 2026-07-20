@@ -1,14 +1,16 @@
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { Menu, X } from "lucide-react";
 import { staticNav } from "./navlinks";
 
 export function Header() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -16,6 +18,10 @@ export function Header() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  useEffect(() => {
+    setMobileOpen(false);
+  }, [pathname]);
 
   function isActive(to: string) {
     if (to === "/") return pathname === "/";
@@ -31,21 +37,25 @@ export function Header() {
       }`}
     >
       <div className="container-page flex h-16 items-center justify-between gap-6">
-        <Link href="/" className="flex items-center gap-2 group">
-          <span className="relative h-16 w-16 shrink-0 transition-transform group-hover:scale-105">
-            <Image
-              src="/logo.png"
-              alt="MyPageSEO logo"
-              fill
-              sizes="32px"
-              className="object-contain"
-              priority
-            />
-          </span>
+        <Link
+          href="/"
+          className="flex h-16 items-center shrink-0 transition-transform hover:scale-105"
+        >
+          <Image
+            src="/logo.png"
+            alt="MyPageSEO"
+            width={64}
+            height={64}
+            priority
+            className="block h-16 w-16 object-contain"
+          />
         </Link>
+
+        {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-1">
           {staticNav.map((item) => {
             const active = isActive(item.to);
+
             return (
               <Link
                 key={item.to}
@@ -56,6 +66,7 @@ export function Header() {
                 }`}
               >
                 {item.label}
+
                 <span
                   className={`absolute inset-x-3 -bottom-[1px] h-0.5 rounded-full bg-accent transition-opacity ${
                     active ? "opacity-100" : "opacity-0"
@@ -66,15 +77,63 @@ export function Header() {
           })}
         </nav>
 
-        <div className="flex items-center gap-2">
+        {/* Desktop CTA */}
+        <div className="hidden md:flex items-center gap-2">
           <Link
             href="/checkout"
-            className="inline-flex items-center rounded-full bg-accent px-4 py-2 text-sm font-semibold text-accent-foreground shadow-card transition-all hover:shadow-lift hover:-translate-y-0.5"
+            className="inline-flex items-center rounded-full bg-accent px-4 py-2 text-sm font-semibold text-accent-foreground shadow-card transition-all hover:-translate-y-0.5 hover:shadow-lift"
           >
             Get Started
           </Link>
         </div>
+
+        {/* Mobile Menu Button */}
+        <button
+          type="button"
+          aria-label="Toggle navigation"
+          aria-expanded={mobileOpen}
+          onClick={() => setMobileOpen((prev) => !prev)}
+          className="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-lg border border-border bg-background/80 text-foreground transition-colors hover:bg-muted"
+        >
+          {mobileOpen ? (
+            <X className="h-5 w-5" />
+          ) : (
+            <Menu className="h-5 w-5" />
+          )}
+        </button>
       </div>
+
+      {/* Mobile Navigation */}
+      {mobileOpen && (
+        <div className="md:hidden border-t border-border bg-background/95 backdrop-blur-xl">
+          <nav className="container-page flex flex-col py-4">
+            {staticNav.map((item) => {
+              const active = isActive(item.to);
+
+              return (
+                <Link
+                  key={item.to}
+                  href={item.to}
+                  className={`rounded-lg px-4 py-3 text-sm font-medium transition-colors ${
+                    active
+                      ? "bg-muted text-foreground"
+                      : "text-muted-foreground hover:bg-muted hover:text-foreground"
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
+
+            <Link
+              href="/checkout"
+              className="mt-4 inline-flex items-center justify-center rounded-full bg-accent px-4 py-3 text-sm font-semibold text-accent-foreground shadow-card transition-all hover:shadow-lift"
+            >
+              Get Started
+            </Link>
+          </nav>
+        </div>
+      )}
     </header>
   );
 }
