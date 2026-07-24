@@ -31,12 +31,12 @@ export default function PricingPage() {
   return (
     <div className="bg-background">
       <PricingHeroAndCards />
-      <ComparisonTable />
-      <IncludedFeatures />
-      <SoftwareSpotlight />
+      {/* <ComparisonTable /> */}
+      {/* <IncludedFeatures /> */}
+      {/* <SoftwareSpotlight /> */}
       <RoiCalculator />
-      <Testimonials />
-      <LifestyleStrip />
+      {/* <Testimonials /> */}
+      {/* <LifestyleStrip /> */}
       <PricingFaq />
       <PricingCta />
     </div>

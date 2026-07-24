@@ -58,9 +58,10 @@ export function HeroSection() {
           <div className="mt-8 flex items-center gap-2 text-sm text-muted-foreground">
             <CheckCircle2 className="h-4 w-4 text-primary" />
             <span>
-              Trusted by local businesses across the{" "}
+              Built for local businesses across the{" "}
               <span className="font-medium text-foreground">
                 USA &amp; Canada
+                {/* Trusted by local businesses across the */}
               </span>
               .
             </span>

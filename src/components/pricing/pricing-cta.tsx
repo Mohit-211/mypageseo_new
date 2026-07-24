@@ -23,7 +23,8 @@ export function PricingCta() {
           Stop competing for visibility. Start being the obvious choice.
         </h2>
         <p className="relative mt-5 text-primary-foreground/80 max-w-xl mx-auto">
-          Join businesses across the US and Canada using MyPageSEO to win in local search.
+          Win Local Search. Grow Your Business.
+          {/* Join businesses across the US and Canada using MyPageSEO to win in local search. */}
         </p>
         <div className="relative mt-10 flex flex-wrap justify-center gap-3">
           <a

@@ -81,7 +81,7 @@ export default function HomePage() {
   return (
     <div>
       <HeroSection />
-      <CredibilitySection />
+      {/* <CredibilitySection /> */}
       <LifestyleSection />
       <CustomerJourneySection />
       <SeoComparisonSection />

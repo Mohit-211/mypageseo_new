@@ -182,34 +182,42 @@ export const testimonials = [
 export const faqs = [
   {
     q: "Are there any long-term contracts?",
-    a: "No. Plans are month-to-month after your initial 90-day foundation period, which ensures results have time to compound.",
+    a: "No. All MyPageSEO plans are month-to-month with no long-term contracts. Stay because you see results, not because you're locked into an agreement.",
   },
   {
-    q: "What is your cancellation policy?",
-    a: "Cancel anytime after the initial 90 days with 30 days' written notice. No penalties, no drama.",
+    q: "Can I cancel anytime?",
+    a: "Yes. You can cancel your subscription whenever you like. There are no cancellation penalties or hidden exit fees.",
   },
   {
-    q: "How long does onboarding take?",
-    a: "Most businesses are fully onboarded within 14 days. Multi-location Elite programs typically launch inside 30 days.",
+    q: "Why is there a one-time setup fee?",
+    a: "The setup fee covers your Local SEO audit, Google Business Profile optimization, technical setup, citation work, reporting dashboard configuration, and campaign onboarding.",
   },
   {
-    q: "Why is there a setup fee?",
-    a: "The one-time fee covers your Local SEO audit, technical foundation, citation cleanup, and dashboard configuration.",
+    q: "How long does it take to get started?",
+    a: "Most businesses are fully onboarded within 5–10 business days. More complex or multi-location projects may take a little longer.",
   },
   {
-    q: "Do I get access to your software?",
-    a: "Yes. Every plan — including Base — includes access to the MyPageSEO reporting dashboard.",
+    q: "Do all plans include the MyPageSEO dashboard?",
+    a: "Yes. Every plan includes access to your reporting dashboard so you can track rankings, visibility, and campaign progress in one place.",
   },
   {
-    q: "Can I upgrade my plan later?",
-    a: "Absolutely. Upgrades are prorated and take effect at the start of your next billing cycle.",
+    q: "Can I change my plan later?",
+    a: "Absolutely. You can upgrade or downgrade your plan as your business grows. We'll make the transition smooth with no disruption to your campaign.",
   },
   {
-    q: "I have multiple locations — do I need Elite or Enterprise?",
-    a: "Standard covers up to 3 locations. Elite fits 4–10. Enterprise is right for 10+ or franchise / multi-brand programs.",
+    q: "Do you work with businesses that have multiple locations?",
+    a: "Yes. We manage everything from single-location businesses to multi-location brands and franchises. Our higher-tier plans are designed specifically for businesses with multiple locations.",
   },
   {
-    q: "Is a consultation included before I sign up?",
-    a: "Yes — every prospect receives a free 30-minute Local SEO consultation with a strategist.",
+    q: "What happens after I sign up?",
+    a: "Once you subscribe, we'll schedule your onboarding, gather your business information, perform an SEO audit, and begin implementing your Local SEO strategy. You'll also receive access to your reporting dashboard.",
   },
+  {
+    q: "When will I start seeing results?",
+    a: "Local SEO is a long-term growth strategy. Many businesses notice improvements within the first few months, while stronger and more sustainable results typically build over time.",
+  },
+  // {
+  //   q: "Do you guarantee #1 rankings on Google?",
+  //   a: "No. Any agency promising guaranteed #1 rankings isn't being honest. What we do guarantee is a transparent, data-driven Local SEO strategy built on proven best practices.",
+  // },
 ];
