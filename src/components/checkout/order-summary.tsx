@@ -1,4 +1,4 @@
-import { BadgeCheck, ChevronRight, Lock } from "lucide-react";
+import { BadgeCheck, ChevronRight, Lock, ShieldCheck } from "lucide-react";
 import { resolvePlanIcon } from "@/lib/plan-icons";
 import type { AppliedCoupon, Plan, Pricing } from "./plans-data";
 
@@ -13,13 +13,14 @@ export function OrderSummary({
 }) {
   const isCustom = plan.price === null;
   const PlanIcon = resolvePlanIcon(plan.icon);
-  console.log(pricing, "pricing");
+
   return (
     <div className="rounded-3xl border border-border/70 bg-background p-6 shadow-lift">
       <div className="flex items-center justify-between">
         <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
           Order summary
         </p>
+
         <span className="rounded-full bg-accent/10 px-2 py-0.5 text-[10px] font-semibold text-accent">
           Subscription
         </span>
@@ -29,6 +30,7 @@ export function OrderSummary({
         <span className="grid h-10 w-10 place-items-center rounded-xl bg-primary/5 text-primary">
           <PlanIcon className="h-5 w-5" strokeWidth={1.75} />
         </span>
+
         <div className="min-w-0 flex-1">
           <p className="text-sm font-semibold text-foreground">
             {plan.name} Plan
@@ -58,11 +60,7 @@ export function OrderSummary({
               label="One-time setup fee"
               value={`$${pricing.setup.toLocaleString()}`}
             />
-            {/* <Row
-              label="Taxes"
-              value={pricing.tax > 0 ? `$${pricing.tax.toLocaleString()}` : "Calculated after"}
-              muted
-            /> */}
+
             {pricing.discount > 0 && (
               <Row
                 label={`Coupon (${applied?.code})`}
@@ -78,10 +76,12 @@ export function OrderSummary({
             <span className="text-sm font-medium text-foreground">
               Due today
             </span>
-            <span className="text-2xl font-semibold tracking-tight text-foreground transition-all">
+
+            <span className="text-2xl font-semibold tracking-tight text-foreground">
               ${pricing.total.toLocaleString()}
             </span>
           </div>
+
           <p className="mt-2 text-xs text-muted-foreground">
             Then{" "}
             <span className="font-semibold text-foreground">
@@ -92,20 +92,30 @@ export function OrderSummary({
         </>
       )}
 
-      <div className="mt-6 space-y-2.5 border-t border-border/60 pt-5">
-        {[
-          { icon: Lock, t: "Secure, encrypted payment" },
-          { icon: BadgeCheck, t: "No hidden fees, transparent billing" },
-          { icon: ChevronRight, t: "Upgrade or change plans anytime" },
-        ].map((r) => (
-          <div
-            key={r.t}
-            className="flex items-center gap-2.5 text-xs text-muted-foreground"
-          >
-            <r.icon className="h-3.5 w-3.5 text-accent shrink-0" />
-            {r.t}
-          </div>
-        ))}
+      {/* ---------------TRUST SECTION----------------- */}
+
+      <div className="mt-5 space-y-3 border-t border-border/60 pt-5">
+        <div className="flex items-center gap-2.5 text-xs text-muted-foreground">
+          <Lock className="h-3.5 w-3.5 shrink-0 text-accent" />
+          <span>Secure, encrypted payment</span>
+        </div>
+
+        <div className="flex items-center gap-2.5 text-xs text-muted-foreground">
+          <BadgeCheck className="h-3.5 w-3.5 shrink-0 text-accent" />
+          <span>No hidden fees, transparent billing</span>
+        </div>
+
+        <div className="flex items-center gap-2.5 text-xs text-muted-foreground">
+          <ChevronRight className="h-3.5 w-3.5 shrink-0 text-accent" />
+          <span>Upgrade or change plans anytime</span>
+        </div>
+
+        <div className="flex items-center gap-2.5 text-xs text-muted-foreground">
+          <ShieldCheck className="h-3.5 w-3.5 shrink-0 text-accent" />
+          <span className="font-semibold text-foreground">
+            No contracts. Cancel anytime.
+          </span>
+        </div>
       </div>
     </div>
   );
@@ -131,6 +141,7 @@ function Row({
       >
         {label}
       </dt>
+
       <dd
         className={`text-sm font-medium ${
           accent ? "text-accent" : "text-foreground"
