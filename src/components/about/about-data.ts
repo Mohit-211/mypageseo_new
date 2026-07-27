@@ -51,38 +51,135 @@ export const differentiators: { icon: LucideIcon; t: string; d: string }[] = [
 ];
 
 export const industries: { icon: LucideIcon; t: string; d: string }[] = [
-  { icon: Stethoscope, t: "Healthcare", d: "Fill appointment books with patients from your service area." },
-  { icon: Scale, t: "Legal", d: "Rank for high-intent local searches when clients need counsel now." },
-  { icon: Wrench, t: "Home Services", d: "Show up when homeowners are in an emergency and searching fast." },
-  { icon: Utensils, t: "Restaurants", d: "Own the map pack for cuisine and neighborhood searches." },
-  { icon: Building2, t: "Real Estate", d: "Become the recognized name in your city and its neighborhoods." },
-  { icon: Car, t: "Automotive", d: "Convert nearby drivers into loyal service and repair customers." },
-  { icon: Leaf, t: "Wellness", d: "Attract nearby clients searching for spa, yoga and holistic care." },
-  { icon: Hotel, t: "Hospitality", d: "Capture travelers researching your city on Google Maps." },
-  { icon: Dumbbell, t: "Fitness", d: "Fill memberships with people searching for gyms and studios near them." },
-  { icon: Briefcase, t: "Professional Services", d: "Be the trusted local expert when businesses look for a partner." },
+  {
+    icon: Stethoscope,
+    t: "Healthcare",
+    d: "Fill appointment books with patients from your service area.",
+  },
+  {
+    icon: Scale,
+    t: "Legal",
+    d: "Rank for high-intent local searches when clients need counsel now.",
+  },
+  {
+    icon: Wrench,
+    t: "Home Services",
+    d: "Show up when homeowners are in an emergency and searching fast.",
+  },
+  {
+    icon: Utensils,
+    t: "Restaurants",
+    d: "Own the map pack for cuisine and neighborhood searches.",
+  },
+  {
+    icon: Building2,
+    t: "Real Estate",
+    d: "Become the recognized name in your city and its neighborhoods.",
+  },
+  {
+    icon: Car,
+    t: "Automotive",
+    d: "Convert nearby drivers into loyal service and repair customers.",
+  },
+  {
+    icon: Leaf,
+    t: "Wellness",
+    d: "Attract nearby clients searching for spa, yoga and holistic care.",
+  },
+  {
+    icon: Hotel,
+    t: "Hospitality",
+    d: "Capture travelers researching your city on Google Maps.",
+  },
+  {
+    icon: Dumbbell,
+    t: "Fitness",
+    d: "Fill memberships with people searching for gyms and studios near them.",
+  },
+  {
+    icon: Briefcase,
+    t: "Professional Services",
+    d: "Be the trusted local expert when businesses look for a partner.",
+  },
 ];
 
 export const teamRoles: { icon: LucideIcon; t: string; d: string }[] = [
-  { icon: Compass, t: "Local SEO Strategy", d: "Senior strategists who architect the roadmap for every client engagement." },
-  { icon: MapPin, t: "Google Business Profile Specialists", d: "Experts dedicated exclusively to GBP optimization and management." },
-  { icon: FileText, t: "Content & Local Landing Pages", d: "Writers who craft geo-relevant pages that rank and convert." },
-  { icon: Link2, t: "Citation Management", d: "Specialists who build, clean and monitor citation profiles." },
-  { icon: Star, t: "Reputation Growth", d: "Reviews systems, response strategy and reputation monitoring." },
-  { icon: Cog, t: "Technical Optimization", d: "Schema, site speed, mobile-first UX and local technical foundations." },
-  { icon: Headset, t: "Customer Success", d: "Your primary point of contact — accountable to your business outcomes." },
-  { icon: Boxes, t: "Product Development", d: "The engineers behind the MyPageSEO software platform." },
+  {
+    icon: Compass,
+    t: "Local SEO Strategy",
+    d: "Senior strategists who architect the roadmap for every client engagement.",
+  },
+  {
+    icon: MapPin,
+    t: "Google Business Profile Specialists",
+    d: "Experts dedicated exclusively to GBP optimization and management.",
+  },
+  {
+    icon: FileText,
+    t: "Content & Local Landing Pages",
+    d: "Writers who craft geo-relevant pages that rank and convert.",
+  },
+  {
+    icon: Link2,
+    t: "Citation Management",
+    d: "Specialists who build, clean and monitor citation profiles.",
+  },
+  {
+    icon: Star,
+    t: "Reputation Growth",
+    d: "Reviews systems, response strategy and reputation monitoring.",
+  },
+  {
+    icon: Cog,
+    t: "Technical Optimization",
+    d: "Schema, site speed, mobile-first UX and local technical foundations.",
+  },
+  {
+    icon: Headset,
+    t: "Customer Success",
+    d: "Your primary point of contact — accountable to your business outcomes.",
+  },
+  {
+    icon: Boxes,
+    t: "Product Development",
+    d: "The engineers behind the MyPageSEO software platform.",
+  },
 ];
 
 export const process: { icon: LucideIcon; t: string; d: string }[] = [
-  { icon: Compass, t: "Discover", d: "We learn your business, service area, competitors and growth goals." },
-  { icon: Search, t: "Audit", d: "A full baseline of your Google Business Profile, rankings, citations and reviews." },
-  { icon: Target, t: "Strategy", d: "A clear Local SEO roadmap tied to measurable business outcomes." },
-  { icon: Zap, t: "Optimize", d: "Our specialists execute across GBP, citations, content and reputation." },
-  { icon: LineChart, t: "Measure", d: "Transparent monthly reporting with focus on calls, bookings and visits." },
-  { icon: TrendingUp, t: "Grow", d: "Compound gains as rankings, reviews and citations reinforce each other." },
+  {
+    icon: Compass,
+    t: "Discover",
+    d: "We learn your business, service area, competitors and growth goals.",
+  },
+  {
+    icon: Search,
+    t: "Audit",
+    d: "A full baseline of your Google Business Profile, rankings, citations and reviews.",
+  },
+  {
+    icon: Target,
+    t: "Strategy",
+    d: "A clear Local SEO roadmap tied to measurable business outcomes.",
+  },
+  {
+    icon: Zap,
+    t: "Optimize",
+    d: "Our specialists execute across GBP, citations, content and reputation.",
+  },
+  {
+    icon: LineChart,
+    t: "Measure",
+    d: "Transparent monthly reporting with focus on calls, bookings and visits.",
+  },
+  {
+    icon: TrendingUp,
+    t: "Grow",
+    d: "Compound gains as rankings, reviews and citations reinforce each other.",
+  },
 ];
 
+/* 
 export const faqs = [
   {
     q: "Is Local SEO different from traditional SEO?",
@@ -103,5 +200,29 @@ export const faqs = [
   {
     q: "Is the software available separately?",
     a: "The MyPageSEO software is included with every engagement. We're evaluating a stand-alone version — reach out if you'd like early access.",
+  },
+];
+*/
+
+export const faqs = [
+  {
+    q: "Is Local SEO different from traditional SEO?",
+    a: "Yes. Traditional SEO focuses on ranking websites for broad searches, while Local SEO is designed to help businesses appear in Google Maps and local search results. It relies on Google Business Profile optimization, local citations, reviews, location relevance, and other local ranking signals to attract nearby customers with high purchase intent.",
+  },
+  {
+    q: "Do I need a physical location to benefit from Local SEO?",
+    a: "Not necessarily. Service-area businesses such as plumbers, electricians, contractors, and mobile service providers can achieve strong local visibility without a storefront. The right Google Business Profile setup and a well-executed Local SEO strategy are what matter most.",
+  },
+  {
+    q: "How long does Local SEO take to show results?",
+    a: "Most businesses begin seeing meaningful improvements within 2 to 3 months, with stronger and more sustainable growth developing over 6 to 12 months. Local SEO is a long-term investment that builds momentum over time.",
+  },
+  {
+    q: "Is Google Business Profile management included?",
+    a: "Yes. Every MyPageSEO plan includes Google Business Profile optimization and ongoing management because it's one of the most influential factors in local search visibility.",
+  },
+  {
+    q: "Do I get access to the MyPageSEO software?",
+    a: "Yes. Our proprietary MyPageSEO software is included with every plan at no additional cost. It works alongside our Local SEO service to provide reporting, insights, and tools that help you track and improve your local online presence. It is not sold as a standalone product.",
   },
 ];

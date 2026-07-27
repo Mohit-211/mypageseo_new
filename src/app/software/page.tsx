@@ -40,7 +40,7 @@ export default function SoftwarePage() {
       <IntelligenceSection />
       <ComparisonSection />
       <AudiencesSection />
-      <StatsSection />
+      {/* <StatsSection /> */}
       <FaqSection />
       <CtaSection />
     </div>

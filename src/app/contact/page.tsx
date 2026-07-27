@@ -40,11 +40,11 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <HelpCards />
+      {/* <HelpCards /> */}
       <ProcessSteps />
       <ServiceAreaMap />
-      <TrustSection />
-      <LifestyleBand />
+      {/* <TrustSection /> */}
+      {/* <LifestyleBand /> */}
       <FaqSection />
       <ContactCTA />
     </div>
