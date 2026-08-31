@@ -207,16 +207,16 @@ export const contactMethods: ContactMethod[] = [
     v: "info@mypageseo.com",
     d: "The fastest way to reach our team for detailed questions.",
   },
-  // {
-  //   i: Phone,
-  //   t: "Call the team",
-  //   v: "+1 (888) 555-0142",
-  //   d: "Speak directly with a Local SEO specialist during business hours.",
-  // },
+  {
+    i: MapPin,
+    t: "Our address",
+    v: "82 Westmorland St, Fredericton, NB E3B 3L3, Canada",
+    d: "Visit our office in Fredericton, New Brunswick, Canada.",
+  },
   {
     i: Clock,
     t: "Office hours",
-    v: "Mon–Fri · 9:00 AM – 6:00 PM ET",
+    v: "Mon–Fri · 8:00 AM – 7:00 PM ET",
     d: "We're here every business day across U.S. and Canadian time zones.",
   },
   {

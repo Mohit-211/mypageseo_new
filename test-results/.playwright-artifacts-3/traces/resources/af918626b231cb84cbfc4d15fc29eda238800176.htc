@@ -1,0 +1,315 @@
+2:"$Sreact.fragment"
+4:I["[project]/node_modules/next/dist/client/components/layout-router.js [app-client] (ecmascript)",["/_next/static/chunks/node_modules_0x17l50._.js","/_next/static/chunks/src_1_krg00._.js","/_next/static/chunks/src_app_layout_tsx_007e4b2._.js"],"default"]
+6:I["[project]/node_modules/next/dist/client/components/render-from-template-context.js [app-client] (ecmascript)",["/_next/static/chunks/node_modules_0x17l50._.js","/_next/static/chunks/src_1_krg00._.js","/_next/static/chunks/src_app_layout_tsx_007e4b2._.js"],"default"]
+9:I["[project]/node_modules/next/dist/next-devtools/userspace/app/segment-explorer-node.js [app-client] (ecmascript)",["/_next/static/chunks/node_modules_0x17l50._.js","/_next/static/chunks/src_1_krg00._.js","/_next/static/chunks/src_app_layout_tsx_007e4b2._.js"],"SegmentViewNode"]
+20:I["[project]/node_modules/lucide-react/dist/esm/Icon.mjs [app-client] (ecmascript)",["/_next/static/chunks/node_modules_0x17l50._.js","/_next/static/chunks/src_1_krg00._.js","/_next/static/chunks/src_app_layout_tsx_007e4b2._.js","/_next/static/chunks/_0ucd5un._.js","/_next/static/chunks/src_app_industries_page_tsx_1tss09c._.js"],"default"]
+27:"$Sreact.forward_ref"
+2e:I["[project]/node_modules/next/dist/client/app-dir/link.js [app-client] (ecmascript)",["/_next/static/chunks/node_modules_0x17l50._.js","/_next/static/chunks/src_1_krg00._.js","/_next/static/chunks/src_app_layout_tsx_007e4b2._.js","/_next/static/chunks/_0ucd5un._.js","/_next/static/chunks/src_app_industries_page_tsx_1tss09c._.js"],""]
+69:I["[project]/node_modules/next/dist/client/image-component.js [app-client] (ecmascript)",["/_next/static/chunks/node_modules_0x17l50._.js","/_next/static/chunks/src_1_krg00._.js","/_next/static/chunks/src_app_layout_tsx_007e4b2._.js","/_next/static/chunks/_0ucd5un._.js","/_next/static/chunks/src_app_industries_page_tsx_1tss09c._.js"],"Image"]
+90:I["[project]/src/components/industries/industry-filter-grid.tsx [app-client] (ecmascript)",["/_next/static/chunks/node_modules_0x17l50._.js","/_next/static/chunks/src_1_krg00._.js","/_next/static/chunks/src_app_layout_tsx_007e4b2._.js","/_next/static/chunks/_0ucd5un._.js","/_next/static/chunks/src_app_industries_page_tsx_1tss09c._.js"],"IndustryFilterGrid"]
+bf:I["[project]/src/components/industries/workflow-section.tsx [app-client] (ecmascript)",["/_next/static/chunks/node_modules_0x17l50._.js","/_next/static/chunks/src_1_krg00._.js","/_next/static/chunks/src_app_layout_tsx_007e4b2._.js","/_next/static/chunks/_0ucd5un._.js","/_next/static/chunks/src_app_industries_page_tsx_1tss09c._.js"],"WorkflowSection"]
+14f:I["[project]/src/components/services/faq-item.tsx [app-client] (ecmascript)",["/_next/static/chunks/node_modules_0x17l50._.js","/_next/static/chunks/src_1_krg00._.js","/_next/static/chunks/src_app_layout_tsx_007e4b2._.js","/_next/static/chunks/_0ucd5un._.js","/_next/static/chunks/src_app_industries_page_tsx_1tss09c._.js"],"FaqItem"]
+177:I["[project]/node_modules/next/dist/lib/framework/boundary-components.js [app-client] (ecmascript)",["/_next/static/chunks/node_modules_0x17l50._.js","/_next/static/chunks/src_1_krg00._.js","/_next/static/chunks/src_app_layout_tsx_007e4b2._.js"],"OutletBoundary"]
+179:"$Sreact.suspense"
+187:I["[project]/node_modules/next/dist/lib/framework/boundary-components.js [app-client] (ecmascript)",["/_next/static/chunks/node_modules_0x17l50._.js","/_next/static/chunks/src_1_krg00._.js","/_next/static/chunks/src_app_layout_tsx_007e4b2._.js"],"ViewportBoundary"]
+191:I["[project]/node_modules/next/dist/lib/framework/boundary-components.js [app-client] (ecmascript)",["/_next/static/chunks/node_modules_0x17l50._.js","/_next/static/chunks/src_1_krg00._.js","/_next/static/chunks/src_app_layout_tsx_007e4b2._.js"],"MetadataBoundary"]
+1ca:"$Sreact.forward_ref"
+1da:"$Sreact.forward_ref"
+1ea:"$Sreact.forward_ref"
+a:D"$e"
+a:D"$b"
+a:D"$10"
+11:D"$13"
+11:D"$12"
+11:D"$15"
+1b:D"$1d"
+1b:D"$1c"
+1b:D"$1f"
+1b:["$","$L20",null,{"ref":"$undefined","iconNode":[["path",{"d":"M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z","key":"1s2grr"}],["path",{"d":"M20 2v4","key":"1rf3ol"}],["path",{"d":"M22 4h-4","key":"gwowj6"}],["circle",{"cx":"4","cy":"20","r":"2","key":"6kqj1y"}]],"className":"lucide-sparkles h-3.5 w-3.5 text-accent"},"$1c","$1e",1]
+24:D"$2b"
+24:D"$25"
+24:D"$2d"
+2f:D"$31"
+2f:D"$30"
+2f:D"$33"
+2f:["$","$L20",null,{"ref":"$undefined","iconNode":[["path",{"d":"M5 12h14","key":"1ays0h"}],["path",{"d":"m12 5 7 7-7 7","key":"xquz4c"}]],"className":"lucide-arrow-right h-4 w-4"},"$30","$32",1]
+24:["$","$L2e",null,{"href":"/checkout","className":"inline-flex items-center gap-2 rounded-full bg-accent px-5 py-3 text-sm font-semibold text-accent-foreground shadow-card transition-all hover:-translate-y-0.5 hover:shadow-lift","children":["Explore Plans ","$2f"]},"$25","$2c",1]
+34:D"$36"
+34:D"$35"
+34:D"$38"
+34:["$","$L2e",null,{"href":"/contact","className":"inline-flex items-center gap-2 rounded-full border border-border bg-background px-5 py-3 text-sm font-semibold text-foreground transition-all hover:border-primary/40","children":"Talk to a Local SEO Expert"},"$35","$37",1]
+39:D"$3b"
+39:D"$3a"
+39:D"$3d"
+50:D"$52"
+50:D"$51"
+50:D"$54"
+50:["$","$L20",null,{"ref":"$undefined","iconNode":[["path",{"d":"m16 2-2.3 2.3a3 3 0 0 0 0 4.2l1.8 1.8a3 3 0 0 0 4.2 0L22 8","key":"n7qcjb"}],["path",{"d":"M15 15 3.3 3.3a4.2 4.2 0 0 0 0 6l7.3 7.3c.7.7 2 .7 2.8 0L15 15Zm0 0 7 7","key":"d0u48b"}],["path",{"d":"m2.1 21.8 6.4-6.3","key":"yn04lh"}],["path",{"d":"m19 5-7 7","key":"194lzd"}]],"className":"lucide-utensils-crossed h-4 w-4","strokeWidth":2},"$51","$53",1]
+39:["$","div",null,{"className":"relative","children":[["$","div",null,{"className":"absolute -inset-6 rounded-3xl bg-gradient-to-br from-primary/10 via-transparent to-accent/10 blur-2xl -z-10"},"$3a","$3e",1],["$","div",null,{"className":"rounded-3xl border border-border/70 bg-background p-6 shadow-lift","children":[["$","div",null,{"className":"relative aspect-[4/3] overflow-hidden rounded-2xl bg-surface/60","children":[["$","svg",null,{"viewBox":"0 0 400 300","className":"absolute inset-0 h-full w-full","children":[["$","defs",null,{"children":[["$","pattern",null,{"id":"grid","width":"24","height":"24","patternUnits":"userSpaceOnUse","children":["$","path",null,{"d":"M 24 0 L 0 0 0 24","fill":"none","stroke":"currentColor","strokeWidth":"0.4","className":"text-border"},"$3a","$44",1]},"$3a","$43",1],["$","radialGradient",null,{"id":"glow","cx":"50%","cy":"50%","r":"50%","children":[["$","stop",null,{"offset":"0%","stopColor":"var(--color-accent)","stopOpacity":"0.35"},"$3a","$46",1],["$","stop",null,{"offset":"100%","stopColor":"var(--color-accent)","stopOpacity":"0"},"$3a","$47",1]]},"$3a","$45",1]]},"$3a","$42",1],["$","rect",null,{"width":"400","height":"300","fill":"url(#grid)"},"$3a","$48",1],["$","path",null,{"d":"M0 210 Q 120 180 200 200 T 400 190","stroke":"currentColor","className":"text-border","strokeWidth":"1.5","fill":"none"},"$3a","$49",1],["$","path",null,{"d":"M60 0 Q 80 120 130 180 T 200 300","stroke":"currentColor","className":"text-border","strokeWidth":"1.5","fill":"none"},"$3a","$4a",1],["$","path",null,{"d":"M400 90 Q 300 100 250 140 T 120 260","stroke":"currentColor","className":"text-border","strokeWidth":"1.5","fill":"none"},"$3a","$4b",1],["$","circle",null,{"cx":"140","cy":"150","r":"70","fill":"url(#glow)"},"$3a","$4c",1],["$","circle",null,{"cx":"280","cy":"180","r":"60","fill":"url(#glow)"},"$3a","$4d",1]]},"$3a","$41",1],[["$","div","0",{"className":"absolute -translate-x-1/2 -translate-y-1/2 animate-fade-in","style":{"left":"22%","top":"38%","animationDelay":"0ms"},"children":["$","div",null,{"className":"relative grid place-items-center h-10 w-10 rounded-full shadow-lift bg-background text-primary border border-border/70","children":["$50","$undefined"]},"$3a","$4f",1]},"$3a","$4e",0],["$","div","1",{"className":"absolute -translate-x-1/2 -translate-y-1/2 animate-fade-in","style":{"left":"58%","top":"28%","animationDelay":"120ms"},"children":"$L56"},"$3a","$55",0],"$L57","$L58","$L59","$L5a","$L5b"]]},"$3a","$40",1],"$L5c"]},"$3a","$3f",1]]},"$3a","$3c",1]
+11:["$","section",null,{"className":"relative overflow-hidden","children":[["$","div",null,{"className":"absolute inset-0 -z-10 bg-gradient-to-b from-surface via-background to-background"},"$12","$16",1],["$","div",null,{"className":"absolute inset-x-0 top-0 -z-10 h-[520px] opacity-70","style":{"background":"radial-gradient(60% 60% at 50% 0%, color-mix(in oklab, var(--color-primary) 12%, transparent), transparent 70%)"}},"$12","$17",1],["$","div",null,{"className":"container-page pt-24 pb-16 md:pt-28 md:pb-24 grid gap-12 lg:grid-cols-[1.1fr_1fr] items-center","children":[["$","div",null,{"children":[["$","span",null,{"className":"inline-flex items-center gap-2 rounded-full border border-border/70 bg-background/80 px-3 py-1 text-xs font-medium text-muted-foreground backdrop-blur","children":["$1b","Industry-specific Local SEO"]},"$12","$1a",1],["$","h1",null,{"className":"mt-6 text-4xl md:text-6xl font-semibold tracking-tight text-foreground","children":"Local SEO built around your industry."},"$12","$21",1],["$","p",null,{"className":"mt-6 text-lg text-muted-foreground leading-relaxed max-w-xl","children":"No two industries compete the same way in local search. A law firm, dental clinic, restaurant, HVAC company, and real estate brokerage all require different Local SEO strategies â€” because customer intent, competition, and Google Business Profile signals vary dramatically. We build campaigns that respect those differences."},"$12","$22",1],["$","div",null,{"className":"mt-8 flex flex-wrap gap-3","children":["$24","$34"]},"$12","$23",1]]},"$12","$19",1],"$39"]},"$12","$18",1]]},"$12","$14",1]
+5d:D"$5f"
+5d:D"$5e"
+5d:D"$61"
+63:D"$65"
+63:D"$64"
+63:D"$67"
+63:["$","div",null,{"className":"group relative overflow-hidden rounded-3xl border border-border/70 bg-surface shadow-card aspect-square ","children":[["$","$L69",null,{"src":"/assets/photo-restaurant.jpg","alt":"Restaurant","fill":true,"priority":false,"loading":"lazy","sizes":"(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw","className":"object-cover transition-transform duration-700 group-hover:scale-[1.03]"},"$64","$68",1],["$","div",null,{"aria-hidden":true,"className":"absolute inset-0 bg-gradient-to-t from-primary/15 via-transparent to-transparent"},"$64","$6a",1]]},"$64","$66",1]
+6b:D"$6d"
+6b:D"$6c"
+6b:D"$6f"
+6b:["$","div",null,{"className":"group relative overflow-hidden rounded-3xl border border-border/70 bg-surface shadow-card aspect-square ","children":[["$","$L69",null,{"src":"/assets/photo-dental.jpg","alt":"Healthcare clinic","fill":true,"priority":false,"loading":"lazy","sizes":"(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw","className":"object-cover transition-transform duration-700 group-hover:scale-[1.03]"},"$6c","$70",1],["$","div",null,{"aria-hidden":true,"className":"absolute inset-0 bg-gradient-to-t from-primary/15 via-transparent to-transparent"},"$6c","$71",1]]},"$6c","$6e",1]
+72:D"$74"
+72:D"$73"
+72:D"$76"
+72:["$","div",null,{"className":"group relative overflow-hidden rounded-3xl border border-border/70 bg-surface shadow-card aspect-square ","children":[["$","$L69",null,{"src":"/assets/photo-contractor.jpg","alt":"Home services","fill":true,"priority":false,"loading":"lazy","sizes":"(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw","className":"object-cover transition-transform duration-700 group-hover:scale-[1.03]"},"$73","$77",1],["$","div",null,{"aria-hidden":true,"className":"absolute inset-0 bg-gradient-to-t from-primary/15 via-transparent to-transparent"},"$73","$78",1]]},"$73","$75",1]
+79:D"$7b"
+79:D"$7a"
+79:D"$7d"
+79:["$","div",null,{"className":"group relative overflow-hidden rounded-3xl border border-border/70 bg-surface shadow-card aspect-square ","children":[["$","$L69",null,{"src":"/assets/photo-lawyer.jpg","alt":"Legal services","fill":true,"priority":false,"loading":"lazy","sizes":"(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw","className":"object-cover transition-transform duration-700 group-hover:scale-[1.03]"},"$7a","$7e",1],["$","div",null,{"aria-hidden":true,"className":"absolute inset-0 bg-gradient-to-t from-primary/15 via-transparent to-transparent"},"$7a","$7f",1]]},"$7a","$7c",1]
+80:D"$82"
+80:D"$81"
+80:D"$84"
+80:["$","div",null,{"className":"group relative overflow-hidden rounded-3xl border border-border/70 bg-surface shadow-card aspect-square ","children":[["$","$L69",null,{"src":"/assets/photo-retail.jpg","alt":"Retail","fill":true,"priority":false,"loading":"lazy","sizes":"(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw","className":"object-cover transition-transform duration-700 group-hover:scale-[1.03]"},"$81","$85",1],["$","div",null,{"aria-hidden":true,"className":"absolute inset-0 bg-gradient-to-t from-primary/15 via-transparent to-transparent"},"$81","$86",1]]},"$81","$83",1]
+87:D"$89"
+87:D"$88"
+87:D"$8b"
+87:["$","div",null,{"className":"group relative overflow-hidden rounded-3xl border border-border/70 bg-surface shadow-card aspect-square ","children":[["$","$L69",null,{"src":"/assets/photo-hotel.jpg","alt":"Hospitality","fill":true,"priority":false,"loading":"lazy","sizes":"(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw","className":"object-cover transition-transform duration-700 group-hover:scale-[1.03]"},"$88","$8c",1],["$","div",null,{"aria-hidden":true,"className":"absolute inset-0 bg-gradient-to-t from-primary/15 via-transparent to-transparent"},"$88","$8d",1]]},"$88","$8a",1]
+5d:["$","section",null,{"className":"container-page pb-16","children":[["$","div",null,{"className":"grid gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-6","children":["$63","$6b","$72","$79","$80","$87"]},"$5e","$62",1],["$","p",null,{"className":"mt-6 text-center text-sm text-muted-foreground","children":"Recognizable environments. Real customers. The kind of businesses we help grow every day."},"$5e","$8e",1]]},"$5e","$60",1]
+91:D"$93"
+91:D"$92"
+91:D"$95"
+9e:D"$a0"
+9e:D"$9f"
+9e:D"$a2"
+9e:["$","$L20",null,{"ref":"$undefined","iconNode":"$50:props:iconNode","className":"lucide-utensils-crossed h-5 w-5","strokeWidth":1.75},"$9f","$a1",1]
+a7:D"$a9"
+a7:D"$a8"
+a7:D"$ab"
+a7:["$","$L20",null,{"ref":"$undefined","iconNode":[["path",{"d":"M12 3v18","key":"108xh3"}],["path",{"d":"m19 8 3 8a5 5 0 0 1-6 0zV7","key":"zcdpyk"}],["path",{"d":"M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1","key":"1yorad"}],["path",{"d":"m5 8 3 8a5 5 0 0 1-6 0zV7","key":"eua70x"}],["path",{"d":"M7 21h10","key":"1b0cd5"}]],"className":"lucide-scale h-5 w-5","strokeWidth":1.75},"$a8","$aa",1]
+b0:D"$b2"
+b0:D"$b1"
+b0:D"$b4"
+b0:["$","$L20",null,{"ref":"$undefined","iconNode":[["path",{"d":"M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5","key":"mvr1a0"}],["path",{"d":"M3.22 13H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27","key":"auskq0"}]],"className":"lucide-heart-pulse h-5 w-5","strokeWidth":1.75},"$b1","$b3",1]
+91:["$","section",null,{"className":"bg-surface/60 border-y border-border/60","children":["$","div",null,{"className":"container-page py-24","children":[["$","div",null,{"className":"max-w-2xl","children":[["$","p",null,{"className":"text-xs font-semibold uppercase tracking-widest text-accent","children":"Why industry matters"},"$92","$98",1],["$","h2",null,{"className":"mt-3 text-3xl md:text-4xl font-semibold tracking-tight","children":"Every industry has different local search challenges."},"$92","$99",1],["$","p",null,{"className":"mt-4 text-muted-foreground leading-relaxed","children":"The Local SEO playbook is the same. The plays are not. Category dictates which levers matter most, which keywords are worth pursuing, and which profile signals your customers actually care about."},"$92","$9a",1]]},"$92","$97",1],["$","div",null,{"className":"mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3","children":[["$","div","Restaurants",{"className":"group rounded-2xl border border-border/70 bg-background p-6 shadow-card transition-all hover:-translate-y-1 hover:shadow-lift","children":[["$","div",null,{"className":"grid h-11 w-11 place-items-center rounded-xl bg-primary/5 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground","children":"$9e"},"$92","$9d",1],["$","h3",null,{"className":"mt-5 text-base font-semibold text-foreground","children":"Restaurants"},"$92","$a3",1],["$","p",null,{"className":"mt-2 text-sm text-muted-foreground leading-relaxed","children":"Live on directions, photos, and review velocity. Ranking matters, but decision-making happens on the profile."},"$92","$a4",1]]},"$92","$9c",0],["$","div","Law firms",{"className":"group rounded-2xl border border-border/70 bg-background p-6 shadow-card transition-all hover:-translate-y-1 hover:shadow-lift","children":[["$","div",null,{"className":"grid h-11 w-11 place-items-center rounded-xl bg-primary/5 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground","children":"$a7"},"$92","$a6",1],["$","h3",null,{"className":"mt-5 text-base font-semibold text-foreground","children":"Law firms"},"$92","$ac",1],["$","p",null,{"className":"mt-2 text-sm text-muted-foreground leading-relaxed","children":"Compete for the most expensive local keywords in every market â€” authority, citations, and content depth win."},"$92","$ad",1]]},"$92","$a5",0],["$","div","Medical practices",{"className":"group rounded-2xl border border-border/70 bg-background p-6 shadow-card transition-all hover:-translate-y-1 hover:shadow-lift","children":[["$","div",null,{"className":"grid h-11 w-11 place-items-center rounded-xl bg-primary/5 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground","children":"$b0"},"$92","$af",1],["$","h3",null,{"className":"mt-5 text-base font-semibold text-foreground","children":"Medical practices"},"$92","$b5",1],["$","p",null,{"className":"mt-2 text-sm text-muted-foreground leading-relaxed","children":"Trust is the ranking factor. Reviews, credentials, and consistent NAP data outperform aggressive tactics."},"$92","$b6",1]]},"$92","$ae",0],["$","div","Contractors & trades",{"className":"group rounded-2xl border border-border/70 bg-background p-6 shadow-card transition-all hover:-translate-y-1 hover:shadow-lift","children":[["$","div",null,{"className":"grid h-11 w-11 place-items-center rounded-xl bg-primary/5 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground","children":"$Lb9"},"$92","$b8",1],"$Lba","$Lbb"]},"$92","$b7",0],"$Lbc","$Lbd"]},"$92","$9b",1]]},"$92","$96",1]},"$92","$94",1]
+c0:D"$c2"
+c0:D"$c1"
+c0:D"$c4"
+cb:D"$cf"
+cb:D"$cc"
+cb:D"$d1"
+d2:D"$d4"
+d2:D"$d3"
+d2:D"$d6"
+d2:["$","$L20",null,{"ref":"$undefined","iconNode":"$2f:props:iconNode","className":"lucide-arrow-right h-4 w-4"},"$d3","$d5",1]
+cb:["$","$L2e",null,{"href":"/services","className":"mt-6 inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-accent transition-colors","children":["See all services ","$d2"]},"$cc","$d0",1]
+da:D"$dc"
+da:D"$db"
+da:D"$de"
+da:["$","$L20",null,{"ref":"$undefined","iconNode":[["path",{"d":"M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0","key":"1r0f0z"}],["circle",{"cx":"12","cy":"10","r":"3","key":"ilqhr7"}]],"className":"lucide-map-pin h-4 w-4","strokeWidth":1.75},"$db","$dd",1]
+e2:D"$e4"
+e2:D"$e3"
+e2:D"$e6"
+e2:["$","$L20",null,{"ref":"$undefined","iconNode":[["path",{"d":"M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z","key":"zw3jo"}],["path",{"d":"M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12","key":"1wduqc"}],["path",{"d":"M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17","key":"kqbvx6"}]],"className":"lucide-layers h-4 w-4","strokeWidth":1.75},"$e3","$e5",1]
+ea:D"$ec"
+ea:D"$eb"
+ea:D"$ee"
+ea:["$","$L20",null,{"ref":"$undefined","iconNode":[["path",{"d":"M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z","key":"oel41y"}],["path",{"d":"m9 12 2 2 4-4","key":"dzmm74"}]],"className":"lucide-shield-check h-4 w-4","strokeWidth":1.75},"$eb","$ed",1]
+f2:D"$f4"
+f2:D"$f3"
+f2:D"$f6"
+f2:["$","$L20",null,{"ref":"$undefined","iconNode":[["path",{"d":"m21 21-4.34-4.34","key":"14j7rj"}],["circle",{"cx":"11","cy":"11","r":"8","key":"4ej97u"}]],"className":"lucide-search h-4 w-4","strokeWidth":1.75},"$f3","$f5",1]
+fa:D"$fc"
+fa:D"$fb"
+fa:D"$fe"
+fa:["$","$L20",null,{"ref":"$undefined","iconNode":[["path",{"d":"M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z","key":"r04s7s"}]],"className":"lucide-star h-4 w-4","strokeWidth":1.75},"$fb","$fd",1]
+c0:["$","section",null,{"className":"bg-surface/60 border-y border-border/60","children":["$","div",null,{"className":"container-page py-24","children":["$","div",null,{"className":"grid gap-12 lg:grid-cols-[1fr_1.4fr] items-start","children":[["$","div",null,{"children":[["$","p",null,{"className":"text-xs font-semibold uppercase tracking-widest text-accent","children":"Services adapted per industry"},"$c1","$c8",1],["$","h2",null,{"className":"mt-3 text-3xl md:text-4xl font-semibold tracking-tight","children":"Same services. Different execution."},"$c1","$c9",1],["$","p",null,{"className":"mt-4 text-muted-foreground leading-relaxed","children":"Our service catalog stays consistent. How each service is scoped, prioritized, and delivered depends on your category, competitive landscape, and business model."},"$c1","$ca",1],"$cb"]},"$c1","$c7",1],["$","div",null,{"className":"grid gap-3 sm:grid-cols-2 md:grid-cols-3","children":[["$","div","Google Business Profile Optimization",{"className":"flex items-center gap-3 rounded-xl border border-border/70 bg-background p-4 shadow-card transition-all hover:-translate-y-0.5 hover:shadow-lift","children":[["$","span",null,{"className":"grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-accent/10 text-accent","children":"$da"},"$c1","$d9",1],["$","span",null,{"className":"text-sm font-medium text-foreground","children":"Google Business Profile Optimization"},"$c1","$df",1]]},"$c1","$d8",0],["$","div","Local Landing Pages",{"className":"flex items-center gap-3 rounded-xl border border-border/70 bg-background p-4 shadow-card transition-all hover:-translate-y-0.5 hover:shadow-lift","children":[["$","span",null,{"className":"grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-accent/10 text-accent","children":"$e2"},"$c1","$e1",1],["$","span",null,{"className":"text-sm font-medium text-foreground","children":"Local Landing Pages"},"$c1","$e7",1]]},"$c1","$e0",0],["$","div","Citation Management",{"className":"flex items-center gap-3 rounded-xl border border-border/70 bg-background p-4 shadow-card transition-all hover:-translate-y-0.5 hover:shadow-lift","children":[["$","span",null,{"className":"grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-accent/10 text-accent","children":"$ea"},"$c1","$e9",1],["$","span",null,{"className":"text-sm font-medium text-foreground","children":"Citation Management"},"$c1","$ef",1]]},"$c1","$e8",0],["$","div","Local Keyword Research",{"className":"flex items-center gap-3 rounded-xl border border-border/70 bg-background p-4 shadow-card transition-all hover:-translate-y-0.5 hover:shadow-lift","children":[["$","span",null,{"className":"grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-accent/10 text-accent","children":"$f2"},"$c1","$f1",1],["$","span",null,{"className":"text-sm font-medium text-foreground","children":"Local Keyword Research"},"$c1","$f7",1]]},"$c1","$f0",0],["$","div","Review Growth",{"className":"flex items-center gap-3 rounded-xl border border-border/70 bg-background p-4 shadow-card transition-all hover:-translate-y-0.5 hover:shadow-lift","children":[["$","span",null,{"className":"grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-accent/10 text-accent","children":"$fa"},"$c1","$f9",1],["$","span",null,{"className":"text-sm font-medium text-foreground","children":"Review Growth"},"$c1","$ff",1]]},"$c1","$f8",0],["$","div","Local Content Strategy",{"className":"flex items-center gap-3 rounded-xl border border-border/70 bg-background p-4 shadow-card transition-all hover:-translate-y-0.5 hover:shadow-lift","children":["$L101","$L102"]},"$c1","$100",0],"$L103","$L104","$L105"]},"$c1","$d7",1]]},"$c1","$c6",1]},"$c1","$c5",1]},"$c1","$c3",1]
+106:D"$108"
+106:D"$107"
+106:D"$10a"
+10f:D"$111"
+10f:D"$110"
+10f:D"$113"
+10f:["$","div",null,{"className":"mt-10 rounded-3xl border border-border/70 bg-gradient-to-b from-surface/40 to-background p-6 md:p-10 shadow-card","children":[["$","div",null,{"className":"relative mx-auto aspect-[16/10] w-full max-w-4xl","children":["$","svg",null,{"viewBox":"0 0 100 62","className":"absolute inset-0 h-full w-full","children":[["$","defs",null,{"children":["$","radialGradient",null,{"id":"pin-glow","cx":"50%","cy":"50%","r":"50%","children":[["$","stop",null,{"offset":"0%","stopColor":"var(--color-accent)","stopOpacity":"0.5"},"$110","$118",1],["$","stop",null,{"offset":"100%","stopColor":"var(--color-accent)","stopOpacity":"0"},"$110","$119",1]]},"$110","$117",1]},"$110","$116",1],["$","path",null,{"d":"M8 20 Q 14 12 24 12 L 40 10 Q 52 8 62 12 L 74 14 Q 82 16 88 22 L 90 30 Q 88 36 82 40 L 74 42 L 70 50 Q 66 56 58 58 L 46 60 Q 36 60 30 54 L 22 46 Q 14 42 10 34 Z","fill":"color-mix(in oklab, var(--color-primary) 6%, transparent)","stroke":"var(--color-primary)","strokeOpacity":"0.35","strokeWidth":"0.4"},"$110","$11a",1],["$","path",null,{"d":"M14 14 L 28 10 L 46 8 L 62 10 L 78 14 L 84 20","fill":"none","stroke":"var(--color-primary)","strokeOpacity":"0.25","strokeWidth":"0.3","strokeDasharray":"1 1"},"$110","$11b",1],[["$","g","Vancouver",{"children":[["$","circle",null,{"cx":32,"cy":42,"r":"4","fill":"url(#pin-glow)","children":["$","animate",null,{"attributeName":"r","values":"3;5;3","dur":"3s","begin":"0s","repeatCount":"indefinite"},"$110","$11e",1]},"$110","$11d",1],["$","circle",null,{"cx":32,"cy":42,"r":"0.9","fill":"var(--color-accent)"},"$110","$11f",1]]},"$110","$11c",0],["$","g","Toronto",{"children":[["$","circle",null,{"cx":58,"cy":30,"r":"4","fill":"url(#pin-glow)","children":["$","animate",null,{"attributeName":"r","values":"3;5;3","dur":"3s","begin":"0.2s","repeatCount":"indefinite"},"$110","$122",1]},"$110","$121",1],["$","circle",null,{"cx":58,"cy":30,"r":"0.9","fill":"var(--color-accent)"},"$110","$123",1]]},"$110","$120",0],["$","g","MontrÃ©al",{"children":[["$","circle",null,{"cx":62,"cy":32,"r":"4","fill":"url(#pin-glow)","children":["$","animate",null,{"attributeName":"r","values":"3;5;3","dur":"3s","begin":"0.4s","repeatCount":"indefinite"},"$110","$126",1]},"$110","$125",1],["$","circle",null,{"cx":62,"cy":32,"r":"0.9","fill":"var(--color-accent)"},"$110","$127",1]]},"$110","$124",0],["$","g","Seattle",{"children":[["$","circle",null,{"cx":20,"cy":52,"r":"4","fill":"url(#pin-glow)","children":["$","animate",null,{"attributeName":"r","values":"3;5;3","dur":"3s","begin":"0.6000000000000001s","repeatCount":"indefinite"},"$110","$12a",1]},"$110","$129",1],["$","circle",null,{"cx":20,"cy":52,"r":"0.9","fill":"var(--color-accent)"},"$110","$12b",1]]},"$110","$128",0],["$","g","SF Bay",{"children":[["$","circle",null,{"cx":22,"cy":66,"r":"4","fill":"url(#pin-glow)","children":["$","animate",null,{"attributeName":"r","values":"3;5;3","dur":"3s","begin":"0.8s","repeatCount":"indefinite"},"$110","$12e",1]},"$110","$12d",1],["$","circle",null,{"cx":22,"cy":66,"r":"0.9","fill":"var(--color-accent)"},"$110","$12f",1]]},"$110","$12c",0],["$","g","LA",{"children":[["$","circle",null,{"cx":26,"cy":76,"r":"4","fill":"url(#pin-glow)","children":["$","animate",null,{"attributeName":"r","values":"3;5;3","dur":"3s","begin":"1s","repeatCount":"indefinite"},"$110","$132",1]},"$110","$131",1],["$","circle",null,{"cx":26,"cy":76,"r":"0.9","fill":"var(--color-accent)"},"$110","$133",1]]},"$110","$130",0],["$","g","Dallas",{"children":[["$","circle",null,{"cx":42,"cy":78,"r":"4","fill":"url(#pin-glow)","children":["$","animate",null,{"attributeName":"r","values":"3;5;3","dur":"3s","begin":"1.2000000000000002s","repeatCount":"indefinite"},"$110","$136",1]},"$110","$135",1],["$","circle",null,{"cx":42,"cy":78,"r":"0.9","fill":"var(--color-accent)"},"$110","$137",1]]},"$110","$134",0],["$","g","Denver",{"children":[["$","circle",null,{"cx":40,"cy":62,"r":"4","fill":"url(#pin-glow)","children":["$","animate",null,{"attributeName":"r","values":"3;5;3","dur":"3s","begin":"1.4000000000000001s","repeatCount":"indefinite"},"$110","$13a",1]},"$110","$139",1],"$L13b"]},"$110","$138",0],"$L13c","$L13d","$L13e","$L13f","$L140","$L141","$L142"]]},"$110","$115",1]},"$110","$114",1],"$L143"]},"$110","$112",1]
+106:["$","section",null,{"className":"container-page py-24","children":[["$","div",null,{"className":"max-w-2xl","children":[["$","p",null,{"className":"text-xs font-semibold uppercase tracking-widest text-accent","children":"Coverage"},"$107","$10c",1],["$","h2",null,{"className":"mt-3 text-3xl md:text-4xl font-semibold tracking-tight","children":"Local SEO for businesses across North America."},"$107","$10d",1],["$","p",null,{"className":"mt-4 text-muted-foreground leading-relaxed","children":"We work with independent businesses, multi-location brands, and franchise systems across the United States and Canada."},"$107","$10e",1]]},"$107","$10b",1],"$10f"]},"$107","$109",1]
+144:D"$146"
+144:D"$145"
+144:D"$148"
+144:["$","section",null,{"className":"bg-surface/60 border-y border-border/60","children":["$","div",null,{"className":"container-page py-24 grid gap-12 lg:grid-cols-[1fr_1.4fr]","children":[["$","div",null,{"children":[["$","p",null,{"className":"text-xs font-semibold uppercase tracking-widest text-accent","children":"FAQ"},"$145","$14b",1],["$","h2",null,{"className":"mt-3 text-3xl md:text-4xl font-semibold tracking-tight","children":"Common questions."},"$145","$14c",1]]},"$145","$14a",1],["$","div",null,{"className":"divide-y divide-border/60 rounded-2xl border border-border/70 bg-background shadow-card","children":[["$","$L14f","Do you work with businesses outside these industries?",{"q":"Do you work with businesses outside these industries?","a":"Yes. If your customers search locally, we can build a Local SEO campaign for you. These are the categories we serve most often â€” not a limit."},"$145","$14e",0],["$","$L14f","Do you support businesses with multiple locations?",{"q":"Do you support businesses with multiple locations?","a":"Absolutely. Multi-location Local SEO â€” with per-location profiles, citations, and reporting â€” is a core specialty."},"$145","$150",0],["$","$L14f","Do franchises need a different strategy?",{"q":"Do franchises need a different strategy?","a":"Yes. Franchise programs balance corporate standards with local franchisee visibility. We coordinate both."},"$145","$151",0],["$","$L14f","Are service-area businesses eligible?",{"q":"Are service-area businesses eligible?","a":"Yes. Home services, mobile businesses, and multi-radius operators are a large share of our client base."},"$145","$152",0],["$","$L14f","Can Local SEO campaigns be fully customized?",{"q":"Can Local SEO campaigns be fully customized?","a":"Every campaign is built around your industry's search behavior, competitive landscape, and business goals â€” never off a template."},"$145","$153",0]]},"$145","$14d",1]]},"$145","$149",1]},"$145","$147",1]
+154:D"$156"
+154:D"$155"
+154:D"$158"
+15f:D"$163"
+15f:D"$160"
+15f:D"$165"
+166:D"$168"
+166:D"$167"
+166:D"$16a"
+166:["$","$L20",null,{"ref":"$undefined","iconNode":"$2f:props:iconNode","className":"lucide-arrow-right h-4 w-4"},"$167","$169",1]
+15f:["$","$L2e",null,{"href":"/checkout","className":"inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground shadow-lift transition-all hover:-translate-y-0.5","children":["Get Started ","$166"]},"$160","$164",1]
+16b:D"$16d"
+16b:D"$16c"
+16b:D"$16f"
+16b:["$","$L2e",null,{"href":"/contact","className":"inline-flex items-center gap-2 rounded-full border border-primary-foreground/30 bg-primary-foreground/5 px-6 py-3 text-sm font-semibold text-primary-foreground backdrop-blur transition-all hover:bg-primary-foreground/15","children":"Talk to a Local SEO Expert"},"$16c","$16e",1]
+154:["$","section",null,{"className":"container-page py-24","children":["$","div",null,{"className":"relative overflow-hidden rounded-3xl px-8 py-20 md:px-16 text-center","style":{"background":"linear-gradient(135deg, var(--color-primary) 0%, color-mix(in oklab, var(--color-primary) 80%, var(--color-accent) 20%) 100%)"},"children":[["$","div",null,{"className":"absolute -top-24 -right-24 h-72 w-72 rounded-full opacity-30 blur-3xl","style":{"background":"var(--color-accent)"}},"$155","$15a",1],["$","div",null,{"className":"absolute -bottom-24 -left-24 h-72 w-72 rounded-full opacity-20 blur-3xl bg-white"},"$155","$15b",1],["$","h2",null,{"className":"relative text-3xl md:text-5xl font-semibold tracking-tight text-primary-foreground max-w-3xl mx-auto","children":"See what Local SEO looks like for your industry."},"$155","$15c",1],["$","p",null,{"className":"relative mt-5 text-primary-foreground/80 max-w-xl mx-auto","children":"We'll walk through category-specific opportunities, competitor gaps, and a plan tailored to your business."},"$155","$15d",1],["$","div",null,{"className":"relative mt-10 flex flex-wrap justify-center gap-3","children":["$15f","$16b"]},"$155","$15e",1]]},"$155","$159",1]},"$155","$157",1]
+a:["$","div",null,{"className":"bg-background","children":["$11","$5d",["$","$L90",null,{},"$b","$8f",1],"$91",["$","$Lbf",null,{},"$b","$be",1],"$c0","$106","$144","$154"]},"$b","$f",1]
+172:D"$174"
+172:D"$173"
+172:D"$176"
+172:["$","$L177",null,{"children":["$","$179",null,{"name":"Next.MetadataOutlet","children":"$@17a"},"$173","$178",1]},"$173","$175",1]
+17d:D"$180"
+17d:D"$17e"
+17d:D"$181"
+17d:null
+182:D"$184"
+182:D"$183"
+182:D"$186"
+188:D"$18a"
+188:D"$189"
+182:["$","$L187","c25c2353v",{"children":"$L188"},"$183","$185",1]
+18b:D"$18d"
+18b:D"$18c"
+18b:D"$18f"
+193:D"$195"
+193:D"$194"
+18b:["$","div","c25c2353m",{"hidden":true,"children":["$","$L191",null,{"children":["$","$179",null,{"name":"Next.Metadata","children":"$L193"},"$18c","$192",1]},"$18c","$190",1]},"$18c","$18e",1]
+0:{"f":[["children","industries",["industries",{"children":["__PAGE__",{}]}],[["$","$2","c",{"children":[null,["$","$L4",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{},null,"$5",1],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined","segmentViewBoundaries":["$undefined","$undefined","$undefined","$undefined"]},null,"$3",1]]},null,"$1",0],{"children":[["$","$2","c",{"children":[["$","$L9","c-page",{"type":"page","pagePath":"industries/page.tsx","children":"$a"},null,"$8",1],[["$","script","script-0",{"src":"/_next/static/chunks/_0ucd5un._.js","async":true,"nonce":"$undefined"},null,"$170",0],["$","script","script-1",{"src":"/_next/static/chunks/src_app_industries_page_tsx_1tss09c._.js","async":true,"nonce":"$undefined"},null,"$171",0]],"$172"]},null,"$7",0],{},null,false,null]},null,false,"$@17b"],["$","$2","h",{"children":["$17d","$182","$18b"]},null,"$17c",0],false]],"q":"","i":true,"S":false,"h":null,"b":"development"}
+56:D"$197"
+198:D"$19a"
+198:D"$199"
+198:D"$19c"
+198:["$","$L20",null,{"ref":"$undefined","iconNode":"$a7:props:iconNode","className":"lucide-scale h-4 w-4","strokeWidth":2},"$199","$19b",1]
+56:["$","div",null,{"className":"relative grid place-items-center h-10 w-10 rounded-full shadow-lift bg-background text-primary border border-border/70","children":["$198","$undefined"]},"$3a","$196",1]
+57:D"$19e"
+1a0:D"$1a2"
+1a0:D"$1a1"
+1a0:D"$1a4"
+1a0:["$","$L20",null,{"ref":"$undefined","iconNode":"$b0:props:iconNode","className":"lucide-heart-pulse h-4 w-4","strokeWidth":2},"$1a1","$1a3",1]
+57:["$","div","2",{"className":"absolute -translate-x-1/2 -translate-y-1/2 animate-fade-in","style":{"left":"72%","top":"58%","animationDelay":"240ms"},"children":["$","div",null,{"className":"relative grid place-items-center h-10 w-10 rounded-full shadow-lift bg-background text-primary border border-border/70","children":["$1a0","$undefined"]},"$3a","$19f",1]},"$3a","$19d",0]
+58:D"$1a6"
+1a8:D"$1aa"
+1a8:D"$1a9"
+1a8:D"$1ac"
+1a8:["$","$L20",null,{"ref":"$undefined","iconNode":[["path",{"d":"M10 10V5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v5","key":"1p9q5i"}],["path",{"d":"M14 6a6 6 0 0 1 6 6v3","key":"1hnv84"}],["path",{"d":"M4 15v-3a6 6 0 0 1 6-6","key":"9ciidu"}],["rect",{"x":"2","y":"15","width":"20","height":"4","rx":"1","key":"g3x8cw"}]],"className":"lucide-hard-hat h-4 w-4","strokeWidth":2},"$1a9","$1ab",1]
+58:["$","div","3",{"className":"absolute -translate-x-1/2 -translate-y-1/2 animate-fade-in","style":{"left":"38%","top":"62%","animationDelay":"360ms"},"children":["$","div",null,{"className":"relative grid place-items-center h-10 w-10 rounded-full shadow-lift bg-background text-primary border border-border/70","children":["$1a8","$undefined"]},"$3a","$1a7",1]},"$3a","$1a5",0]
+59:D"$1ae"
+1b0:D"$1b2"
+1b0:D"$1b1"
+1b0:D"$1b4"
+1b0:["$","$L20",null,{"ref":"$undefined","iconNode":"$da:props:iconNode","className":"lucide-map-pin h-4 w-4","strokeWidth":2},"$1b1","$1b3",1]
+59:["$","div","4",{"className":"absolute -translate-x-1/2 -translate-y-1/2 animate-fade-in","style":{"left":"50%","top":"44%","animationDelay":"480ms"},"children":["$","div",null,{"className":"relative grid place-items-center h-10 w-10 rounded-full shadow-lift bg-accent text-accent-foreground","children":["$1b0",["$","span",null,{"className":"absolute inset-0 rounded-full ring-4 ring-accent/30 animate-ping"},"$3a","$1b5",1]]},"$3a","$1af",1]},"$3a","$1ad",0]
+5a:D"$1b7"
+1b9:D"$1bb"
+1b9:D"$1ba"
+1b9:D"$1bd"
+1b9:["$","$L20",null,{"ref":"$undefined","iconNode":[["path",{"d":"M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8","key":"5wwlr5"}],["path",{"d":"M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z","key":"r6nss1"}]],"className":"lucide-house h-4 w-4","strokeWidth":2},"$1ba","$1bc",1]
+5a:["$","div","5",{"className":"absolute -translate-x-1/2 -translate-y-1/2 animate-fade-in","style":{"left":"18%","top":"72%","animationDelay":"600ms"},"children":["$","div",null,{"className":"relative grid place-items-center h-10 w-10 rounded-full shadow-lift bg-background text-primary border border-border/70","children":["$1b9","$undefined"]},"$3a","$1b8",1]},"$3a","$1b6",0]
+5b:D"$1bf"
+1c1:D"$1c3"
+1c1:D"$1c2"
+1c1:D"$1c5"
+1c1:["$","$L20",null,{"ref":"$undefined","iconNode":[["path",{"d":"M16 10a4 4 0 0 1-8 0","key":"1ltviw"}],["path",{"d":"M3.103 6.034h17.794","key":"awc11p"}],["path",{"d":"M3.4 5.467a2 2 0 0 0-.4 1.2V20a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6.667a2 2 0 0 0-.4-1.2l-2-2.667A2 2 0 0 0 17 2H7a2 2 0 0 0-1.6.8z","key":"o988cm"}]],"className":"lucide-shopping-bag h-4 w-4","strokeWidth":2},"$1c2","$1c4",1]
+5b:["$","div","6",{"className":"absolute -translate-x-1/2 -translate-y-1/2 animate-fade-in","style":{"left":"82%","top":"38%","animationDelay":"720ms"},"children":["$","div",null,{"className":"relative grid place-items-center h-10 w-10 rounded-full shadow-lift bg-background text-primary border border-border/70","children":["$1c1","$undefined"]},"$3a","$1c0",1]},"$3a","$1be",0]
+5c:D"$1c7"
+1c8:D"$1cc"
+1c8:D"$1c9"
+1c8:D"$1ce"
+1d0:D"$1d2"
+1d0:D"$1d1"
+1d0:D"$1d4"
+1d0:["$","$L20",null,{"ref":"$undefined","iconNode":"$fa:props:iconNode","className":"lucide-star h-3.5 w-3.5 text-accent"},"$1d1","$1d3",1]
+1c8:["$","div",null,{"className":"rounded-xl border border-border/60 bg-surface/50 p-3","children":[["$","div",null,{"className":"flex items-center gap-1.5 text-muted-foreground","children":["$1d0",["$","span",null,{"className":"text-[10px] font-medium","children":"Reviews"},"$1c9","$1d5",1]]},"$1c9","$1cf",1],["$","p",null,{"className":"mt-1 text-lg font-semibold text-foreground","children":"4.9"},"$1c9","$1d6",1],["$","p",null,{"className":"text-[10px] font-semibold text-accent","children":"+38"},"$1c9","$1d7",1]]},"$1c9","$1cd",1]
+1d8:D"$1dc"
+1d8:D"$1d9"
+1d8:D"$1de"
+1e0:D"$1e2"
+1e0:D"$1e1"
+1e0:D"$1e4"
+1e0:["$","$L20",null,{"ref":"$undefined","iconNode":"$da:props:iconNode","className":"lucide-map-pin h-3.5 w-3.5 text-accent"},"$1e1","$1e3",1]
+1d8:["$","div",null,{"className":"rounded-xl border border-border/60 bg-surface/50 p-3","children":[["$","div",null,{"className":"flex items-center gap-1.5 text-muted-foreground","children":["$1e0",["$","span",null,{"className":"text-[10px] font-medium","children":"Map rank"},"$1d9","$1e5",1]]},"$1d9","$1df",1],["$","p",null,{"className":"mt-1 text-lg font-semibold text-foreground","children":"#2"},"$1d9","$1e6",1],["$","p",null,{"className":"text-[10px] font-semibold text-accent","children":"+6"},"$1d9","$1e7",1]]},"$1d9","$1dd",1]
+1e8:D"$1ec"
+1e8:D"$1e9"
+1e8:D"$1ee"
+1f0:D"$1f2"
+1f0:D"$1f1"
+1f0:D"$1f4"
+1f0:["$","$L20",null,{"ref":"$undefined","iconNode":[["path",{"d":"M3 3v16a2 2 0 0 0 2 2h16","key":"c24i48"}],["path",{"d":"M18 17V9","key":"2bz60n"}],["path",{"d":"M13 17V5","key":"1frdt8"}],["path",{"d":"M8 17v-3","key":"17ska0"}]],"className":"lucide-chart-column h-3.5 w-3.5 text-accent"},"$1f1","$1f3",1]
+1e8:["$","div",null,{"className":"rounded-xl border border-border/60 bg-surface/50 p-3","children":[["$","div",null,{"className":"flex items-center gap-1.5 text-muted-foreground","children":["$1f0",["$","span",null,{"className":"text-[10px] font-medium","children":"Calls"},"$1e9","$1f5",1]]},"$1e9","$1ef",1],["$","p",null,{"className":"mt-1 text-lg font-semibold text-foreground","children":"482"},"$1e9","$1f6",1],["$","p",null,{"className":"text-[10px] font-semibold text-accent","children":"+63%"},"$1e9","$1f7",1]]},"$1e9","$1ed",1]
+5c:["$","div",null,{"className":"mt-4 grid grid-cols-3 gap-3","children":["$1c8","$1d8","$1e8"]},"$3a","$1c6",1]
+b9:D"$1f9"
+b9:D"$1f8"
+b9:D"$1fb"
+b9:["$","$L20",null,{"ref":"$undefined","iconNode":"$1a8:props:iconNode","className":"lucide-hard-hat h-5 w-5","strokeWidth":1.75},"$1f8","$1fa",1]
+ba:D"$1fd"
+ba:["$","h3",null,{"className":"mt-5 text-base font-semibold text-foreground","children":"Contractors & trades"},"$92","$1fc",1]
+bb:D"$1ff"
+bb:["$","p",null,{"className":"mt-2 text-sm text-muted-foreground leading-relaxed","children":"Service-area Local SEO across radius, seasonality, and emergency-vs-planned intent â€” profiles must adapt."},"$92","$1fe",1]
+bc:D"$201"
+203:D"$205"
+203:D"$204"
+203:D"$207"
+203:["$","$L20",null,{"ref":"$undefined","iconNode":[["path",{"d":"M10 12h4","key":"a56b0p"}],["path",{"d":"M10 8h4","key":"1sr2af"}],["path",{"d":"M14 21v-3a2 2 0 0 0-4 0v3","key":"1rgiei"}],["path",{"d":"M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2","key":"secmi2"}],["path",{"d":"M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16","key":"16ra0t"}]],"className":"lucide-building2 lucide-building-2 h-5 w-5","strokeWidth":1.75},"$204","$206",1]
+bc:["$","div","Multi-location brands",{"className":"group rounded-2xl border border-border/70 bg-background p-6 shadow-card transition-all hover:-translate-y-1 hover:shadow-lift","children":[["$","div",null,{"className":"grid h-11 w-11 place-items-center rounded-xl bg-primary/5 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground","children":"$203"},"$92","$202",1],["$","h3",null,{"className":"mt-5 text-base font-semibold text-foreground","children":"Multi-location brands"},"$92","$208",1],["$","p",null,{"className":"mt-2 text-sm text-muted-foreground leading-relaxed","children":"Consistency at scale: citations, GBPs, reviews, and reporting standardized across every location."},"$92","$209",1]]},"$92","$200",0]
+bd:D"$20b"
+20d:D"$20f"
+20d:D"$20e"
+20d:D"$211"
+20d:["$","$L20",null,{"ref":"$undefined","iconNode":"$1c1:props:iconNode","className":"lucide-shopping-bag h-5 w-5","strokeWidth":1.75},"$20e","$210",1]
+bd:["$","div","Retail & boutiques",{"className":"group rounded-2xl border border-border/70 bg-background p-6 shadow-card transition-all hover:-translate-y-1 hover:shadow-lift","children":[["$","div",null,{"className":"grid h-11 w-11 place-items-center rounded-xl bg-primary/5 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground","children":"$20d"},"$92","$20c",1],["$","h3",null,{"className":"mt-5 text-base font-semibold text-foreground","children":"Retail & boutiques"},"$92","$212",1],["$","p",null,{"className":"mt-2 text-sm text-muted-foreground leading-relaxed","children":"Foot traffic depends on hyperlocal visibility, product-aware search, and picture-perfect profiles."},"$92","$213",1]]},"$92","$20a",0]
+101:D"$215"
+216:D"$218"
+216:D"$217"
+216:D"$21a"
+216:["$","$L20",null,{"ref":"$undefined","iconNode":"$1f0:props:iconNode","className":"lucide-chart-column h-4 w-4","strokeWidth":1.75},"$217","$219",1]
+101:["$","span",null,{"className":"grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-accent/10 text-accent","children":"$216"},"$c1","$214",1]
+102:D"$21c"
+102:["$","span",null,{"className":"text-sm font-medium text-foreground","children":"Local Content Strategy"},"$c1","$21b",1]
+103:D"$21e"
+220:D"$222"
+220:D"$221"
+220:D"$224"
+220:["$","$L20",null,{"ref":"$undefined","iconNode":[["path",{"d":"M12 20v2","key":"1lh1kg"}],["path",{"d":"M12 2v2","key":"tus03m"}],["path",{"d":"M17 20v2","key":"1rnc9c"}],["path",{"d":"M17 2v2","key":"11trls"}],["path",{"d":"M2 12h2","key":"1t8f8n"}],["path",{"d":"M2 17h2","key":"7oei6x"}],["path",{"d":"M2 7h2","key":"asdhe0"}],["path",{"d":"M20 12h2","key":"1q8mjw"}],["path",{"d":"M20 17h2","key":"1fpfkl"}],["path",{"d":"M20 7h2","key":"1o8tra"}],["path",{"d":"M7 20v2","key":"4gnj0m"}],["path",{"d":"M7 2v2","key":"1i4yhu"}],["rect",{"x":"4","y":"4","width":"16","height":"16","rx":"2","key":"1vbyd7"}],["rect",{"x":"8","y":"8","width":"8","height":"8","rx":"1","key":"z9xiuo"}]],"className":"lucide-cpu h-4 w-4","strokeWidth":1.75},"$221","$223",1]
+103:["$","div","Reporting & Dashboards",{"className":"flex items-center gap-3 rounded-xl border border-border/70 bg-background p-4 shadow-card transition-all hover:-translate-y-0.5 hover:shadow-lift","children":[["$","span",null,{"className":"grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-accent/10 text-accent","children":"$220"},"$c1","$21f",1],["$","span",null,{"className":"text-sm font-medium text-foreground","children":"Reporting & Dashboards"},"$c1","$225",1]]},"$c1","$21d",0]
+104:D"$227"
+229:D"$22b"
+229:D"$22a"
+229:D"$22d"
+229:["$","$L20",null,{"ref":"$undefined","iconNode":"$1b:props:iconNode","className":"lucide-sparkles h-4 w-4","strokeWidth":1.75},"$22a","$22c",1]
+104:["$","div","Reputation Management",{"className":"flex items-center gap-3 rounded-xl border border-border/70 bg-background p-4 shadow-card transition-all hover:-translate-y-0.5 hover:shadow-lift","children":[["$","span",null,{"className":"grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-accent/10 text-accent","children":"$229"},"$c1","$228",1],["$","span",null,{"className":"text-sm font-medium text-foreground","children":"Reputation Management"},"$c1","$22e",1]]},"$c1","$226",0]
+105:D"$230"
+232:D"$234"
+232:D"$233"
+232:D"$236"
+232:["$","$L20",null,{"ref":"$undefined","iconNode":"$203:props:iconNode","className":"lucide-building2 lucide-building-2 h-4 w-4","strokeWidth":1.75},"$233","$235",1]
+105:["$","div","Multi-location SEO",{"className":"flex items-center gap-3 rounded-xl border border-border/70 bg-background p-4 shadow-card transition-all hover:-translate-y-0.5 hover:shadow-lift","children":[["$","span",null,{"className":"grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-accent/10 text-accent","children":"$232"},"$c1","$231",1],["$","span",null,{"className":"text-sm font-medium text-foreground","children":"Multi-location SEO"},"$c1","$237",1]]},"$c1","$22f",0]
+13b:D"$239"
+13b:["$","circle",null,{"cx":40,"cy":62,"r":"0.9","fill":"var(--color-accent)"},"$110","$238",1]
+13c:D"$23b"
+13c:["$","g","Chicago",{"children":[["$","circle",null,{"cx":56,"cy":60,"r":"4","fill":"url(#pin-glow)","children":["$","animate",null,{"attributeName":"r","values":"3;5;3","dur":"3s","begin":"1.6s","repeatCount":"indefinite"},"$110","$23d",1]},"$110","$23c",1],["$","circle",null,{"cx":56,"cy":60,"r":"0.9","fill":"var(--color-accent)"},"$110","$23e",1]]},"$110","$23a",0]
+13d:D"$240"
+13d:["$","g","NYC",{"children":[["$","circle",null,{"cx":70,"cy":58,"r":"4","fill":"url(#pin-glow)","children":["$","animate",null,{"attributeName":"r","values":"3;5;3","dur":"3s","begin":"1.8s","repeatCount":"indefinite"},"$110","$242",1]},"$110","$241",1],["$","circle",null,{"cx":70,"cy":58,"r":"0.9","fill":"var(--color-accent)"},"$110","$243",1]]},"$110","$23f",0]
+13e:D"$245"
+13e:["$","g","Atlanta",{"children":[["$","circle",null,{"cx":68,"cy":72,"r":"4","fill":"url(#pin-glow)","children":["$","animate",null,{"attributeName":"r","values":"3;5;3","dur":"3s","begin":"2s","repeatCount":"indefinite"},"$110","$247",1]},"$110","$246",1],["$","circle",null,{"cx":68,"cy":72,"r":"0.9","fill":"var(--color-accent)"},"$110","$248",1]]},"$110","$244",0]
+13f:D"$24a"
+13f:["$","g","Miami",{"children":[["$","circle",null,{"cx":66,"cy":84,"r":"4","fill":"url(#pin-glow)","children":["$","animate",null,{"attributeName":"r","values":"3;5;3","dur":"3s","begin":"2.2s","repeatCount":"indefinite"},"$110","$24c",1]},"$110","$24b",1],["$","circle",null,{"cx":66,"cy":84,"r":"0.9","fill":"var(--color-accent)"},"$110","$24d",1]]},"$110","$249",0]
+140:D"$24f"
+140:["$","g","Boston",{"children":[["$","circle",null,{"cx":74,"cy":66,"r":"4","fill":"url(#pin-glow)","children":["$","animate",null,{"attributeName":"r","values":"3;5;3","dur":"3s","begin":"2.4000000000000004s","repeatCount":"indefinite"},"$110","$251",1]},"$110","$250",1],["$","circle",null,{"cx":74,"cy":66,"r":"0.9","fill":"var(--color-accent)"},"$110","$252",1]]},"$110","$24e",0]
+141:D"$254"
+141:["$","g","Phoenix",{"children":[["$","circle",null,{"cx":34,"cy":68,"r":"4","fill":"url(#pin-glow)","children":["$","animate",null,{"attributeName":"r","values":"3;5;3","dur":"3s","begin":"2.6s","repeatCount":"indefinite"},"$110","$256",1]},"$110","$255",1],["$","circle",null,{"cx":34,"cy":68,"r":"0.9","fill":"var(--color-accent)"},"$110","$257",1]]},"$110","$253",0]
+142:D"$259"
+142:["$","g","Austin",{"children":[["$","circle",null,{"cx":46,"cy":70,"r":"4","fill":"url(#pin-glow)","children":["$","animate",null,{"attributeName":"r","values":"3;5;3","dur":"3s","begin":"2.8000000000000003s","repeatCount":"indefinite"},"$110","$25b",1]},"$110","$25a",1],["$","circle",null,{"cx":46,"cy":70,"r":"0.9","fill":"var(--color-accent)"},"$110","$25c",1]]},"$110","$258",0]
+143:D"$25e"
+262:D"$264"
+262:D"$263"
+262:D"$266"
+262:["$","$L20",null,{"ref":"$undefined","iconNode":[["path",{"d":"M20 6 9 17l-5-5","key":"1gmf2c"}]],"className":"lucide-check h-3.5 w-3.5 text-accent"},"$263","$265",1]
+143:["$","div",null,{"className":"mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs text-muted-foreground","children":[["$","span",null,{"className":"inline-flex items-center gap-1.5","children":[["$","span",null,{"className":"h-2 w-2 rounded-full bg-accent"},"$110","$260",1]," Active service markets"]},"$110","$25f",1],["$","span",null,{"className":"inline-flex items-center gap-1.5","children":["$262"," United States & Canada"]},"$110","$261",1]]},"$110","$25d",1]
+267:[]
+17b:D"$268"
+17b:"$W267"
+188:D"$269"
+188:[["$","meta","0",{"charSet":"utf-8"},"$173","$26a",0],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"},"$173","$26b",0]]
+285:I["[project]/node_modules/next/dist/lib/metadata/generate/icon-mark.js [app-client] (ecmascript)",["/_next/static/chunks/node_modules_0x17l50._.js","/_next/static/chunks/src_1_krg00._.js","/_next/static/chunks/src_app_layout_tsx_007e4b2._.js"],"IconMark"]
+17a:D"$26c"
+17a:null
+193:D"$26d"
+193:[["$","title","0",{"children":"Industries We Serve â€” Local SEO by Industry | MyPageSEO | MyPageSEO"},"$173","$26e",0],["$","meta","1",{"name":"description","content":"MyPageSEO builds industry-specific Local SEO campaigns for medical, legal, home services, retail, hospitality, and more across the US and Canada."},"$173","$26f",0],["$","meta","2",{"name":"application-name","content":"MyPageSEO"},"$173","$270",0],["$","link","3",{"rel":"author","href":"https://mypageseo.com"},"$173","$271",0],["$","meta","4",{"name":"author","content":"MyPageSEO"},"$173","$272",0],["$","meta","5",{"name":"keywords","content":"Local SEO,Google Business Profile,Google Maps SEO,Local Search,Local SEO Company,Local SEO Agency,Citation Management,Reputation Management,Google Business Profile Optimization,GBP Optimization,Local Marketing,Local Rankings,Small Business Marketing,Multi Location SEO,Restaurant SEO,Dentist SEO,Law Firm SEO,Contractor SEO,North America SEO,MyPageSEO"},"$173","$273",0],["$","meta","6",{"name":"creator","content":"MyPageSEO"},"$173","$274",0],["$","meta","7",{"name":"publisher","content":"MyPageSEO"},"$173","$275",0],["$","meta","8",{"name":"robots","content":"index, follow"},"$173","$276",0],["$","meta","9",{"name":"googlebot","content":"index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"},"$173","$277",0],["$","meta","10",{"name":"category","content":"Business"},"$173","$278",0],["$","link","11",{"rel":"canonical","href":"https://mypageseo.com/industries"},"$173","$279",0],["$","meta","12",{"name":"format-detection","content":"telephone=no, address=no, email=no"},"$173","$27a",0],["$","meta","13",{"property":"og:title","content":"Industries We Serve â€” MyPageSEO"},"$173","$27b",0],["$","meta","14",{"property":"og:description","content":"Local SEO strategies tailored to your industry â€” from dentists and law firms to HVAC, restaurants, and multi-location brands."},"$173","$27c",0],["$","meta","15",{"property":"og:type","content":"website"},"$173","$27d",0],["$","meta","16",{"name":"twitter:card","content":"summary_large_image"},"$173","$27e",0],["$","meta","17",{"name":"twitter:title","content":"Industries We Serve â€” MyPageSEO"},"$173","$27f",0],["$","meta","18",{"name":"twitter:description","content":"Local SEO strategies tailored to your industry â€” from dentists and law firms to HVAC, restaurants, and multi-location brands."},"$173","$280",0],["$","link","19",{"rel":"shortcut icon","href":"/favicon.png"},"$173","$281",0],["$","link","20",{"rel":"icon","href":"/favicon.png","type":"image/png"},"$173","$282",0],["$","link","21",{"rel":"apple-touch-icon","href":"/favicon.png"},"$173","$283",0],["$","$L285","22",{},"$173","$284",0]]

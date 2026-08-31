@@ -16,8 +16,12 @@ export function CtaSection() {
           style={{ background: "var(--color-accent)" }}
         />
         <h2 className="relative text-3xl md:text-5xl font-semibold tracking-tight text-primary-foreground max-w-3xl mx-auto">
-          Get the ecosystem working for your business.
+          Let's build your local growth strategy.
         </h2>
+        <p className="relative mt-5 text-base text-primary-foreground/80 max-w-xl mx-auto">
+          Tell us about your business and we&apos;ll put together a plan built
+          around your locations and goals.
+        </p>
         <div className="relative mt-10 flex flex-wrap justify-center gap-3">
           <Link
             href="/checkout"
@@ -29,7 +33,7 @@ export function CtaSection() {
             href="/contact"
             className="inline-flex items-center gap-2 rounded-full border border-primary-foreground/30 bg-primary-foreground/5 px-6 py-3 text-sm font-semibold text-primary-foreground backdrop-blur transition-all hover:bg-primary-foreground/15"
           >
-            Request a Demo
+            Talk to Our Team
           </Link>
         </div>
       </div>

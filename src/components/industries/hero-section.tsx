@@ -4,25 +4,19 @@ import { HeroIllustration } from "@/components/industries/hero-illustration";
 
 export function HeroSection() {
   return (
-    <section className="relative overflow-hidden">
-      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-surface via-background to-background" />
-      <div
-        className="absolute inset-x-0 top-0 -z-10 h-[520px] opacity-70"
-        style={{
-          background:
-            "radial-gradient(60% 60% at 50% 0%, color-mix(in oklab, var(--color-primary) 12%, transparent), transparent 70%)",
-        }}
-      />
-      <div className="container-page pt-24 pb-16 md:pt-28 md:pb-24 grid gap-12 lg:grid-cols-[1.1fr_1fr] items-center">
-        <div>
-          <span className="inline-flex items-center gap-2 rounded-full border border-border/70 bg-background/80 px-3 py-1 text-xs font-medium text-muted-foreground backdrop-blur">
-            <Sparkles className="h-3.5 w-3.5 text-accent" />
-            Industry-specific Local SEO
+    <section className="relative flex h-[calc(100svh-4rem)] items-center overflow-hidden bg-hero">
+      <div aria-hidden className="absolute inset-0 bg-radial-soft opacity-70" />
+      <div className="container-page relative grid gap-14 lg:grid-cols-2 items-center">
+        <div className="min-w-0 animate-fade-up">
+          <span className="inline-flex items-center gap-2 rounded-full bg-card px-3 py-1 text-xs font-medium text-primary ring-soft">
+            <Sparkles className="h-3.5 w-3.5 text-accent" /> Industry-specific
+            Local SEO
           </span>
-          <h1 className="mt-6 text-4xl md:text-6xl font-semibold tracking-tight text-foreground">
-            Local SEO built around your industry.
+          <h1 className="mt-6 text-4xl md:text-6xl font-display leading-[1.05] text-foreground">
+            Local SEO built around{" "}
+            <span className="text-gradient">your industry.</span>
           </h1>
-          <p className="mt-6 text-lg text-muted-foreground leading-relaxed max-w-xl">
+          <p className="mt-5 text-lg text-muted-foreground max-w-xl leading-relaxed">
             No two industries compete the same way in local search. A law firm,
             dental clinic, restaurant, HVAC company, and real estate brokerage
             all require different Local SEO strategies — because customer
@@ -32,19 +26,26 @@ export function HeroSection() {
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
               href="/checkout"
-              className="inline-flex items-center gap-2 rounded-full bg-accent px-5 py-3 text-sm font-semibold text-accent-foreground shadow-card transition-all hover:-translate-y-0.5 hover:shadow-lift"
+              className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground shadow-lift transition-all hover:-translate-y-0.5"
             >
               Explore Plans <ArrowRight className="h-4 w-4" />
             </Link>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-5 py-3 text-sm font-semibold text-foreground transition-all hover:border-primary/40"
+              className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-6 py-3 text-sm font-semibold text-foreground transition-all hover:border-primary/40"
             >
               Talk to a Local SEO Expert
             </Link>
           </div>
         </div>
-        <HeroIllustration />
+        <div
+          className="min-w-0 animate-fade-up"
+          style={{ animationDelay: "150ms" }}
+        >
+          <div className="mx-auto w-full max-w-lg overflow-hidden lg:max-w-none">
+            <HeroIllustration />
+          </div>
+        </div>
       </div>
     </section>
   );
