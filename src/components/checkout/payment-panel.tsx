@@ -43,7 +43,7 @@ export function PaymentPanel({
       if (!res.success || !res.data?.valid) {
         onApplyCoupon(null);
         setCouponError(
-          res.message || "That code isn't valid. Please try another.",
+          res.message || "That code isn't valid. Please try another."
         );
         return;
       }
@@ -80,14 +80,14 @@ export function PaymentPanel({
       switch (status) {
         case 400:
           setCouponError(
-            err?.response?.data?.message ?? "The coupon code is invalid.",
+            err?.response?.data?.message ?? "The coupon code is invalid."
           );
           break;
 
         case 401:
         case 403:
           setCouponError(
-            "We're unable to validate coupons right now. You can continue your purchase without a coupon or try again later.",
+            "We're unable to validate coupons right now. You can continue your purchase without a coupon or try again later."
           );
           break;
 
@@ -97,20 +97,19 @@ export function PaymentPanel({
 
         case 409:
           setCouponError(
-            err?.response?.data?.message ??
-              "This coupon has already been used.",
+            err?.response?.data?.message ?? "This coupon has already been used."
           );
           break;
 
         case 429:
           setCouponError(
-            "Too many attempts. Please wait a moment and try again.",
+            "Too many attempts. Please wait a moment and try again."
           );
           break;
 
         default:
           setCouponError(
-            "Something went wrong while validating your coupon. Please try again later.",
+            "Something went wrong while validating your coupon. Please try again later."
           );
       }
     } finally {
@@ -122,7 +121,7 @@ export function PaymentPanel({
     <Panel
       step="3"
       title="Payment"
-      subtitle="Encrypted end-to-end. Cancel anytime after your foundation period."
+      subtitle="Encrypted end-to-end. Cancel anytime,"
     >
       <div className="mb-6">
         <div className="animate-fade-in">

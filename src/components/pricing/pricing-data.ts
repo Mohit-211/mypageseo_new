@@ -29,8 +29,71 @@ export const plans: Plan[] = [
     id: "base",
     icon: Sparkles,
     name: "Base",
+    tagline: "Your foundation for getting found locally.",
+    cta: "Start with Base",
+    features: [
+      "Local SEO Audit",
+      "Google Business Profile Optimization",
+      "Citation Building & Management",
+      "Monthly GBP Posts & Updates",
+      "8 Keywords",
+      "Keyword Rank Tracking",
+      "Monthly Performance Reporting",
+      "Priority Support",
+      "No Contract — Cancel Anytime",
+    ],
+  },
+
+  {
+    id: "standard",
+    icon: Rocket,
+    name: "Standard",
+    tagline: "Built to put your business ahead locally.",
+    cta: "Choose Standard",
+    popular: true,
+    inherits: "Base",
+    features: [
+      "Local SEO Audit",
+      "Google Business Profile Optimization",
+      "Citation Building & Management",
+      "Monthly GBP Posts & Updates",
+      "12 Keywords",
+      "Keyword Rank Tracking",
+      "Monthly Performance Reporting",
+      "Priority Support",
+      "No Contract — Cancel Anytime",
+    ],
+  },
+
+  {
+    id: "elite",
+    icon: Crown,
+    name: "Elite",
+    tagline: "Maximum visibility for businesses ready to dominate.",
+    cta: "Choose Elite",
+    inherits: "Standard",
+    features: [
+      "Local SEO Audit",
+      "Google Business Profile Optimization",
+      "Citation Building & Management",
+      "Monthly GBP Posts & Updates",
+      "16 Keywords",
+      "Keyword Rank Tracking",
+      "Monthly Performance Reporting",
+      "Priority Support",
+      "No Contract - Cancel Anytime",
+    ],
+  },
+];
+
+/* 
+export const plans: Plan[] = [
+  {
+    id: "base",
+    icon: Sparkles,
+    name: "Base",
     tagline:
-      "For businesses starting their Local SEO journey at a single location.",
+    "For businesses starting their Local SEO journey at a single location.",
     cta: "Start with Base",
     features: [
       "Local SEO audit of your website & Google Business Profile",
@@ -80,6 +143,7 @@ export const plans: Plan[] = [
     ],
   },
 ];
+*/
 
 export const compareRows: { label: string; values: (string | boolean)[] }[] = [
   {
