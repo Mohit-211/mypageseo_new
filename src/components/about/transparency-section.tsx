@@ -1,5 +1,5 @@
 import { Handshake, ShieldCheck } from "lucide-react";
-import { Reveal } from "@/components/reveal";
+import { Reveal } from "@/components/site/reveal";
 
 const commitments = [
   "Clear scope, no surprises",

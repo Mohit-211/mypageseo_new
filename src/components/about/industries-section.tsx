@@ -1,4 +1,4 @@
-import { Reveal } from "@/components/reveal";
+import { Reveal } from "@/components/site/reveal";
 import { industries } from "./about-data";
 
 export function IndustriesSection() {

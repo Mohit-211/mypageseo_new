@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { ArrowRight, Minus, Plus } from "lucide-react";
-import { Reveal } from "@/components/reveal";
+import { Reveal } from "@/components/site/reveal";
 import { faqs } from "./about-data";
 
 export function AboutFaq() {

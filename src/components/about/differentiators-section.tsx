@@ -1,4 +1,4 @@
-import { Reveal } from "@/components/reveal";
+import { Reveal } from "@/components/site/reveal";
 import { differentiators } from "./about-data";
 
 export function DifferentiatorsSection() {

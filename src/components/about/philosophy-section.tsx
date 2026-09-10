@@ -1,5 +1,5 @@
 import { Eye, Ruler, TrendingUp } from "lucide-react";
-import { Reveal } from "@/components/reveal";
+import { Reveal } from "@/components/site/reveal";
 
 const principles = [
   { icon: Eye, t: "Clarity", d: "You should always understand what we're doing and why — no jargon, no hand-waving." },

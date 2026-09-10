@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, Sparkles, ShieldCheck } from "lucide-react";
-import { Reveal } from "@/components/reveal";
+import { Reveal } from "@/components/site/reveal";
 
 const perfBars = [28, 40, 36, 52, 46, 60, 68, 64, 78, 82, 88, 95];
 

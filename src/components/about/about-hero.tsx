@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Photo } from "@/components/site/photos";
-import { Reveal } from "@/components/reveal";
+import { Reveal } from "@/components/site/reveal";
 
 export function AboutHero() {
   return (

@@ -1,4 +1,4 @@
-import { Reveal } from "@/components/reveal";
+import { Reveal } from "@/components/site/reveal";
 
 const storySteps = [
   { y: "The problem", t: "Countless agencies claim SEO. Very few specialize in Local SEO." },

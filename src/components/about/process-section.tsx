@@ -1,4 +1,4 @@
-import { Reveal } from "@/components/reveal";
+import { Reveal } from "@/components/site/reveal";
 import { process } from "./about-data";
 
 export function ProcessSection() {
