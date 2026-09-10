@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Instrument_Serif } from "next/font/google";
-import { AppShell } from "@/components/app-shell";
+import { AppShell } from "@/components/site/app-shell";
 import { CountryProvider } from "@/context/CountryContext";
 import "./globals.css";
 

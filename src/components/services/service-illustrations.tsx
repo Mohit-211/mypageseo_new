@@ -8,7 +8,7 @@ import {
   SearchResultIllustration,
   GBPHealthIllustration,
   CollaborationIllustration,
-} from "@/components/illustrations";
+} from "@/components/site/illustrations";
 
 /** Used in the top-of-page showcase (one illustration per service). */
 export function ServiceShowcaseIllustration({ slug }: { slug: string }) {

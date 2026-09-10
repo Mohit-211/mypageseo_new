@@ -27,12 +27,12 @@ export function ServiceSection({ service }: { service: Service }) {
         />
         <div className="container-page pt-20 pb-16 md:pt-24 md:pb-24 grid gap-12 lg:grid-cols-[1.15fr_1fr] items-center">
           <div>
-            <a
-              href="#top"
+            <Link
+              href="/services"
               className="inline-flex items-center gap-1.5 text-xs font-medium text-muted-foreground hover:text-foreground"
             >
               ← Product Ecosystem
-            </a>
+            </Link>
             <div className="mt-6 inline-flex items-center gap-3">
               <span
                 className={`grid h-14 w-14 place-items-center rounded-2xl ${

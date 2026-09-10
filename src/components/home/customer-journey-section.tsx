@@ -1,4 +1,4 @@
-import { CustomerJourneyIllustration } from "@/components/illustrations";
+import { CustomerJourneyIllustration } from "@/components/site/illustrations";
 
 export function CustomerJourneySection() {
   return (

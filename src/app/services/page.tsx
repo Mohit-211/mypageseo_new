@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
-import { HeroSection } from "@/components/services/hero-section";
+import { ServicesOverview } from "@/components/services/services-overview";
 import { WhySection } from "@/components/services/why-section";
-import { ServicesExplorer } from "@/components/services/services-explorer";
 import { CtaSection } from "@/components/services/cta-section";
 
 export const metadata: Metadata = {
@@ -19,10 +18,9 @@ export const metadata: Metadata = {
 
 export default function ServicesPage() {
   return (
-    <div id="top" className="bg-background">
-      <HeroSection />
+    <div className="bg-background">
+      <ServicesOverview />
       <WhySection />
-      <ServicesExplorer />
       <CtaSection />
     </div>
   );

@@ -1,4 +1,4 @@
-import { Photo } from "@/components/photos";
+import { Photo } from "@/components/site/photos";
 import { SceneCard } from "./scene-card";
 
 export function LifestyleSection() {

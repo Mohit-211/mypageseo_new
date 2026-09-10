@@ -4,8 +4,8 @@ import { useState, type ReactNode } from "react";
 import { usePathname } from "next/navigation";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
-import { Header } from "@/components/header";
-import { Footer } from "@/components/footer";
+import { Header } from "@/components/site/header";
+import { Footer } from "@/components/site/footer";
 
 export function AppShell({ children }: { children: ReactNode }) {
   const [queryClient] = useState(() => new QueryClient());

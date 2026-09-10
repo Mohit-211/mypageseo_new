@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { Photo } from "@/components/photos";
+import { Photo } from "@/components/site/photos";
 import { Reveal } from "@/components/reveal";
 
 export function AboutHero() {
