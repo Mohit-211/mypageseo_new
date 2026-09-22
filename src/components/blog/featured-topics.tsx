@@ -1,14 +1,16 @@
 "use client";
 
 import { ArrowRight } from "lucide-react";
-import { categories, topics } from "./blog-data";
+import { topics } from "./blog-data";
+import type { CategoryOption } from "./category-nav";
 
 interface FeaturedTopicsProps {
-  setCat: (value: string) => void;
+  categories: CategoryOption[];
+  setCatId: (id: string) => void;
   setQ: (value: string) => void;
 }
 
-export function FeaturedTopics({ setCat, setQ }: FeaturedTopicsProps) {
+export function FeaturedTopics({ categories, setCatId, setQ }: FeaturedTopicsProps) {
   return (
     <section className="py-20 md:py-24 bg-surface">
       <div className="container-page">
@@ -23,7 +25,8 @@ export function FeaturedTopics({ setCat, setQ }: FeaturedTopicsProps) {
             <button
               key={topic.t}
               onClick={() => {
-                setCat(categories.includes(topic.t) ? topic.t : "All");
+                const match = categories.find((c) => c.title === topic.t);
+                setCatId(match ? match.id : "all");
                 setQ(topic.t);
                 window.scrollTo({ top: 300, behavior: "smooth" });
               }}

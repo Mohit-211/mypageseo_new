@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import { cache } from "react";
 import { notFound } from "next/navigation";
-import { articles } from "@/components/blog/article/article-data";
+import { getBlogBySlugAPI } from "@/api/blog.api";
+import { mapApiBlogToArticle } from "@/components/blog/article/article-data";
 import { ReadingProgress } from "@/components/blog/article/reading-progress";
 import { ArticleHero } from "@/components/blog/article/article-hero";
 import { ArticleContent } from "@/components/blog/article/article-content";
@@ -8,9 +10,14 @@ import { AuthorBio } from "@/components/blog/article/author-bio";
 import { RelatedArticles } from "@/components/blog/article/related-articles";
 import { ArticleCTA } from "@/components/blog/article/article-cta";
 
-export function generateStaticParams() {
-  return Object.keys(articles).map((slug) => ({ slug }));
-}
+const getArticle = cache(async (slug: string) => {
+  try {
+    const res = await getBlogBySlugAPI(slug);
+    return res?.data ? mapApiBlogToArticle(res.data) : null;
+  } catch {
+    return null;
+  }
+});
 
 export async function generateMetadata({
   params,
@@ -18,7 +25,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const article = articles[slug];
+  const article = await getArticle(slug);
 
   if (!article) {
     return {
@@ -47,7 +54,7 @@ export default async function ArticlePage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const article = articles[slug];
+  const article = await getArticle(slug);
 
   if (!article) {
     notFound();

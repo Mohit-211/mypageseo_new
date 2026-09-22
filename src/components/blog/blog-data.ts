@@ -9,20 +9,8 @@ import {
   Sparkles,
   type LucideIcon,
 } from "lucide-react";
-
-export const categories = [
-  "All",
-  "Local SEO",
-  "Google Business Profile",
-  "Citations",
-  "Reviews & Reputation",
-  "Local Rankings",
-  "Marketing Strategy",
-  "Case Studies",
-  "Software Updates",
-  "Industry News",
-  "Guides",
-];
+import type { ApiBlog } from "@/api/blog.api";
+import type { ApiCategory } from "@/api/category.api";
 
 export type ArtKind =
   | "map"
@@ -46,28 +34,56 @@ export type Post = {
   art: ArtKind;
 };
 
-export const featured: Post = {
-  t: "The 2026 Local SEO Playbook: What's Working in Google Maps Right Now",
-  c: "Local SEO",
-  d: "A field-tested breakdown of the ranking signals, GBP tactics, and reporting habits that separate top-performing local businesses from the rest heading into 2026.",
-  date: "Jul 12, 2026",
-  read: "12 min read",
-  author: "Priya Ramesh",
-  initials: "PR",
-  art: "map",
-};
-
-export const posts: Post[] = [
-  { t: "The 2026 Google Business Profile Checklist", c: "Google Business Profile", d: "Every field, category, and post type that actually influences local rankings — with real examples.", date: "Jul 08, 2026", read: "8 min", author: "Marcus Chen", initials: "MC", art: "gbp" },
-  { t: "Geo-Grid Ranking vs. Average Rank: Why It Matters", c: "Local Rankings", d: "Why one number hides the truth about how nearby customers actually see your business on Google Maps.", date: "Jul 04, 2026", read: "6 min", author: "Priya Ramesh", initials: "PR", art: "chart" },
-  { t: "Review Velocity Is the Signal Most Owners Miss", c: "Reviews & Reputation", d: "The pace of reviews often outweighs volume. Here's how to build a program that keeps momentum.", date: "Jun 28, 2026", read: "7 min", author: "Elena Vasquez", initials: "EV", art: "reviews" },
-  { t: "Citation Cleanup: The Underrated Local Ranking Boost", c: "Citations", d: "A pragmatic approach to auditing directory listings without paying for every 'top 100 sites' service.", date: "Jun 22, 2026", read: "9 min", author: "David Park", initials: "DP", art: "citations" },
-  { t: "How a Multi-Location Dental Group Grew Calls 62%", c: "Case Studies", d: "The exact GBP, citation, and review workflow that lifted qualified calls across 14 locations in six months.", date: "Jun 18, 2026", read: "10 min", author: "Marcus Chen", initials: "MC", art: "growth" },
-  { t: "Local SEO for Home Services: A Practical Framework", c: "Marketing Strategy", d: "Service-area businesses have unique constraints. Here's a framework built for them, not for brick-and-mortar.", date: "Jun 12, 2026", read: "11 min", author: "Priya Ramesh", initials: "PR", art: "guide" },
-  { t: "What Google's Latest Local Update Actually Changed", c: "Industry News", d: "Cutting through the noise on the most recent local search algorithm update — with data from real accounts.", date: "Jun 05, 2026", read: "5 min", author: "Elena Vasquez", initials: "EV", art: "news" },
-  { t: "The Anatomy of a Perfect GBP Post", c: "Google Business Profile", d: "Length, media, offers, and CTAs — what makes GBP posts drive profile actions instead of ignored impressions.", date: "May 30, 2026", read: "6 min", author: "David Park", initials: "DP", art: "gbp" },
-  { t: "Reputation Recovery: Turning a 3.6 into a 4.7", c: "Reviews & Reputation", d: "A step-by-step reputation recovery plan for businesses climbing out of a rough patch of reviews.", date: "May 24, 2026", read: "9 min", author: "Elena Vasquez", initials: "EV", art: "reviews" },
+const ART_CYCLE: ArtKind[] = [
+  "map",
+  "gbp",
+  "chart",
+  "reviews",
+  "citations",
+  "growth",
+  "news",
+  "guide",
+  "software",
 ];
+
+function initialsFromName(name?: string): string {
+  if (!name) return "NA";
+  const initials = name
+    .trim()
+    .split(/\s+/)
+    .slice(0, 2)
+    .map((part) => part[0]?.toUpperCase() ?? "")
+    .join("");
+  return initials || "NA";
+}
+
+function formatDate(value?: string): string {
+  if (!value) return "";
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return value;
+  return date.toLocaleDateString("en-US", {
+    month: "short",
+    day: "2-digit",
+    year: "numeric",
+  });
+}
+
+export function mapApiBlogToPost(blog: ApiBlog, index = 0): Post {
+  return {
+    t: blog.title,
+    c: blog.category ?? "General",
+    d: blog.description ?? "",
+    date: formatDate(blog.created_at),
+    read: blog.read_time ?? "5 min read",
+    author: blog.author ?? "MyPageSEO Team",
+    initials: initialsFromName(blog.author),
+    art: ART_CYCLE[index % ART_CYCLE.length],
+  };
+}
+
+export function mapApiCategoriesToNames(apiCategories: ApiCategory[]): string[] {
+  return ["All", ...apiCategories.map((c) => c.title).filter(Boolean)];
+}
 
 export type Guide = {
   t: string;

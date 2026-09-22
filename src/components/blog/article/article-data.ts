@@ -1,3 +1,5 @@
+import type { ApiBlog } from "@/api/blog.api";
+
 export type CoverKind = "map" | "gbp" | "chart" | "reviews" | "citations";
 
 export type Article = {
@@ -11,28 +13,33 @@ export type Article = {
   cover: CoverKind;
 };
 
-export const articles: Record<string, Article> = {
-  "2026-local-seo-playbook": {
-    title: "The 2026 Local SEO Playbook: What's Working in Google Maps Right Now",
-    category: "Local SEO",
-    excerpt: "A field-tested breakdown of the ranking signals, GBP tactics, and reporting habits that separate top-performing local businesses from the rest.",
-    date: "July 12, 2026",
-    updated: "July 14, 2026",
-    read: "12 min read",
-    author: "MyPageSEO Editorial Team",
-    cover: "map",
-  },
-  "google-business-profile-checklist": {
-    title: "The 2026 Google Business Profile Checklist",
-    category: "Google Business Profile",
-    excerpt: "Every field, category, and post type that actually influences local rankings — with real examples.",
-    date: "July 8, 2026",
-    updated: "July 10, 2026",
-    read: "8 min read",
-    author: "MyPageSEO Editorial Team",
-    cover: "gbp",
-  },
-};
+const COVER_CYCLE: CoverKind[] = ["map", "gbp", "chart", "reviews", "citations"];
+
+function coverFromSlug(slug: string): CoverKind {
+  let hash = 0;
+  for (let i = 0; i < slug.length; i++) hash = (hash * 31 + slug.charCodeAt(i)) >>> 0;
+  return COVER_CYCLE[hash % COVER_CYCLE.length];
+}
+
+function formatDate(value?: string): string {
+  if (!value) return "";
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return value;
+  return date.toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });
+}
+
+export function mapApiBlogToArticle(blog: ApiBlog): Article {
+  return {
+    title: blog.title,
+    category: blog.category ?? "General",
+    excerpt: blog.description ?? "",
+    date: formatDate(blog.created_at),
+    updated: formatDate(blog.updated_at ?? blog.created_at),
+    read: blog.read_time ?? "5 min read",
+    author: blog.author ?? "MyPageSEO Editorial Team",
+    cover: coverFromSlug(blog.slug || blog.title),
+  };
+}
 
 export type RelatedArticle = {
   slug: string;

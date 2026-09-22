@@ -21,19 +21,24 @@ function CategoryChip({ label, active, onClick }: CategoryChipProps) {
   );
 }
 
-interface CategoryNavProps {
-  categories: string[];
-  cat: string;
-  setCat: (value: string) => void;
+export interface CategoryOption {
+  id: string;
+  title: string;
 }
 
-export function CategoryNav({ categories, cat, setCat }: CategoryNavProps) {
+interface CategoryNavProps {
+  categories: CategoryOption[];
+  activeId: string;
+  onSelect: (id: string) => void;
+}
+
+export function CategoryNav({ categories, activeId, onSelect }: CategoryNavProps) {
   return (
     <section className="py-6 border-b border-border sticky top-16 z-30 bg-background/85 backdrop-blur">
       <div className="container-page">
         <div className="flex gap-2 overflow-x-auto pb-1 -mx-1 px-1 scrollbar-none">
           {categories.map((c) => (
-            <CategoryChip key={c} label={c} active={cat === c} onClick={() => setCat(c)} />
+            <CategoryChip key={c.id} label={c.title} active={activeId === c.id} onClick={() => onSelect(c.id)} />
           ))}
         </div>
       </div>
