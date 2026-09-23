@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
 import { cache } from "react";
 import { notFound } from "next/navigation";
-import { getBlogBySlugAPI } from "@/api/blog.api";
-import { mapApiBlogToArticle } from "@/components/blog/article/article-data";
+import { getBlogBySlugAPI, getBlogsAPI } from "@/api/blog.api";
+import {
+  extractHeadings,
+  mapApiBlogToArticle,
+  mapApiBlogToRelated,
+} from "@/components/blog/article/article-data";
 import { ReadingProgress } from "@/components/blog/article/reading-progress";
 import { ArticleHero } from "@/components/blog/article/article-hero";
 import { ArticleContent } from "@/components/blog/article/article-content";
@@ -18,6 +22,19 @@ const getArticle = cache(async (slug: string) => {
     return null;
   }
 });
+
+async function getRelatedArticles(slug: string, categoryId: string) {
+  try {
+    const res = await getBlogsAPI({ limit: 4, category_id: categoryId || undefined });
+    const blogs = res?.data?.results ?? [];
+    return blogs
+      .filter((b) => b.slug !== slug)
+      .slice(0, 3)
+      .map(mapApiBlogToRelated);
+  } catch {
+    return [];
+  }
+}
 
 export async function generateMetadata({
   params,
@@ -60,13 +77,16 @@ export default async function ArticlePage({
     notFound();
   }
 
+  const sections = extractHeadings(article.content);
+  const relatedArticles = await getRelatedArticles(slug, article.categoryId);
+
   return (
     <div>
       <ReadingProgress />
       <ArticleHero article={article} />
-      <ArticleContent />
-      <AuthorBio />
-      <RelatedArticles />
+      <ArticleContent content={article.content} sections={sections}/>
+      {/* <AuthorBio author={article.author} position={article.author_position} /> */}
+      <RelatedArticles articles={relatedArticles} />
       <ArticleCTA />
     </div>
   );

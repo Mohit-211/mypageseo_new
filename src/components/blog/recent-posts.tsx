@@ -38,8 +38,11 @@ export function RecentPosts({ posts, totalCount, cat, onClearFilters }: RecentPo
           </div>
         ) : (
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {posts.map((p, i) => (
-              <PostCard key={p.t} post={p} index={i} />
+            {/* {posts.map((p, i) => (
+              <PostCard key={p.slug} post={p} index={i} />
+            ))} */}
+             {posts.map((p, i) => (
+              <PostCard key={p.slug} post={p} index={i} />
             ))}
           </div>
         )}

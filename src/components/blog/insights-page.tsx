@@ -36,7 +36,6 @@ export function InsightsPage() {
     search: debouncedQ || undefined,
     categoryId: catId === ALL_CATEGORY_ID ? undefined : catId,
   });
-
   const categoryOptions: CategoryOption[] = useMemo(
     () => [
       { id: ALL_CATEGORY_ID, title: "All" },
@@ -46,14 +45,24 @@ export function InsightsPage() {
   );
   const catLabel = categoryOptions.find((c) => c.id === catId)?.title ?? "All";
 
-  const posts = useMemo(() => apiPosts.map((p, i) => mapApiBlogToPost(p, i)), [apiPosts]);
+  const posts = useMemo(() => apiPosts.map((p) => mapApiBlogToPost(p)), [apiPosts]);
   const featured = posts[0];
+
+  const handleSearch = (value: string) => {
+    setQ(value);
+    if (value.trim()) setCatId(ALL_CATEGORY_ID);
+  };
+
+  const handleCategorySelect = (id: string) => {
+    setCatId(id);
+    setQ("");
+  };
 
   return (
     <div>
-      <BlogHero q={q} setQ={setQ} />
+      <BlogHero q={q} setQ={handleSearch} />
       {!categoriesLoading && (
-        <CategoryNav categories={categoryOptions} activeId={catId} onSelect={setCatId} />
+        <CategoryNav categories={categoryOptions} activeId={catId} onSelect={handleCategorySelect} />
       )}
 
       {postsLoading && (
@@ -76,6 +85,7 @@ export function InsightsPage() {
       )}
 
       {!postsLoading && !postsError && (
+        
         <>
           {featured && !q && <FeaturedPost post={featured} />}
 
@@ -93,7 +103,7 @@ export function InsightsPage() {
 
       <PopularGuides />
       <SoftwareUpdates />
-      <FeaturedTopics categories={categoryOptions} setCatId={setCatId} setQ={setQ} />
+      <FeaturedTopics categories={categoryOptions} setCatId={handleCategorySelect} setQ={setQ} />
       <NewsletterSignup />
       <BlogCTA />
     </div>

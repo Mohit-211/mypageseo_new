@@ -75,6 +75,7 @@ export function ArticleCover({ kind, className = "" }: ArticleCoverProps) {
               </g>
             </g>
           ))}
+          
         </svg>
       )}
       {kind === "citations" && (

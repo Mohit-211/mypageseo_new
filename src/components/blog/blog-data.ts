@@ -23,28 +23,17 @@ export type ArtKind =
   | "guide"
   | "software";
 
-export type Post = {
-  t: string;
-  c: string;
-  d: string;
+export interface Post {
+  slug: string;
+  image?: string;
+  title: string;
+  category: string;
+  description: string;
   date: string;
   read: string;
   author: string;
   initials: string;
-  art: ArtKind;
-};
-
-const ART_CYCLE: ArtKind[] = [
-  "map",
-  "gbp",
-  "chart",
-  "reviews",
-  "citations",
-  "growth",
-  "news",
-  "guide",
-  "software",
-];
+}
 
 function initialsFromName(name?: string): string {
   if (!name) return "NA";
@@ -68,16 +57,20 @@ function formatDate(value?: string): string {
   });
 }
 
-export function mapApiBlogToPost(blog: ApiBlog, index = 0): Post {
+
+
+export function mapApiBlogToPost(blog: ApiBlog): Post {
   return {
-    t: blog.title,
-    c: blog.category ?? "General",
-    d: blog.description ?? "",
-    date: formatDate(blog.created_at),
-    read: blog.read_time ?? "5 min read",
-    author: blog.author ?? "MyPageSEO Team",
+    slug: blog.slug,
+    title: blog.name,
+    
+     blog.categories?.[0]?.title ?? "",
+    description: blog.short_description ?? "",
+    date: formatDate(blog.date ?? blog.created_at),
+    read: "",
+    author: blog.author ?? "",
     initials: initialsFromName(blog.author),
-    art: ART_CYCLE[index % ART_CYCLE.length],
+    image: blog.main_image,
   };
 }
 

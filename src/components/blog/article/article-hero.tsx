@@ -8,83 +8,91 @@ interface ArticleHeroProps {
 }
 
 export function ArticleHero({ article }: ArticleHeroProps) {
+  console.log(article,"article")
+  const getInitials = (name: string) => {
+    return name
+      .split(" ")
+      .filter(Boolean)
+      .map((word) => word[0])
+      .join("")
+      .slice(0, 2)
+      .toUpperCase();
+  };
+
+  const base = process.env.NEXT_PUBLIC_IMAGE_URL ?? "";
+
+  const wordCount = article.excerpt?.split(/\s+/).filter(Boolean).length ?? 0;
+  const readMinutes = Math.max(1, Math.round(wordCount / 200) * 4);
+
   return (
-    <>
-      {/* hero: breadcrumbs + title, locked to viewport */}
-      <section className="relative flex h-[calc(100svh-4rem)] items-center overflow-hidden bg-hero">
+    <section className="relative overflow-hidden bg-hero">
+      <div aria-hidden className="absolute inset-0 bg-radial-soft opacity-70" />
+
+      <div className="container-page relative pt-10 md:pt-14">
+       
+
+       
+
+        {/* asymmetric row: excerpt/meta left, nothing right (breathing room) */}
+        
+
+        {/* image with overlapping author card */}
         <div
-          aria-hidden
-          className="absolute inset-0 bg-radial-soft opacity-70"
-        />
-        <div className="container-page relative">
-          <nav
-            aria-label="Breadcrumb"
-            className="flex flex-wrap items-center gap-1.5 text-xs text-muted-foreground"
-          >
-            <Link href="/" className="hover:text-primary">
-              Home
-            </Link>
-            <ChevronRight className="h-3 w-3" />
-            <Link href="/blog" className="hover:text-primary">
-              Insights
-            </Link>
-            <ChevronRight className="h-3 w-3" />
-            <span className="text-primary/80">{article.category}</span>
-            <ChevronRight className="h-3 w-3" />
-            <span className="max-w-[180px] truncate text-foreground/70 md:max-w-none">
-              {article.title}
+          className="relative mt-12 animate-fade-up"
+          style={{ width: "70%", margin: "auto" }}
+        >
+          <div className="group relative  overflow-hidden rounded-[2rem] shadow-lift ring-soft">
+            {article.coverImage &&
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                src={`${base}${article.coverImage}`}
+                alt={article.title}
+                className="h-full w-full transition-transform duration-700 ease-out group-hover:scale-[1.02]"
+              />
+            // ) : (
+            //   <ArticleCover kind={article.cover} className="h-full w-full" />
+            // )
+            }
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/80 via-background/0 to-transparent"
+            />
+          </div>
+
+          {/* author card, floating over bottom-left of the image */}
+          <div className="absolute bottom-0 left-0 flex items-center gap-3 rounded-2xl bg-background/90 px-4 py-3 shadow-lift ring-soft backdrop-blur-md md:left-6 md:-bottom-6">
+            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-primary font-semibold text-primary-foreground">
+              {getInitials(article.author)}
+            </div>
+            <div>
+              <div className="text-sm font-medium text-foreground">
+                {article.author}
+              </div>
+              <div className="text-xs text-muted-foreground">
+                {article.author_position}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="mt-10 grid gap-6 md:grid-cols-[1fr_auto] md:items-end animate-fade-up"
+          style={{ animationDelay: "80ms" }}
+        >
+          <p className="max-w-2xl text-lg text-muted-foreground leading-relaxed">
+            {/* {article.excerpt} */}
+          </p>
+
+          <div className="flex shrink-0 items-center gap-4 text-xs text-muted-foreground">
+            <span className="flex items-center gap-1.5">
+              <Calendar className="h-3.5 w-3.5" /> {article.date}
             </span>
-          </nav>
-
-          <div className="mt-6 max-w-4xl">
-            <div className="mb-5 flex flex-wrap items-center gap-3">
-              <span className="inline-flex items-center rounded-full bg-accent/10 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wider text-accent">
-                {article.category}
-              </span>
-              <span className="flex items-center gap-1 text-xs text-muted-foreground">
-                <Calendar className="h-3 w-3" /> {article.date}
-              </span>
-              <span className="flex items-center gap-1 text-xs text-muted-foreground">
-                <Clock className="h-3 w-3" /> {article.read}
-              </span>
-              <span className="text-xs text-muted-foreground">
-                Updated {article.updated}
-              </span>
-            </div>
-            <h1 className="text-4xl md:text-6xl font-display leading-[1.05] text-foreground animate-fade-up">
-              {article.title}
-            </h1>
-            <p
-              className="mt-5 text-lg text-muted-foreground leading-relaxed max-w-3xl animate-fade-up"
-              style={{ animationDelay: "80ms" }}
-            >
-              {article.excerpt}
-            </p>
-            <div className="mt-8 flex items-center gap-3">
-              <div className="flex h-11 w-11 items-center justify-center rounded-full bg-primary font-semibold text-primary-foreground">
-                MP
-              </div>
-              <div>
-                <div className="text-sm font-medium text-foreground">
-                  {article.author}
-                </div>
-                <div className="text-xs text-muted-foreground">
-                  Local Search Specialists · MyPageSEO
-                </div>
-              </div>
-            </div>
+           
           </div>
         </div>
-      </section>
 
-      {/* cover image: normal content flow, not part of the hero */}
-      <section className="pt-12 pb-10">
-        <div className="container-page max-w-6xl">
-          <div className="aspect-[16/8] overflow-hidden rounded-3xl shadow-lift ring-soft">
-            <ArticleCover kind={article.cover} className="h-full w-full" />
-          </div>
-        </div>
-      </section>
-    </>
+        {/* spacer to clear the floating card on desktop */}
+        <div className="h-6 md:h-10" aria-hidden />
+      </div>
+    </section>
   );
 }

@@ -7,17 +7,28 @@ export interface BlogQueryParams {
   limit?: number;
   sortBy?: SortOrder;
   search?: string;
+  category_id?: string;
+}
+
+export interface ApiBlogCategory {
+  _id: string;
+  title: string;
+  slug?: string;
 }
 
 export interface ApiBlog {
+  name: string;
+  categories: ApiBlogCategory[];
+  short_description: string;
+  date: string | undefined;
+  main_image: string | undefined;
+  author_position: string;
   _id: string;
-  title: string;
   slug: string;
-  description?: string;
   content?: string;
-  category?: string;
+  category?: string | ApiBlogCategory;
+  category_id?: string;
   author?: string;
-  cover_image?: string;
   read_time?: string;
   is_active?: boolean;
   created_at?: string;
@@ -45,21 +56,16 @@ export interface BlogDetailResponse {
 }
 
 export const getBlogsAPI = async (
-  { page = 1, limit = 100, sortBy = "ASC", search }: BlogQueryParams = {}
+  { page = 1, limit = 100, sortBy = "ASC", search, category_id }: BlogQueryParams = {}
 ): Promise<BlogListResponse> => {
   const { data } = await api.get("/blog/get", {
-    params: { page, limit, sortBy, ...(search ? { search } : {}) },
-  });
-
-  return data;
-};
-
-export const getBlogsByCategoryAPI = async (
-  categoryId: string,
-  { page = 1, limit = 100, sortBy = "ASC", search }: BlogQueryParams = {}
-): Promise<BlogListResponse> => {
-  const { data } = await api.get(`/blog-category/${categoryId}`, {
-    params: { page, limit, sortBy, ...(search ? { search } : {}) },
+    params: {
+      page,
+      limit,
+      sortBy,
+      ...(search ? { search } : {}),
+      ...(category_id ? { category_id } : {}),
+    },
   });
 
   return data;

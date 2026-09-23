@@ -2,19 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { ChevronDown, List } from "lucide-react";
-
-export type Section = { id: string; title: string };
-
-export const sections: Section[] = [
-  { id: "intro", title: "Why local search changed again" },
-  { id: "signals", title: "The signals that matter in 2026" },
-  { id: "gbp", title: "Google Business Profile essentials" },
-  { id: "reviews", title: "Reviews, velocity, and sentiment" },
-  { id: "citations", title: "Citations and NAP consistency" },
-  { id: "rankings", title: "Measuring what actually moves" },
-  { id: "workflow", title: "A weekly Local SEO workflow" },
-  { id: "conclusion", title: "The takeaway" },
-];
+import type { Section } from "./article-data";
 
 export function useActiveSection(ids: string[]) {
   const [active, setActive] = useState(ids[0]);
@@ -39,10 +27,11 @@ export function useActiveSection(ids: string[]) {
 }
 
 interface TableOfContentsProps {
+  sections: Section[];
   active: string;
 }
 
-export function TableOfContents({ active }: TableOfContentsProps) {
+export function TableOfContents({ sections, active }: TableOfContentsProps) {
   return (
     <nav className="space-y-1">
       <div className="text-[11px] font-bold text-accent uppercase tracking-wider mb-3 flex items-center gap-1.5">
@@ -66,10 +55,11 @@ export function TableOfContents({ active }: TableOfContentsProps) {
 }
 
 interface MobileTocProps {
+  sections: Section[];
   active: string;
 }
 
-export function MobileToc({ active }: MobileTocProps) {
+export function MobileToc({ sections, active }: MobileTocProps) {
   const [open, setOpen] = useState(false);
   const current = sections.find((s) => s.id === active) ?? sections[0];
   return (
@@ -84,7 +74,7 @@ export function MobileToc({ active }: MobileTocProps) {
       </button>
       {open && (
         <div className="px-4 pb-4 border-t border-border pt-3">
-          <TableOfContents active={active} />
+          <TableOfContents sections={sections} active={active} />
         </div>
       )}
     </div>

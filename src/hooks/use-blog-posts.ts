@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import { getBlogsAPI, getBlogsByCategoryAPI } from "@/api/blog.api";
+import { getBlogsAPI } from "@/api/blog.api";
 import type { ApiBlog } from "@/api/blog.api";
 
 interface UseBlogPostsParams {
@@ -9,9 +9,6 @@ interface UseBlogPostsParams {
   categoryId?: string;
 }
 
-// The `/blog-category/:id` response shape hasn't been confirmed against a real
-// payload yet, so this accepts either a paginated `results` list or a plain
-// `blogs` array until it's verified.
 function extractPosts(data: any): ApiBlog[] {
   if (Array.isArray(data?.results)) return data.results;
   if (Array.isArray(data?.blogs)) return data.blogs;
@@ -32,12 +29,15 @@ export function useBlogPosts({ search, categoryId }: UseBlogPostsParams = {}) {
     setLoading(true);
     setError(null);
 
-    const params = { page: 1, limit: 100, sortBy: "ASC" as const, search };
-    const request = categoryId
-      ? getBlogsByCategoryAPI(categoryId, params)
-      : getBlogsAPI(params);
+    const params = {
+      page: 1,
+      limit: 100,
+      sortBy: "ASC" as const,
+      search,
+      category_id: categoryId,
+    };
 
-    request
+    getBlogsAPI(params)
       .then((res) => {
         if (requestId !== requestIdRef.current) return;
 
