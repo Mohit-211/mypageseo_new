@@ -87,7 +87,7 @@ export default async function ArticlePage({
       <ArticleContent content={article.content} sections={sections}/>
       {/* <AuthorBio author={article.author} position={article.author_position} /> */}
       <RelatedArticles articles={relatedArticles} />
-      <ArticleCTA />
+      {/* <ArticleCTA /> */}
     </div>
   );
 }

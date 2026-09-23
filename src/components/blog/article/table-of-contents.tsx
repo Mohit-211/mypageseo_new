@@ -63,7 +63,7 @@ export function MobileToc({ sections, active }: MobileTocProps) {
   const [open, setOpen] = useState(false);
   const current = sections.find((s) => s.id === active) ?? sections[0];
   return (
-    <div className="lg:hidden not-prose my-6 rounded-2xl bg-card ring-soft overflow-hidden">
+    <div className="not-prose mb-8 rounded-2xl bg-card ring-soft overflow-hidden">
       <button onClick={() => setOpen((v) => !v)} className="w-full flex items-center justify-between px-4 py-3 text-left">
         <span className="flex items-center gap-2 text-sm">
           <List className="w-4 h-4 text-accent" />

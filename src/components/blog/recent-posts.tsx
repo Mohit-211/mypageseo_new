@@ -12,6 +12,7 @@ interface RecentPostsProps {
 }
 
 export function RecentPosts({ posts, totalCount, cat, onClearFilters }: RecentPostsProps) {
+  console.log(posts,"posts===")
   return (
     <section className="py-16 md:py-20">
       <div className="container-page">

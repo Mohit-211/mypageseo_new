@@ -27,7 +27,7 @@ export interface Post {
   slug: string;
   image?: string;
   title: string;
-  category: string;
+  categories: string[];
   description: string;
   date: string;
   read: string;
@@ -63,7 +63,7 @@ export function mapApiBlogToPost(blog: ApiBlog): Post {
   return {
     slug: blog.slug,
     title: blog.name,
-    category: blog.categories?.[0]?.title ?? "",
+    categories: (blog.categories ?? []).map((c) => c.title).filter(Boolean),
     description: blog.short_description ?? "",
     date: formatDate(blog.date ?? blog.created_at),
     read: "",

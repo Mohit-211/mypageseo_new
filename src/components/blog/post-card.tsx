@@ -14,11 +14,12 @@ interface PostCardProps {
 export function PostCard({ post, index }: PostCardProps) {
   const { ref, shown } = useReveal<HTMLAnchorElement>();
   const base = process.env.NEXT_PUBLIC_IMAGE_URL ?? "";
+  console.log(post,"=")
   return (
     <Link
       href={`/blog/${post.slug}`}
       ref={ref}
-      className={`group block rounded-2xl bg-card ring-soft overflow-hidden transition-all duration-500 hover:shadow-lift hover:-translate-y-1 ${
+      className={`group flex flex-col h-full rounded-2xl bg-card ring-soft overflow-hidden transition-all duration-500 hover:shadow-lift hover:-translate-y-1 ${
         shown ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
       }`}
       style={{ transitionDelay: `${(index % 3) * 70}ms` }}
@@ -33,16 +34,18 @@ export function PostCard({ post, index }: PostCardProps) {
           />
         )}
       </div>
-      <div className="p-6">
-        <div className="flex items-center gap-3 mb-3">
-          <CategoryBadge label={post.category} />
+      <div className="p-6 flex flex-col flex-1">
+        <div className="flex flex-wrap items-center gap-2 mb-3">
+          {post.categories.map((c) => (
+            <CategoryBadge key={c} label={c} />
+          ))}
         
         </div>
-        <h3 className="font-display text-xl leading-snug text-foreground group-hover:text-primary transition-colors">
+        <h3 className="font-display text-xl leading-snug text-foreground group-hover:text-primary transition-colors line-clamp-1">
           {post.title}
         </h3>
         <p className="mt-2 text-sm text-muted-foreground leading-relaxed line-clamp-2">{post.description}</p>
-        <div className="mt-5 flex items-center justify-between">
+        <div className="mt-auto pt-5 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <AuthorAvatar initials={post.initials} />
             <div>

@@ -57,7 +57,7 @@ export function InsightsPage() {
     setCatId(id);
     setQ("");
   };
-
+console.log(posts,'posts')
   return (
     <div>
       <BlogHero q={q} setQ={handleSearch} />
@@ -105,7 +105,7 @@ export function InsightsPage() {
       <SoftwareUpdates />
       <FeaturedTopics categories={categoryOptions} setCatId={handleCategorySelect} setQ={setQ} />
       <NewsletterSignup />
-      <BlogCTA />
+      {/* <BlogCTA /> */}
     </div>
   );
 }

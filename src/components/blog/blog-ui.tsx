@@ -7,6 +7,7 @@ export function AuthorAvatar({ initials }: { initials: string }) {
 }
 
 export function CategoryBadge({ label }: { label: string }) {
+  console.log(label,"=====>")
   return (
     <span className="inline-flex items-center px-2.5 py-1 rounded-full bg-accent/10 text-accent text-[11px] font-semibold uppercase tracking-wider">
       {label}
