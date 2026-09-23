@@ -63,8 +63,7 @@ export function mapApiBlogToPost(blog: ApiBlog): Post {
   return {
     slug: blog.slug,
     title: blog.name,
-    
-     blog.categories?.[0]?.title ?? "",
+    category: blog.categories?.[0]?.title ?? "",
     description: blog.short_description ?? "",
     date: formatDate(blog.date ?? blog.created_at),
     read: "",
