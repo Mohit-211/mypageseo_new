@@ -10,15 +10,17 @@ export function CheckoutHeader() {
       <div className="container-page flex h-16 items-center justify-between">
         <Link
           href="/"
-          className="flex h-16 items-center shrink-0 transition-transform hover:scale-105"
+          className="flex h-16 items-center shrink-0 transition-opacity hover:opacity-80"
         >
           <Image
             src="/logo.png"
             alt="MyPageSEO"
-            width={64}
+            width={78}
             height={64}
+            sizes="78px"
+            quality={100}
             priority
-            className="block h-16 w-16 object-contain"
+            className="block h-16 w-auto"
           />
         </Link>
 

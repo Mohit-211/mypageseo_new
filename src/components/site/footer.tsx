@@ -53,8 +53,10 @@ export function Footer() {
               <Image
                 src="/logo.png"
                 alt="MyPageSEO logo"
-                width={200}
-                height={50}
+                width={88}
+                height={72}
+                sizes="88px"
+                quality={100}
                 className="h-18 w-auto"
               />
             </Link>

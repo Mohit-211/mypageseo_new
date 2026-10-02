@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 import { COUNTRY_NAMES } from "./lib/countries";
 
-export function middleware(req: NextRequest) {
+export function proxy(req: NextRequest) {
   const countryCode = req.headers.get("cf-ipcountry") || "US";
 
   const country = COUNTRY_NAMES[countryCode] || "UNITED STATES";
