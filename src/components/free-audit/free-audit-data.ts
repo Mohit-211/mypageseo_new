@@ -38,6 +38,88 @@ export function rankText(rank: number | null, status: CellStatus): string {
   return String(rank);
 }
 
+// ---- Area figures (counted from the grid's buckets, so they work for the preview too) ----
+
+export interface AreaCounts {
+  /** Points with an answer (failed points are left out). */
+  usable: number;
+  top3: number;
+  top10: number;
+  /** Rank 11 or worse, or not in the top 30. */
+  hardToFind: number;
+  notFound: number;
+}
+
+export function areaCounts(buckets: Bucket[]): AreaCounts {
+  const n = (...ids: Bucket[]) => buckets.filter((b) => ids.includes(b)).length;
+  return {
+    usable: buckets.length - n("error"),
+    top3: n("pack"),
+    top10: n("pack", "visible"),
+    hardToFind: n("low", "invisible", "not_found"),
+    notFound: n("not_found"),
+  };
+}
+
+export const BUCKET_MEANING: Record<Bucket, string> = {
+  pack: "in the top 3 (the Map Pack)",
+  visible: "ranked 4 to 10",
+  low: "ranked 11 to 20",
+  invisible: "ranked 21 to 30",
+  not_found: "not in the top 30",
+  error: "no answer from Google",
+};
+
+/** "1.7 km (1.0 mi) north-west", from the grid step to the centre. */
+export function placeFromCentre(row: number, col: number, size: number, spacingKm: number): string {
+  const mid = Math.floor(size / 2);
+  const north = (mid - row) * spacingKm;
+  const east = (col - mid) * spacingKm;
+  const km = Math.hypot(north, east);
+  if (km < 0.01) return "At the centre";
+  const ns = north > 0.01 ? "north" : north < -0.01 ? "south" : "";
+  const ew = east > 0.01 ? "east" : east < -0.01 ? "west" : "";
+  return `${km.toFixed(1)} km (${(km * 0.621).toFixed(1)} mi) ${[ns, ew].filter(Boolean).join("-")}`;
+}
+
+// ---- Map (Google Static Maps: Places-derived data shown on a map must be on a Google map) ----
+
+export const GOOGLE_MAPS_KEY = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || "";
+const MAP_PX = 640;
+const metresPerPx = (lat: number, zoom: number) => (156543.03392 * Math.cos((lat * Math.PI) / 180)) / 2 ** zoom;
+
+/** The closest zoom that still shows the whole grid plus a margin. */
+export function mapZoom(lat: number, radiusKm: number): number {
+  const span = radiusKm * 2 * 1000 * 1.25;
+  let zoom = 15;
+  while (zoom > 8 && MAP_PX * metresPerPx(lat, zoom) < span) zoom--;
+  return zoom;
+}
+
+/** The grid step as a share of the map image's width (for placing the pins). */
+export const stepShare = (lat: number, zoom: number, spacingKm: number) => (spacingKm * 1000) / (MAP_PX * metresPerPx(lat, zoom));
+
+const MAP_STYLES = [
+  "saturation:-75|lightness:20",
+  "feature:poi|visibility:off",
+  "feature:transit|visibility:off",
+  "feature:road|element:labels.icon|visibility:off",
+  "feature:water|color:0xc7dbe2",
+];
+
+export function staticMapUrl(lat: number, lng: number, zoom: number): string | null {
+  if (!GOOGLE_MAPS_KEY) return null;
+  const params = new URLSearchParams({
+    center: `${lat.toFixed(6)},${lng.toFixed(6)}`,
+    zoom: String(zoom),
+    size: `${MAP_PX}x${MAP_PX}`,
+    scale: "2",
+    key: GOOGLE_MAPS_KEY,
+  });
+  for (const st of MAP_STYLES) params.append("style", st);
+  return `https://maps.googleapis.com/maps/api/staticmap?${params}`;
+}
+
 export const percent = (v: number | null) => (v === null ? "–" : `${Math.round(v * 100)}%`);
 
 // ---- Saved audit (sessionStorage only: id + access token, nothing about the visitor) ----

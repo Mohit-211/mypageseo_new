@@ -4,7 +4,8 @@ import { useCallback, useRef, useState } from "react";
 import type { ReactNode } from "react";
 import Link from "next/link";
 import Turnstile, { type BoundTurnstileObject } from "react-turnstile";
-import { AlertCircle, ArrowRight, Loader2, RotateCcw } from "lucide-react";
+import { Popover } from "@base-ui/react/popover";
+import { AlertCircle, ArrowRight, Info, Loader2, RotateCcw } from "lucide-react";
 import { TURNSTILE_SITE_KEY, type FriendlyError } from "./free-audit-data";
 
 /** One Turnstile widget per form: a token works once, so reset after every request. */
@@ -204,5 +205,28 @@ export function FormTerms() {
       </Link>
       .
     </p>
+  );
+}
+
+/** A small "i" that explains a term. Opens on hover (desktop) and on tap (touch), unlike a plain tooltip. */
+export function InfoTip({ label, children, className = "" }: { label: string; children: ReactNode; className?: string }) {
+  return (
+    <Popover.Root>
+      <Popover.Trigger
+        openOnHover
+        delay={100}
+        aria-label={`What is “${label}”?`}
+        className={`inline-flex h-4 w-4 shrink-0 cursor-help items-center justify-center rounded-full text-muted-foreground/70 align-middle transition-colors hover:text-primary focus-visible:outline-2 focus-visible:outline-primary ${className}`}
+      >
+        <Info className="h-3.5 w-3.5" />
+      </Popover.Trigger>
+      <Popover.Portal>
+        <Popover.Positioner side="top" sideOffset={8} className="z-50">
+          <Popover.Popup className="max-w-[260px] rounded-xl bg-foreground px-3.5 py-2.5 text-xs leading-relaxed text-background shadow-lift outline-none">
+            {children}
+          </Popover.Popup>
+        </Popover.Positioner>
+      </Popover.Portal>
+    </Popover.Root>
   );
 }

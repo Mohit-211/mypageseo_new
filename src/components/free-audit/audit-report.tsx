@@ -11,6 +11,7 @@ import {
   Globe,
   Loader2,
   Lock,
+  Medal,
   MapPin,
   Phone,
   Star,
@@ -22,12 +23,11 @@ import {
   type CheckItem,
   type Competitor,
   type PublicFacts,
-  type RankedBusiness,
   type Warning,
 } from "@/api/free-audit.api";
-import { GoogleAttribution } from "./audit-ui";
-import { Heatmap, ScoreBadge, SummaryStats } from "./audit-results";
-import { CONTACT_URL, friendlyError } from "./free-audit-data";
+import { GoogleAttribution, InfoTip } from "./audit-ui";
+import { AreaInsight, RankMap, SCORE_TIP, ScoreBadge, SummaryStats, toPins } from "./audit-results";
+import { CONTACT_URL, areaCounts, friendlyError, type AreaCounts } from "./free-audit-data";
 
 // ---- Shared ----
 
@@ -110,6 +110,7 @@ export function AuditProgress({ title, detail }: { title: string; detail: string
   );
 }
 
+
 // ---- Preview (locked) ----
 
 const PLACEHOLDER_ROWS = ["Placeholder Business One", "Placeholder Business Two", "Placeholder Business Three", "Placeholder Business Four"];
@@ -117,7 +118,7 @@ const PLACEHOLDER_ROWS = ["Placeholder Business One", "Placeholder Business Two"
 /** A blurred static placeholder: the API doesn't send the locked data, and we don't fake it. */
 function LockedTeaser({ title, hint }: { title: string; hint: string }) {
   return (
-    <div className="relative overflow-hidden rounded-2xl bg-card p-5 ring-soft shadow-card">
+    <div className="relative overflow-hidden rounded-2xl bg-card p-5 shadow-card ring-soft">
       <p className="text-sm font-semibold text-foreground">{title}</p>
       <div aria-hidden className="mt-3 select-none space-y-2.5 blur-[5px]">
         {PLACEHOLDER_ROWS.map((name, i) => (
@@ -128,10 +129,7 @@ function LockedTeaser({ title, hint }: { title: string; hint: string }) {
           </div>
         ))}
       </div>
-      <a
-        href="#unlock-heading"
-        className="absolute inset-0 top-10 flex flex-col items-center justify-center gap-1 bg-card/40 text-center"
-      >
+      <a href="#unlock-heading" className="absolute inset-0 top-10 flex flex-col items-center justify-center gap-1 bg-card/40 text-center">
         <span className="inline-flex items-center gap-1.5 rounded-full bg-primary px-3 py-1.5 text-xs font-medium text-primary-foreground">
           <Lock className="h-3.5 w-3.5" /> Unlock free below
         </span>
@@ -144,29 +142,39 @@ function LockedTeaser({ title, hint }: { title: string; hint: string }) {
 export function PreviewReport({ view }: { view: AuditView }) {
   const preview = view.preview;
   if (!preview) return null;
+  const counts = areaCounts(preview.cells.map((c) => c.bucket));
+  const ahead = preview.businesses_ahead;
   return (
     <div className="space-y-6">
-      <SummaryStats summary={preview.summary} centerSource={view.center.source} />
-      <div className="grid gap-6 lg:grid-cols-[1.2fr_1fr]">
-        <div className="rounded-3xl bg-card p-6 shadow-card ring-soft md:p-8">
-          <div className="mb-5 flex items-center justify-between gap-3">
+      <AreaInsight counts={counts} keyword={view.keyword} />
+      <SummaryStats summary={preview.summary} counts={counts} />
+      <div className="grid gap-6 lg:grid-cols-[1.35fr_1fr]">
+        <div className="min-w-0 rounded-3xl bg-card p-5 shadow-card ring-soft md:p-7">
+          <div className="mb-4 flex items-center justify-between gap-3">
             <h3 className="text-lg font-semibold text-foreground">Where you show up on Google Maps</h3>
-            <span className="inline-flex items-center gap-1 rounded-full bg-surface-muted px-2.5 py-1 text-[11px] font-medium text-muted-foreground">
+            <span className="inline-flex shrink-0 items-center gap-1 rounded-full bg-surface-muted px-2.5 py-1 text-[11px] font-medium text-muted-foreground">
               <Lock className="h-3 w-3" /> Ranks locked
             </span>
           </div>
-          <Heatmap cells={preview.cells} size={view.grid.size} spacingKm={view.grid.spacing_km} centerLabel={view.center.label ?? "Centre"} />
+          <RankMap view={view} cells={preview.cells} />
         </div>
-        <div className="space-y-4">
+        <div className="min-w-0 space-y-4">
           {preview.score && (
-            <div className="rounded-2xl bg-card p-5 ring-soft shadow-card">
+            <div className="rounded-2xl bg-card p-5 shadow-card ring-soft">
               <ScoreBadge score={preview.score} />
-              <p className="mt-3 text-xs text-muted-foreground">
-                Unlock the checklist to see what&apos;s holding your score back.
-              </p>
+              <p className="mt-3 text-xs text-muted-foreground">Unlock the checklist to see what&apos;s holding your score back.</p>
             </div>
           )}
-          <LockedTeaser title="Who ranks higher" hint="Every business above you for this search" />
+          <LockedTeaser
+            title={
+              ahead === 0
+                ? "Who's closest behind you"
+                : ahead
+                  ? `${ahead} ${ahead === 1 ? "business outranks" : "businesses outrank"} you in your area`
+                  : "Who outranks you in your area"
+            }
+            hint={ahead === 0 ? "See how you rank against your area" : "See who they are and where they beat you"}
+          />
           <LockedTeaser title="How you compare with the top 3" hint="Their scores, reviews and profiles next to yours" />
         </div>
       </div>
@@ -177,22 +185,22 @@ export function PreviewReport({ view }: { view: AuditView }) {
 // ---- Full report ----
 
 const WARNING_TEXT: Record<Warning, string> = {
-  some_points_failed: "Google didn't answer for some points on the map. Those squares are grey.",
+  some_points_failed: "Google didn't answer for some spots on the map. Those dots are grey.",
   names_unavailable: "We couldn't load the list of businesses ranking above you this time.",
   some_competitors_unavailable: "We couldn't load the details for some of the top competitors.",
 };
 
 const CHECK_ICON = {
-  good: <CheckCircle2 className="h-5 w-5 text-emerald-600" aria-label="Good" />,
-  partial: <CircleDashed className="h-5 w-5 text-amber-600" aria-label="Could be better" />,
-  missing: <XCircle className="h-5 w-5 text-red-600" aria-label="Missing" />,
+  good: <CheckCircle2 className="h-5 w-5 shrink-0 text-emerald-600" aria-label="Good" />,
+  partial: <CircleDashed className="h-5 w-5 shrink-0 text-amber-600" aria-label="Could be better" />,
+  missing: <XCircle className="h-5 w-5 shrink-0 text-red-600" aria-label="Missing" />,
 };
 
 function Checklist({ items }: { items: CheckItem[] }) {
   return (
-    <ul className="divide-y divide-border">
+    <ul className="grid gap-x-8 sm:grid-cols-2">
       {items.map((item) => (
-        <li key={item.id} className="flex items-center gap-3 py-3">
+        <li key={item.id} className="flex items-center gap-3 border-b border-border py-3">
           {CHECK_ICON[item.state]}
           <span className="flex-1 text-sm font-medium text-foreground">{item.label}</span>
           <span className="text-right text-sm text-muted-foreground">{item.detail}</span>
@@ -202,33 +210,68 @@ function Checklist({ items }: { items: CheckItem[] }) {
   );
 }
 
-function HigherList({ higher, attribution }: { higher: RankedBusiness[] | null; attribution: string }) {
-  if (higher === null) {
-    return <p className="text-sm text-muted-foreground">We couldn&apos;t load this list this time.</p>;
-  }
-  if (higher.length === 0) {
+const fmtAvg = (v: number | null | undefined) => (v == null ? "–" : v > 30 ? "30+" : v.toFixed(1));
+const fmtPct = (v: number | null | undefined) => (v == null ? "–" : `${Math.round(v * 100)}%`);
+
+/**
+ * Area basis (proposed backend): businesses ranked by their average over the whole grid.
+ * Centre basis (today): the list at the centre point only — often empty, since a business
+ * usually ranks #1 at its own address, so we say what that means instead of "nobody".
+ */
+function HigherList({ view, counts }: { view: AuditView; counts: AreaCounts }) {
+  const result = view.result!;
+  const higher = result.higher;
+  const area = result.basis === "area";
+
+  if (higher === null) return <p className="text-sm text-muted-foreground">We couldn&apos;t load this list this time.</p>;
+
+  // On the area basis the client's own row comes last, so "nobody ahead" is a list of just that row.
+  const ahead = higher.filter((r) => !r.is_self);
+  if (ahead.length === 0) {
+    const missing = counts.usable - counts.top3;
     return (
-      <p className="inline-flex items-center gap-2 text-sm font-medium text-emerald-700">
-        <CheckCircle2 className="h-4 w-4" /> Nobody — you&apos;re #1 here.
-      </p>
+      <div className="space-y-3 text-sm">
+        <p className="inline-flex items-center gap-2 font-medium text-emerald-700">
+          <Medal className="h-4 w-4" /> {area ? "Nobody — you lead your area." : "You're #1 right at your own address."}
+        </p>
+        {!area && missing > 0 && (
+          <p className="text-muted-foreground">
+            That&apos;s where Google is most sure about you. Move a little away and it changes: in{" "}
+            <span className="font-semibold text-foreground">{missing} of {counts.usable}</span>{" "}spots around you, other
+            businesses take the top 3. Tap the dots on the map to see where.
+          </p>
+        )}
+      </div>
     );
   }
+
   return (
     <>
-      <ol className="max-h-[28rem] divide-y divide-border overflow-y-auto pr-1">
+      <ol className="max-h-[30rem] divide-y divide-border overflow-y-auto pr-1">
         {higher.map((r) => (
-          <li key={`${r.rank}-${r.name}`} className={`flex items-start gap-3 py-2.5 ${r.is_self ? "font-semibold" : ""}`}>
+          <li key={`${r.rank ?? "self"}-${r.name}`} className={`flex items-start gap-3 py-2.5 ${r.is_self ? "rounded-lg bg-primary-soft px-2" : ""}`}>
             <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-surface-muted text-xs font-semibold text-foreground">
-              {r.rank}
+              {r.rank ?? "30+"}
             </span>
-            <span className="min-w-0">
-              <span className="block text-sm text-foreground">{r.name ?? "Unnamed business"}</span>
+            <span className="min-w-0 flex-1">
+              <span className="block text-sm font-medium text-foreground">{r.is_self ? `${r.name ?? "You"} (you)` : r.name ?? "Unnamed business"}</span>
               {r.address && <span className="block truncate text-xs text-muted-foreground">{r.address}</span>}
             </span>
+            {area && (
+              <span className="shrink-0 text-right text-xs text-muted-foreground">
+                <span className="block font-semibold text-foreground">avg {fmtAvg(r.avg_rank)}</span>
+                top 3 in {fmtPct(r.top3_rate)}
+              </span>
+            )}
           </li>
         ))}
       </ol>
-      <GoogleAttribution text={attribution} className="mt-2" />
+      {area && result.area && result.area.ahead > ahead.length && (
+        <p className="mt-2 text-xs text-muted-foreground">
+          The top {ahead.length} of {result.area.ahead} businesses that outrank you across the area.
+        </p>
+      )}
+      <GoogleAttribution text={view.attribution.text} className="mt-2" />
     </>
   );
 }
@@ -238,43 +281,63 @@ const yesNo = (v: boolean | null | undefined) =>
 
 const photos = (n: number | null | undefined) => (n == null ? "–" : n >= 10 ? "10+" : String(n));
 
+type Column = {
+  key: string;
+  label: string;
+  self: boolean;
+  score: Competitor["score"];
+  facts: PublicFacts | null;
+  avg_rank?: number | null;
+  top3_rate?: number | null;
+};
+
+type Row = { label: string; tip: string; render: (c: Column) => React.ReactNode };
+
+function compareRows(area: boolean): Row[] {
+  const rows: Row[] = [
+    { label: "Quick score", tip: SCORE_TIP, render: (c) => (c.score ? <ScoreBadge score={c.score} size="sm" /> : "–") },
+    { label: "Rating", tip: "Google star rating, with the number of reviews in brackets. Both weigh heavily in local rankings.", render: (c) => (c.facts ? <Rating rating={c.facts.rating} count={c.facts.user_rating_count} /> : "–") },
+    { label: "Website", tip: "Whether the Google profile links to a website.", render: (c) => (c.facts ? yesNo(Boolean(c.facts.website)) : "–") },
+    { label: "Opening hours", tip: "Whether opening hours are listed on the Google profile.", render: (c) => (c.facts ? yesNo(c.facts.has_hours) : "–") },
+    { label: "Photos", tip: "Photos on the Google profile (Google tells us up to 10).", render: (c) => (c.facts ? photos(c.facts.photo_count) : "–") },
+  ];
+  if (!area) return rows;
+  return [
+    { label: "Average rank", tip: "Average position over every spot on the map. Lower is better.", render: (c) => fmtAvg(c.avg_rank) },
+    { label: "Top 3 coverage", tip: "Share of spots where the business is in Google's top 3 (the Map Pack).", render: (c) => fmtPct(c.top3_rate) },
+    ...rows,
+  ];
+}
+
 function CompareTable({ view, competitors }: { view: AuditView; competitors: Competitor[] }) {
   const b = view.business;
-  const you = {
-    key: "you",
-    label: b.name ?? "You",
-    rank: view.result?.summary.center_rank ?? null,
-    score: b.score ?? null,
-    facts: { rating: b.rating, user_rating_count: b.user_rating_count, website: b.website ?? null, has_hours: Boolean(b.has_hours), photo_count: b.photo_count ?? null } as PublicFacts,
-    self: true,
-  };
-  const columns = [
-    you,
-    ...competitors.map((c) => ({ key: `${c.rank}`, label: c.name ?? "Unnamed business", rank: c.rank, score: c.score, facts: c.facts, self: false })),
+  const summary = view.result!.summary;
+  const area = view.result!.basis === "area";
+  const columns: Column[] = [
+    {
+      key: "you",
+      label: b.name ?? "You",
+      self: true,
+      score: b.score ?? null,
+      facts: { rating: b.rating, user_rating_count: b.user_rating_count, website: b.website ?? null, has_hours: Boolean(b.has_hours), photo_count: b.photo_count ?? null },
+      avg_rank: summary.avg_rank,
+      top3_rate: summary.top3_rate,
+    },
+    ...competitors.map((c) => ({ key: `${c.rank}-${c.name}`, label: c.name ?? "Unnamed business", self: false, score: c.score, facts: c.facts, avg_rank: c.avg_rank, top3_rate: c.top3_rate })),
   ];
-  const rows: { label: string; render: (c: (typeof columns)[number]) => React.ReactNode }[] = [
-    { label: "Rank here", render: (c) => (c.rank === null ? "30+" : `#${c.rank}`) },
-    { label: "Quick score", render: (c) => (c.score ? <ScoreBadge score={c.score} size="sm" /> : "–") },
-    { label: "Rating", render: (c) => (c.facts ? <Rating rating={c.facts.rating} count={c.facts.user_rating_count} /> : "–") },
-    { label: "Website", render: (c) => (c.facts ? yesNo(Boolean(c.facts.website)) : "–") },
-    { label: "Opening hours", render: (c) => (c.facts ? yesNo(c.facts.has_hours) : "–") },
-    { label: "Photos", render: (c) => (c.facts ? photos(c.facts.photo_count) : "–") },
-  ];
+  const rows = compareRows(area);
 
   return (
-    <div className="-mx-6 overflow-x-auto px-6 md:mx-0 md:px-0">
-      <table className="w-full min-w-[560px] text-sm">
+    <>
+      {/* Tablet and up: one column per business, full card width (no sideways scroll). */}
+      <table className="hidden w-full table-fixed text-sm md:table">
         <thead>
           <tr>
-            <th className="w-32 py-2 text-left text-xs font-medium text-muted-foreground" scope="col">
+            <th scope="col" className="w-[22%] py-2 text-left">
               <span className="sr-only">Measure</span>
             </th>
             {columns.map((c) => (
-              <th
-                key={c.key}
-                scope="col"
-                className={`px-3 py-2 text-left align-bottom text-sm font-semibold ${c.self ? "rounded-t-xl bg-primary-soft text-primary" : "text-foreground"}`}
-              >
+              <th key={c.key} scope="col" className={`px-3 py-3 text-left align-bottom font-semibold ${c.self ? "rounded-t-xl bg-primary-soft text-primary" : "text-foreground"}`}>
                 {c.self && <span className="block text-[10px] font-semibold uppercase tracking-wider">You</span>}
                 <span className="line-clamp-2">{c.label}</span>
                 {!c.self && !c.facts && <span className="block text-xs font-normal text-muted-foreground">Details unavailable</span>}
@@ -285,11 +348,13 @@ function CompareTable({ view, competitors }: { view: AuditView; competitors: Com
         <tbody>
           {rows.map((row) => (
             <tr key={row.label} className="border-t border-border">
-              <th scope="row" className="py-2.5 text-left text-xs font-medium text-muted-foreground">
-                {row.label}
+              <th scope="row" className="py-3 pr-2 text-left text-xs font-medium text-muted-foreground">
+                <span className="inline-flex items-center gap-1">
+                  {row.label} <InfoTip label={row.label}>{row.tip}</InfoTip>
+                </span>
               </th>
               {columns.map((c) => (
-                <td key={c.key} className={`px-3 py-2.5 text-foreground ${c.self ? "bg-primary-soft" : ""}`}>
+                <td key={c.key} className={`px-3 py-3 text-foreground ${c.self ? "bg-primary-soft" : ""}`}>
                   {row.render(c)}
                 </td>
               ))}
@@ -297,7 +362,31 @@ function CompareTable({ view, competitors }: { view: AuditView; competitors: Com
           ))}
         </tbody>
       </table>
-    </div>
+
+      {/* Phones: one card per business. */}
+      <div className="space-y-3 md:hidden">
+        {columns.map((c) => (
+          <div key={c.key} className={`rounded-2xl p-4 ring-1 ${c.self ? "bg-primary-soft ring-primary/20" : "ring-border"}`}>
+            <p className="font-semibold text-foreground">
+              {c.self && <span className="mr-1.5 text-[10px] uppercase tracking-wider text-primary">You</span>}
+              {c.label}
+            </p>
+            {!c.self && !c.facts ? (
+              <p className="mt-1 text-xs text-muted-foreground">Details unavailable</p>
+            ) : (
+              <dl className="mt-2 grid grid-cols-2 gap-x-4 gap-y-2 text-sm">
+                {rows.map((row) => (
+                  <div key={row.label} className="flex items-center justify-between gap-2">
+                    <dt className="text-xs text-muted-foreground">{row.label}</dt>
+                    <dd className="text-foreground">{row.render(c)}</dd>
+                  </div>
+                ))}
+              </dl>
+            )}
+          </div>
+        ))}
+      </div>
+    </>
   );
 }
 
@@ -341,10 +430,13 @@ function PdfButton({ view, token }: { view: AuditView; token: string }) {
   );
 }
 
-function Card({ title, subtitle, children }: { title: string; subtitle?: string; children: React.ReactNode }) {
+
+function Card({ title, subtitle, tip, children, className = "" }: { title: string; subtitle?: string; tip?: string; children: React.ReactNode; className?: string }) {
   return (
-    <section className="min-w-0 rounded-3xl bg-card p-6 shadow-card ring-soft md:p-8">
-      <h3 className="text-lg font-semibold text-foreground">{title}</h3>
+    <section className={`min-w-0 rounded-3xl bg-card p-5 shadow-card ring-soft md:p-7 ${className}`}>
+      <h3 className="flex items-center gap-1.5 text-lg font-semibold text-foreground">
+        {title} {tip && <InfoTip label={title}>{tip}</InfoTip>}
+      </h3>
       {subtitle && <p className="mt-1 text-sm text-muted-foreground">{subtitle}</p>}
       <div className="mt-5">{children}</div>
     </section>
@@ -355,13 +447,15 @@ export function FullReport({ view, token }: { view: AuditView; token: string }) 
   const result = view.result;
   if (!result) return null;
   const b = view.business;
+  const area = result.basis === "area";
+  const counts = areaCounts(toPins(result.cells).map((p) => p.bucket));
 
   return (
     <div className="space-y-6">
       {view.pdf_available && (
         <div className="flex flex-wrap items-center justify-between gap-4 rounded-3xl bg-primary-soft p-5 md:p-6">
           <p className="text-sm text-foreground">
-            <span className="font-semibold">Your full report is ready.</span> We&apos;ve also emailed the PDF
+            <span className="font-semibold">Your full report is ready.</span>{" "}We&apos;ve also emailed the PDF
             {view.lead.email_masked ? ` to ${view.lead.email_masked}` : ""}.
           </p>
           <PdfButton view={view} token={token} />
@@ -378,37 +472,46 @@ export function FullReport({ view, token }: { view: AuditView; token: string }) 
         </ul>
       )}
 
-      <SummaryStats summary={result.summary} centerSource={view.center.source} />
+      <AreaInsight counts={counts} keyword={view.keyword} />
+      <SummaryStats summary={result.summary} counts={counts} seen={result.area?.seen} />
 
-      <div className="grid gap-6 lg:grid-cols-[1.2fr_1fr]">
-        <Card title="Your rank across the area" subtitle={`For “${view.keyword}”, at ${result.cells.length} points around ${view.center.label ?? "the centre"}.`}>
-          <Heatmap cells={result.cells} size={view.grid.size} spacingKm={view.grid.spacing_km} centerLabel={view.center.label ?? "Centre"} />
+      <div className="grid gap-6 lg:grid-cols-[1.35fr_1fr]">
+        <Card title="Your rank across the area" subtitle={`For “${view.keyword}”, at ${result.cells.length} spots around ${view.center.label ?? "the centre"}.`}>
+          <RankMap view={view} cells={result.cells} />
         </Card>
-        <Card title="Who ranks higher" subtitle="At the centre of the map, for this search.">
-          <HigherList higher={result.higher} attribution={view.attribution.text} />
+        <Card
+          title={area ? "Who outranks you in your area" : "Who ranks above you"}
+          subtitle={area ? "Ranked by average position over every spot on the map." : "Right at the centre of the map."}
+          tip={
+            area
+              ? "Every business that, on average across the map, ranks better than you for this search."
+              : "The businesses Google lists above you when someone searches from the centre of the map."
+          }
+        >
+          <HigherList view={view} counts={counts} />
         </Card>
       </div>
 
-      <div className="grid gap-6 lg:grid-cols-[1fr_1.4fr]">
-        <Card title="Google profile quick score">
+      <Card
+        title="How you compare with the top 3"
+        subtitle={area ? "The three businesses that rank best across your area." : "The three businesses Google shows first at the centre of the map."}
+      >
+        {result.competitors.length > 0 ? (
+          <>
+            <CompareTable view={view} competitors={result.competitors} />
+            <GoogleAttribution text={view.attribution.text} className="mt-3" />
+          </>
+        ) : (
+          <p className="text-sm text-muted-foreground">No other businesses ranked here for this search.</p>
+        )}
+      </Card>
+
+      <Card title="Google profile quick score" tip={SCORE_TIP}>
+        <div className="grid gap-6 md:grid-cols-[auto_1fr] md:items-start md:gap-10">
           {b.score && <ScoreBadge score={b.score} />}
-          {b.checklist && b.checklist.length > 0 && (
-            <div className="mt-5">
-              <Checklist items={b.checklist} />
-            </div>
-          )}
-        </Card>
-        <Card title="How you compare with the top 3" subtitle="The three businesses Google shows first at the centre.">
-          {result.competitors.length > 0 ? (
-            <>
-              <CompareTable view={view} competitors={result.competitors} />
-              <GoogleAttribution text={view.attribution.text} className="mt-3" />
-            </>
-          ) : (
-            <p className="text-sm text-muted-foreground">No other businesses ranked here for this search.</p>
-          )}
-        </Card>
-      </div>
+          {b.checklist && b.checklist.length > 0 && <Checklist items={b.checklist} />}
+        </div>
+      </Card>
 
       <section className="relative overflow-hidden rounded-3xl bg-primary p-8 text-primary-foreground shadow-lift md:p-12">
         <div aria-hidden className="absolute -right-24 -top-24 h-96 w-96 rounded-full bg-accent/30 blur-3xl" />

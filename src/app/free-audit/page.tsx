@@ -59,7 +59,7 @@ export default function FreeAuditPage() {
             <Zap className="h-3.5 w-3.5 text-accent" /> Free local visibility audit
           </span>
           <h1 className="mt-6 font-display text-4xl leading-[1.05] text-foreground md:text-6xl">
-            Where does your business <span className="text-gradient">really rank</span> on Google Maps?
+            Where does your business <span className="text-gradient">really rank</span>{" "}on Google Maps?
           </h1>
           <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-muted-foreground">
             Your rank changes from street to street. See it across 49 points around you, for the search your

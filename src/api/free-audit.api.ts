@@ -36,6 +36,8 @@ export interface AuditSummary {
   top3_rate: number | null;
   points: number;
   failed_points: number;
+  /** The business's place in the area ranking (every business, by average over the grid). null = "30+". Absent on older audits. */
+  area_rank?: number | null;
 }
 
 export interface Score {
@@ -87,14 +89,21 @@ export interface ResultCell {
   status: CellStatus;
 }
 
-export interface RankedBusiness {
-  rank: number;
+/** Area figures for one business, averaged over every point of the grid. */
+export interface AreaFigures {
+  avg_rank?: number | null;
+  top3_rate?: number | null;
+}
+
+export interface RankedBusiness extends AreaFigures {
+  /** Area position (centre position on older audits). The client's own row is null when it wasn't in any top 30. */
+  rank: number | null;
   name: string | null;
   address: string | null;
   is_self: boolean;
 }
 
-export interface Competitor {
+export interface Competitor extends AreaFigures {
   rank: number;
   name: string | null;
   address: string | null;
@@ -119,11 +128,22 @@ export interface AuditView {
   polling: boolean;
   locked: boolean;
   keyword: string;
-  center: { source: "business" | "city"; label: string | null };
+  /** lat / lng: the grid centre, for the map (older audits don't have them). */
+  center: { source: "business" | "city"; label: string | null; lat?: number; lng?: number };
   grid: { size: number; radius_km: number; spacing_km: number };
   business: Business;
-  preview: { summary: AuditSummary; cells: PreviewCell[]; score: Score | null } | null;
+  preview: {
+    summary: AuditSummary;
+    cells: PreviewCell[];
+    score: Score | null;
+    /** How many businesses outrank this one across the area (a count; names stay locked). */
+    businesses_ahead?: number | null;
+  } | null;
   result: {
+    /** "area": `higher` / `competitors` are ranked across the whole grid. Absent on older audits (centre basis). */
+    basis?: "area" | "center";
+    /** Area basis only. `ahead` can be more than the 10 rows in `higher`. */
+    area?: { self_rank: number | null; ahead: number; seen: number; points: number };
     cells: ResultCell[];
     summary: AuditSummary;
     higher: RankedBusiness[] | null;
