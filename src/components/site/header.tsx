@@ -163,6 +163,12 @@ export function Header() {
 				{/* Desktop CTA */}
 				<div className="hidden md:flex items-center gap-2">
 					<Link
+						href="/free-audit"
+						className="inline-flex items-center rounded-full bg-[#27424a] px-4 py-2 text-sm font-semibold text-white shadow-card transition-all hover:-translate-y-0.5 hover:shadow-lift"
+					>
+						Free Audit
+					</Link>
+					<Link
 						href="/checkout"
 						className="inline-flex items-center rounded-full bg-accent px-4 py-2 text-sm font-semibold text-accent-foreground shadow-card transition-all hover:-translate-y-0.5 hover:shadow-lift"
 					>
@@ -273,8 +279,14 @@ export function Header() {
 						})}
 
 						<Link
+							href="/free-audit"
+							className="mt-4 inline-flex items-center justify-center rounded-full bg-[#27424a] px-4 py-3 text-sm font-semibold text-white shadow-card transition-all hover:shadow-lift"
+						>
+							Free Audit
+						</Link>
+						<Link
 							href="/checkout"
-							className="mt-4 inline-flex items-center justify-center rounded-full bg-accent px-4 py-3 text-sm font-semibold text-accent-foreground shadow-card transition-all hover:shadow-lift"
+							className="mt-2 inline-flex items-center justify-center rounded-full bg-accent px-4 py-3 text-sm font-semibold text-accent-foreground shadow-card transition-all hover:shadow-lift"
 						>
 							Get Started
 						</Link>
